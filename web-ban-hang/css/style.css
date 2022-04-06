@@ -24,3 +24,10 @@ a{
 li{
     padding: 10px;
 }
+.category a{
+    border: 1px solid #c4c4c4;
+    background-color: #e5e5e5;
+    color: gray;
+    cursor: pointer;
+    margin-right: 0.4rem;
+}
