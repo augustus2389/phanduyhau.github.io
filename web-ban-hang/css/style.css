@@ -1,0 +1,26 @@
+*{
+    margin: 5px;
+}
+.menu{
+    display: flex;
+    text-align: center;
+}
+img {
+    width: 350px;
+}
+h1{
+    padding: 25px 0px;
+    text-align: center;
+}
+p{
+    font-size: 30px;
+}
+a:hover{
+    color: aqua;
+}
+a{
+    text-decoration: none;
+}
+li{
+    padding: 10px;
+}
