@@ -74,6 +74,10 @@
 .title p{
   margin-right: 20px;
 }
+p{
+  text-shadow: 16px 16px 6px grey;
+    font-weight: bold;
+}
 hr {
   border-top: 3px double #8c8b8b;
 }
