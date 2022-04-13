@@ -71,12 +71,12 @@
   width: 300px;
   font-family: Serif;
 }
-.title p{
+.title p {
   margin-right: 20px;
 }
-p{
-  text-shadow: 16px 16px 6px grey;
-    font-weight: bold;
+p {
+  text-shadow: 16px 16px 10px grey;
+  font-weight: bold;
 }
 hr {
   border-top: 3px double #8c8b8b;
@@ -109,7 +109,9 @@ ul li {
 }
 .caption a {
   color: white;
+  text-shadow: 0 0 3px red;
 }
 a {
   text-decoration: none;
+  font-size: 14px;
 }
