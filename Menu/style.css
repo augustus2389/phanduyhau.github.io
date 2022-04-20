@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.container{
+    margin: auto;
+    max-width: 100%;
+    background-color: red;
+    display: flex;
+    
+}
+.menu li{
+    list-style: none;
+    /* position: relative; */
+}
+.menu a{
+    text-decoration: none;
+    display: block;
+    padding: 15px;  
+}
+.menu {
+    width: 230px;
+}
+.menu, .sub-menu {
+    background: white;
+    margin: 0px 15px;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 25%);
+    padding: 0;
+    position: relative;
+}
+.menu li:hover>a {
+    color: orange;
+    background-color: #999999;
+}
+
+.menu i{
+    float: right;
+    display: none;
+}
+.menu a:hover li{
+    display: block;
+}
+.sub-menu{
+    display: none;
+    position: absolute;
+    z-index: 5;
+    left: 215px;
+    top: 0px;
+    width: 230px;
+    height: 393px;
+}
+.menu li:hover .sub-menu{
+    display: block;
+    background:white; 
+}
+.menu li:hover i{
+    display: block;
+}
+.menu li:hover  .sub-menu {
+     background-color: white;
+}
