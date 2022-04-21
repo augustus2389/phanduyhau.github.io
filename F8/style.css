@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+}
+.body{
+    padding: 0;
+    box-sizing: border-box;
+}
+.box{
+    background-color: orange;
+    height: 100px;
+    position: relative;
+}
+h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
