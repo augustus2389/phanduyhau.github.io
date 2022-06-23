@@ -171,8 +171,6 @@ btnDiscount.addEventListener("click", () => {
   } else {
     alert("Nhập mã không hợp lệ");
   }
-
-  discountInput.value = "";
 });
 
 renderProduct(items);
