@@ -169,7 +169,7 @@ ul {
     flex-wrap: wrap;
   }
   .col {
-    flex-basis: 50%;
+    flex-basis: 100%;
   }
   .card-image .category {
     position: absolute;
@@ -179,14 +179,13 @@ ul {
     font-size: 20px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .row {
     display: flex;
     flex-wrap: wrap;
   }
   .card-image .category {
-    position: absolute;
-    left: 60px;
+    left: 110px;
   }
 }
 @media (min-width: 1000px) {
@@ -197,7 +196,6 @@ ul {
     flex-basis: 33.333%;
   }
   .card-image .category {
-    position: absolute;
     left: 50px;
   }
 }
