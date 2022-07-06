@@ -9,6 +9,9 @@
   img {
     max-width: 100%;
   }
+  #header img{
+    width: 100%;
+  }
 #header .header-image {
     margin-bottom: 117px;
   }
