@@ -1,0 +1,427 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@300;700;800&family=Roboto:ital,wght@0,100;0,500;1,300&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+img {
+  max-width: 100%;
+}
+#header {
+  background-color: #7cb342;
+}
+.header {
+  width: 100%;
+}
+ul {
+  list-style-type: none;
+}
+.test {
+  width: 90%;
+  margin: auto;
+  height: 100px;
+  color: black;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  border-right: 1px solid white;
+  padding-right: 20px;
+}
+#header .header-title {
+  text-transform: uppercase;
+  color: white;
+  width: 28%;
+}
+.menu-icon {
+  font-size: 32px;
+  cursor: pointer;
+  display: none;
+}
+.menu ul {
+  display: flex;
+}
+.menu li {
+  text-transform: uppercase;
+  margin-left: 16px;
+  cursor: pointer;
+}
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+  opacity: 0.4;
+  overflow: hidden;
+  z-index: 1000;
+  display: none;
+}
+
+#main-image {
+  position: relative;
+}
+#main-image img {
+  padding-bottom: 80px;
+  width: 100%;
+}
+#donate .donate-info {
+  text-transform: uppercase;
+  padding-top: 100px;
+}
+
+#donate b {
+  color: #7cb342;
+}
+#donate .donate-title {
+  background-color: #7cb342;
+}
+
+#donate .donate-title h2 {
+  font-size: 54px;
+  line-height: 65px;
+  line-height: 100%;
+  font-weight: 700;
+  padding: 30px 0;
+  color: white;
+}
+#donate .donate-form {
+  width: 57%;
+  margin: auto;
+}
+#donate .donate-box {
+  box-shadow: 5px 10px 8px #888888;
+  margin-bottom: 120px;
+}
+#donate .donate-form input {
+  margin: 10px 0;
+}
+#donate .donate-form input:nth-child(2) {
+  border: 1px solid #7cb342;
+}
+::placeholder {
+}
+#donate .donate-form input:nth-child(4) {
+  margin-bottom: 40px;
+}
+#donate .donate-form button {
+  padding: 3 74px;
+  border: none;
+  background-color: #7cb342;
+  color: white;
+  font-weight: 700;
+}
+#mission .kid-image {
+  flex-basis: 38%;
+  height: 50%;
+}
+#mission .our-mission {
+  flex-basis: 62%;
+  height: 50%;
+  padding-top: 120px;
+}
+#mission .support {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 8px #888888;
+}
+.kid {
+  display: flex;
+  width: 85%;
+  padding-bottom: 100px;
+}
+#mission .support p {
+  margin: 13px;
+}
+#mission .help {
+  border-bottom: 1px solid #d8d8d8;
+}
+#mission .help:last-child {
+  border: none;
+}
+.our-mission p:nth-child(1) {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+
+  text-align: right;
+  letter-spacing: 2.5px;
+
+  color: #050d31;
+}
+.our-mission h2 {
+  margin-left: auto;
+  width: 80%;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 36px;
+
+  text-align: right;
+  text-transform: uppercase;
+
+  color: #023753;
+}
+.our-mission p:nth-child(3) {
+  width: 73%;
+  float: right;
+}
+.our-mission b {
+  color: #7cb342;
+  font-weight: 700;
+}
+
+#pollution .activities {
+  width: 70%;
+  margin-left: 130px;
+}
+#pollution .box1 {
+  width: 30%;
+}
+#pollution h2 {
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 36px;
+  color: #023753;
+  width: 80%;
+}
+#pollution .activities p {
+  width: 80%;
+  line-height: 28.8px;
+}
+#pollution b {
+  color: #7cb342;
+  font-weight: 700;
+}
+#pollution .box1 {
+  box-shadow: 0px 0px 8px #888888;
+  margin-bottom: 100px;
+}
+#pollution .box-mini {
+  padding: 25px;
+  border-bottom: 1px solid #d8d8d8;
+}
+#pollution .box-mini img {
+  padding-right: 10px;
+}
+
+#pollution .box1 p:first-child {
+}
+#pollution .box2 {
+  padding-left: 30px;
+}
+#pollution .box2 p {
+  margin: 10px;
+}
+
+#passionate .learn-image {
+  width: 100%;
+  height: 50%;
+}
+#passionate .volunteer {
+  text-align: right;
+}
+#passionate .support {
+  background-color: white;
+  box-shadow: 0px 0px 8px #888888;
+}
+
+.learn {
+  display: flex;
+  width: 85%;
+  padding-bottom: 200px;
+}
+#passionate .friendly img{
+  margin-left: 30px;
+}
+#passionate .friendly p {
+  padding: 22px 70px 10px 10px
+}
+#passionate .friendly {
+  border-bottom: 1px solid #d8d8d8;
+}
+#passionate .friendly:last-child {
+  border: none;
+}
+.volunteer p:nth-child(1) {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: right;
+  letter-spacing: 2.5px;
+  color: #050d31;
+}
+.volunteer h2 {
+  margin-left: auto;
+  width: 80%;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 36px;
+  text-align: right;
+  text-transform: uppercase;
+  color: #023753;
+}
+.note-text .address-icon img {
+  padding: 15px;
+}
+.volunteer button {
+  border: none;
+  padding: 10px 83px;
+  background-color: #7cb342;
+  color: white;
+  font-weight: 700;
+}
+.volunteer b {
+  color: #7cb342;
+  font-weight: 700;
+}
+#footer {
+  background-color: #7cb342;
+}
+#footer p {
+  margin: 20px;
+  color: white;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+}
+#footer p:nth-child(1) {
+  padding: 0 20px;
+  border-right: 2px solid white;
+}
+
+#ceo .ceo-title {
+  top: 0px;
+  left: 116px;
+}
+#ceo .ceo-image {
+  padding: 57px;
+}
+@media (max-width: 1200px) {
+  #mission .support {
+    font-size: 10px;
+    padding: 10px;
+  }
+  #mission .our-mission {
+    padding-top: 0;
+  }
+  .our-mission h2 {
+    font-size: 20px;
+  }
+  .our-mission p:nth-child(3) {
+    font-size: 10px;
+  }
+  #header .header-title p {
+    font-size: 10px;
+    margin-left: 10px;
+  }
+  #ceo h2 {
+    font-size: 20px;
+  }
+  #passionate .our-mission {
+    flex-basis: 100%;
+    height: 50%;
+  }
+  #passionate .friendly p {
+    padding: 0 20px
+  }
+  #passionate .friendly img{
+    margin-left: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .menu-icon {
+    display: inline-block;
+  }
+  .menu ul {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    z-index: 10002;
+    flex-direction: column;
+    transition: all 0.3s;
+  }
+  .menu ul li {
+    padding: 10px;
+    transition: all 0.5s;
+    margin-left: 0;
+  }
+  .menu ul li:hover {
+    background-color: aliceblue;
+    color: aqua;
+  }
+  #header .header-title p {
+    font-size: 10px;
+  }
+  #mission .support {
+    padding: 0px;
+    font-size: 5px;
+  }
+  .our-mission h2 {
+    font-size: 10px;
+  }
+  .our-mission p:nth-child(3) {
+    font-size: 10px;
+  }
+  #ceo h2 {
+    font-size: 20px;
+  }
+  #passionate .learn-image {
+    flex-basis: 100%;
+    height: 50%;
+  }
+  #passionate .friendly p {
+    padding: 0 26px 0px 15px;
+    font-size: 10px;
+  }
+  #passionate .friendly img{
+    margin-left: 10px;
+  }
+  .volunteer h2{
+    font-size: 21px;
+  }
+  .volunteer p{
+    font-size: 10px;
+  }
+  #pollution h2{}
+  #pollution .box1{
+    width: 50%;
+  }
+  #ceo .ceo-image{}
+}
+@media (max-width: 576px) {
+  #mission .support {
+    font-size: 2px;
+  }
+
+  #donate .donate-title h2 {
+    font-size: 30px;
+  }
+  #donate .donate-box {
+    margin: 40px;
+  }
+  #donate .donate-info {
+    padding: 0;
+  }
+  #mission .kid-image {
+    flex-basis: 100%;
+  }
+  #passionate .friendly p {
+    padding: 0 10px;
+    font-size:5px
+  }
+  #passionate .friendly img{
+    margin-left: 10px;
+  }
+  #pollution .box1{}
+  #pollution .box1 h3{}
+}
