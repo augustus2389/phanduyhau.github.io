@@ -33,6 +33,9 @@ ul {
   border-right: 1px solid white;
   padding-right: 20px;
 }
+.menu{
+  background-color: white;
+}
 #header .header-title {
   text-transform: uppercase;
   color: white;
@@ -48,8 +51,12 @@ ul {
 }
 .menu li {
   text-transform: uppercase;
-  margin-left: 16px;
+  padding: 16px;
   cursor: pointer;
+}
+.menu li:nth-child(1){
+  color: #7cb342;
+  font-weight: 700;
 }
 #overlay {
   position: absolute;
