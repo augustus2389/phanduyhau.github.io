@@ -379,6 +379,15 @@ ul {
     transition: all 0.5s;
     margin-left: 0;
   }
+  .menu{
+    font-size: 10px;
+  }
+  .menu .menu-icon i{
+    background-color:  #7cb342;
+  }
+  .menu-icon{
+    line-height: 15px;
+  }
   .menu ul li:hover {
     background-color: aliceblue;
     color: aqua;
