@@ -1,0 +1,20 @@
+@import url(./_header.css);
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@300;700;800&family=Quicksand:wght@300;400;500;700&family=Roboto:ital,wght@0,100;0,500;1,300&display=swap");
+@import url(./_footer.css);
+
+h1{
+    color: #8b572a;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 30px;
+    margin: 20px 0px 10px 10px;
+}
+h2{
+    color: #8b572a;
+    margin: 20px 0 13px 0;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 18px;
+    cursor: pointer;
+    border-bottom: 0.5px solid gray;
+}

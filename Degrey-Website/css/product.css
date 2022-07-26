@@ -1,0 +1,81 @@
+@import url(./_header.css);
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@300;700;800&family=Quicksand:wght@300;400;500;700&family=Roboto:ital,wght@0,100;0,500;1,300&display=swap");
+@import url(./_footer.css);
+
+h1{
+    color: #8b572a;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 30px;
+    margin: 20px 0px 10px 10px;
+}
+:root{
+    --primary: #DE483E;
+    --secondary: #C74237
+}
+.dropdown {
+    width: 100%;
+    max-width: 21.2rem;
+}
+.dropdown-select {
+    width: 100%;
+    /* padding: 3rem; */
+    background-color: var(--primary);
+    border-radius: 4px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.dropdown-list{
+    margin-top:2.5rem;
+    border-radius: 4px;
+    left:0;
+    right: 0;
+    display: none;
+}
+.dropdown-list::after{
+    content:"";
+    height:2.5rem;
+    position: absolute;
+    left: 0;
+    right:0;
+    background-color: transparent;
+    transform: translateY(-100%);
+}
+.dropdown:hover .dropdown-list{
+    display: block;
+}
+.dropdown-item{
+    background-color: var(--primary);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+}
+.dropdown-item:first-child{
+    border-radius: 4px 4px 0 0 ;
+}
+.dropdown-item:first-child::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 3rem;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: translateY(-100%);
+    transition: border-color 0.2s linear;
+}
+.dropdown-item:first-child:hover:before{
+    border-bottom-color:var(--secondary) ;
+}
+.dropdown-item:last-child{
+    border-radius: 0 0 4px 4px ;
+}
+.dropdown-item:hover{
+    background-color: var(--secondary);
+}
