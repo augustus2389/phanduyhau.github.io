@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@300;700;800&family=Quicksand:wght@300;400;500;700&family=Roboto:ital,wght@0,100;0,500;1,300&display=swap");
-@import url(./_product.css);
-@import url(./_CustomBootstrap.css);
-@import url(./_header.css);
+@import url(./product.css);
+@import url(./CustomBootstrap.css);
+@import url(./header.css);
 
 
 .image-mini .mini-item {
