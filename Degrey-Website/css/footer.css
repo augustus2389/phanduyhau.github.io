@@ -4,7 +4,8 @@
     padding-bottom: 12px;
   }
   .footer-content ul {
-    padding-left: 20px;
+    padding: 0px;
+    list-style-type: none;
   }
   .contact-icon i {
     margin-right: 10px;

@@ -3,7 +3,7 @@
 @import url(./header.css);
 @import url(./footer.css);
 @import url(./card.css);
-@import url(./responsive.css);
+
 
 .image-mini .mini-item {
   display: none;
@@ -124,42 +124,36 @@
 .suggest-item {
   margin-right: 20px;
 }
-.more-btn {
-  cursor: pointer;
-  border: 1px solid gray;
-  background-color: #8b572a;
-  color: white;
+.footer-content h3 {
   font-weight: 700;
-  width: 200px;
-  line-height: 40px;
-  margin-bottom: 40px;
-  text-transform: uppercase;
+  font-size: 18px;
+  padding-bottom: 12px;
+}
+.footer-content ul {
+  padding-left: 20px;
+}
+.contact-icon i {
+  margin-right: 10px;
+  font-size: 30px;
+}
+.footer-phone {
+  padding: 20px 0;
+}
+.phone-number {
+  padding: 10px;
+}
+.phone-icon {
+  font-size: 30px;
+}
+.phone-number p {
+  font-size: 24px;
+  color: #333333;
+  font-weight: 500;
+  line-height: 0;
+}
+.end p {
   text-align: center;
-  position: relative;
-  z-index: 1;
-  transition: 0.5s;
-  font-size: 12px;
 }
-.more-btn:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  background-color: black;
-}
-.btn2:before {
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  transition: width 0.25s linear;
-}
-.btn2:hover:before {
-  width: 100%;
-}
-.btn2:hover a {
-  color: white;
-}
-
 @media (max-width: 990px) {
   .menu-icon {
     display: inline-block;

@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      rel="shortcut icon"
+      href="./img/favicon (2).ico"
+      type="image/x-icon"
     />
+    <link rel="icon" href="./img/favicon (2).ico" type="image/x-icon" />
+    <title>Degrey</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -24,16 +24,26 @@
     <section id="header">
       <div class="container">
         <div class="header-item d-flex justify-content-between">
-          <div class="header-logo">
-            <a href="./index.html"><img src="./img/logo.svg" alt="" /></a>
-          </div>
-          <div class="menu">
+          <div class="icon-menu d-flex align-items-center">
             <span class="menu-icon">
               <i class="fa-solid fa-bars"></i>
             </span>
+            <div class="header-logo">
+              <a href="./index.html"> <img src="./img/logo.svg" alt="" /></a>
+            </div>
+          </div>
+          <div class="menu navbar-nav">
             <ul>
-              <li><a href="./index.html">Trang chủ</a></li>
-              <li><a href="./product.html">Sản phẩm</a></li>
+              <li><a href="./index.html">Trang chủ </a></li>
+              <li>
+                <a href="./product.html">Sản phẩm</a>
+                <!-- <ul class="sub-menu">
+                  <li><a href="#">Tất cả sản phẩm</a></li>
+                  <li><a href="#">Áo</a></li>
+                  <li><a href="#">Quần</a></li>
+                  <li><a href="#">Phụ kiện</a></li>
+                </ul> -->
+              </li>
               <li><a href="./store.html">Cửa hàng</a></li>
               <li><a href="./intro.html">Giới thiệu</a></li>
             </ul>
@@ -66,6 +76,16 @@
       </div>
       <div id="overlay"></div>
     </section>
+    <section class="breadcrumb-item">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./index.html">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Tất cả sản phẩm</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
     <section class="banner">
       <div class="container">
         <div class="banner-image">
@@ -73,57 +93,498 @@
         </div>
       </div>
     </section>
-    <section class="filter">
+    <section class="sort">
       <div class="container">
-        <div class="filter-item d-flex justify-content-between">
-          <div class="filter-title">
-            <h1>Tất cả sản phẩm</h1>
-          </div>
-          <div class="dropdown position-relative">
-            <div class="dropdown-select ">
-              <span class="dropdown-selected d-flex align-items-center justify-content-between">
-                <div class="dropdown-left d-flex">
-                  <i class="fa-solid fa-arrow-down-a-z"></i>
-                  <p>Sắp xếp</p>
-                </div>
-                <div class="dropw">
-                  <i class="fa-solid fa-caret-down"></i>
-                </div>
-              </span>
+        <div class="row">
+          <div class="col-lg-43 col-md-3 col-sm-5">
+            <div class="sort-title">
+              <h1>Tất cả sản phẩm</h1>
             </div>
-            <ul class="dropdown-list position-absolute top-100 ">
-              <li class="dropdown-item">
-                <span class="dropdown-text">
-                  Tăng dần
-                </span>
-              </li>
-              <li class="dropdown-item">
-                <span class="dropdown-text">
-                  Giảm dần
-                </span>
-              </li>
-              <li class="dropdown-item">
-                <span class="dropdown-text">
-                  Từ A-Z
-                </span>
-              </li>
-              <li class="dropdown-item">
-                <span class="dropdown-text">
-                  Từ Z-A
-                </span>
-              </li>
-            </ul>
-            
+          </div>
+          <div class="col-lg-49 col-md-9 col-sm-7">
+            <div class="sort-name d-flex">
+              <p>Xếp theo:</p>
+              <form>
+                <ul>
+                  <form>
+                    <li>
+                      <label for="price_money"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                    100.000đ"
+                          id="price_money"
+                        />Từ A-Z</label
+                      >
+                    </li>
+                    <li>
+                      <label for="price_money2"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                      100.000đ"
+                          id="price_money2"
+                        />Từ Z-A</label
+                      >
+                    </li>
+                    <li>
+                      <label for="price_money3"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                        100.000đ"
+                          id="price_money3"
+                        />Từ thấp đến cao</label
+                      >
+                    </li>
+                    <li>
+                      <label for="price_money4"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                          100.000đ"
+                          id="price_money4"
+                        />Từ cao đến thấp</label
+                      >
+                    </li>
+
+                  </form>
+                </ul>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
+    <section class="product">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="product-filter">
+              <div class="filter-title">
+                <p>Tìm theo sản phẩm</p>
+                <div class="filter-selected">
+                  <div class="filter-selected-title d-flex justify-content-between">
+                    <span>Bạn chọn</span>
+                    <p>Xóa hết <i class="fa-solid fa-ban"></i></p>
+                  </div>
+                  <ul>
+                    <li><label for=""><i class="fa-solid fa-xmark"></i> Giá dưới 100.000đ</label></li>
+                    <li><label for=""><i class="fa-solid fa-xmark"></i> Áo Jacket</label></li>
+                    <li><label for=""><i class="fa-solid fa-xmark"></i> XL</label></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="filter">
+                <p>Lọc giá</p>
+                <ul>
+                  <form>
+                    <li>
+                      <label for="price"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                    100.000đ"
+                          id="price"
+                        />Dưới 100.000đ</label
+                      >
+                    </li>
+                    <li>
+                      <label for="price2"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                      100.000đ"
+                          id="price2"
+                        />100.000đ - 250.000đ</label
+                      >
+                    </li>
+                    <li>
+                      <label for="price3"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                        100.000đ"
+                          id="price3"
+                        />250.000đ - 500.000đ</label
+                      >
+                    </li>
+                    <li>
+                      <label for="price4"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                          100.000đ"
+                          id="price4"
+                        />500.000đ - 800.000đ</label
+                      >
+                    </li>
+                    <li>
+                      <label for="price5"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                            100.000đ"
+                          id="price5"
+                        />800.000đ Trở lên</label
+                      >
+                    </li>
+                  </form>
+                </ul>
+              </div>
+              <div class="filter">
+                <p>Loại</p>
+                <ul>
+                  <form>
+                    <li>
+                      <label for="jacket"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                    100.000đ"
+                          id="jacket"
+                        />Áo Jacket</label
+                      >
+                    </li>
+                    <li>
+                      <label for="balo"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                      100.000đ"
+                          id="balo"
+                        />Balo</label
+                      >
+                    </li>
+                    <li>
+                      <label for="t-shirt"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                        100.000đ"
+                          id="t-shirt"
+                        />T-Shirt</label
+                      >
+                    </li>
+                    <li>
+                      <label for="other"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                          100.000đ"
+                          id="other"
+                        />Phụ kiện khác</label
+                      >
+                    </li>
+                  </form>
+                </ul>
+              </div>
+              <div class="filter">
+                <p>Kích cỡ</p>
+                <ul>
+                  <form>
+                    <li>
+                      <label for="size-s"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                    100.000đ"
+                          id="size-s"
+                        />S</label
+                      >
+                    </li>
+                    <li>
+                      <label for="size-m"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                      100.000đ"
+                          id="size-m"
+                        />M</label
+                      >
+                    </li>
+                    <li>
+                      <label for="size-l"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                        100.000đ"
+                          id="size-l"
+                        />L</label
+                      >
+                    </li>
+                    <li>
+                      <label for="size-xl"
+                        ><input
+                          type="radio"
+                          name="price"
+                          value="Dưới
+                          100.000đ"
+                          id="size-xl"
+                        />XL</label
+                      >
+                    </li>
+                  </form>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/Jacket/jacket1.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>
+                    
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/Backpacks/bag9.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>
+                    
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/T-Shirt/t1.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>
+                    
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/T-Shirt/t2.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>
+                    
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/Jacket/jacket2.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>
+                    
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/Jacket/jacket8.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>
+                    
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/Jacket/jacket7.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>
+                    
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/T-Shirt/t6.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>
+                    
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/Backpacks/bag10.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/T-Shirt/t5.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/T-Shirt/t8.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>                    
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="card-item ">
+                  <div class="card-image position-relative">
+                    <img src="./img/Jacket/jacket3.png" alt="" />
+                      <ul class="social position-absolute top-50 end-0 translate-middle-y">
+                        <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+                      <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      </ul>
+                    
+                  </div>
+                  <div class="card-title">
+                    <h3>Áo Khoác Nấm Degrey Đỏ SS2 - AKND Đỏ</h3>
+                    <p>390.000đ</p>
+                  </div>
+                  <button class="btn btn--detail">
+                    <a href="./detail.html">Chi tiết</a>
+                  </button>
+                </div>
+              </div> 
+              <button class="more-btn btn2">
+                xem thêm sản phẩm</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="footer">
       <hr />
       <div class="container">
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6 col-sm-6 ">
             <div class="footer-item">
               <div class="footer-content">
                 <h3>Về DEGREY</h3>
@@ -138,7 +599,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6 col-sm-6">
             <div class="footer-item">
               <div class="footer-content">
                 <h3>Địa chỉ</h3>
@@ -154,7 +615,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6 col-sm-6">
             <div class="footer-item">
               <div class="footer-content">
                 <h3>Hỗ trợ khách hàng</h3>
@@ -168,7 +629,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6 col-sm-6">
             <div class="footer-item">
               <div class="footer-content">
                 <h3>Chăm sóc khách hàng</h3>
@@ -212,6 +673,7 @@
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/product.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
