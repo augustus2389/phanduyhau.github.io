@@ -1,5 +1,5 @@
 .btn {
-    margin: 20px 10px 10px 0;
+    /* margin: 20px 10px 10px 0; */
     cursor: pointer;
     border: 1px solid gray;
     border-radius: 0%;
@@ -9,8 +9,7 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
-    visibility: hidden;
-    opacity: 0;
+    display: none;
     transition: 0.5s;
     font-size: 12px;
   }
@@ -31,12 +30,11 @@
   .btn--detail:hover:before {
     width: 100%;
   }
-  .btn--detail:hover a{
+  .card-item .btn--detail:hover a{
     color: white;
   }
   .card-item:hover .btn{
-    visibility: visible;
-    opacity: 100;
+    display: inline-block;
     margin: 10px auto;
   }
   .card-item:hover .card-title{
@@ -48,7 +46,7 @@
     font-weight: 700;
   }
   .card-item {
-    height: 314px;
+    /* height: 314px; */
     /* margin-bottom: 40px; */
     text-align: center;
   }
@@ -57,6 +55,7 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 1.45;
+    margin-top: 10px;
   }
   .card-item .card-title p:nth-child(2) {
     font-weight: 600;

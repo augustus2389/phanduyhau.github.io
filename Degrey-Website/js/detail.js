@@ -1,38 +1,19 @@
-
-
-// detail.html?id=1 --> querystring
-// detail.html?id=1&name=product1&price=1000000
-// Lấy ra id trên url
-
-
-
-// Initialise Carousel ********************************
-const mainCarousel = new Carousel(document.querySelector("#mainCarousel"), {
-    Dots: false,
-});
-
-// Thumbnails
-const thumbCarousel = new Carousel(document.querySelector("#thumbCarousel"), {
-    Sync: {
-        target: mainCarousel,
-        friction: 0,
-    },
-    Dots: false,
-    Navigation: false,
-    center: true,
-    slidesPerPage: 1,
-    infinite: false,
-});
-
-// Customize Fancybox
-Fancybox.bind('[data-fancybox="gallery"]', {
-    Carousel: {
-        on: {
-            change: (that) => {
-                mainCarousel.slideTo(mainCarousel.findPageForSlide(that.page), {
-                    friction: 0,
-                });
-            },
-        },
-    },
-});
+$('.details-preview').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.details-thumb'
+  });
+  
+  $('.details-thumb').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay:true,
+    arrows:true,
+    autoplaySpeed: 1000,
+    asNavFor: '.details-preview',
+    focusOnSelect: true,
+    prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa          fa-angle-left' aria-hidden='true'></i></button>",
+    nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+  });
