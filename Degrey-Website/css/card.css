@@ -3,7 +3,7 @@
     cursor: pointer;
     border: 1px solid gray;
     border-radius: 0%;
-    padding: 0.5rem 4.7rem;
+    width: 100%;
     text-transform: uppercase;
     text-align: center;
     overflow: hidden;

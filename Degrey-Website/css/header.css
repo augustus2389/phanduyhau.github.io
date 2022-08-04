@@ -61,6 +61,17 @@ a {
   position: relative;
   outline: none;
 }
+.login ul{
+  z-index: 2;
+  list-style-type: none;
+  padding: 0;
+  background-image: url(/Degrey-Website/img/banner-cro.png);
+}
+.login li{
+  width: 83px;
+  margin-top: 10px;
+  border-bottom: 1px solid gray;
+}
 #header .header-action {
   padding-top: 22px;
 }
@@ -103,3 +114,10 @@ a {
   transform: translateX(-50%);
   z-index: 10;
 } */
+.login i{
+  margin: 5px 20px;
+  font-size: 25px;
+}
+.login i:hover{
+  color: #111;
+}
