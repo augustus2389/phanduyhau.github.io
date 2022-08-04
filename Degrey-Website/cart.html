@@ -24,7 +24,7 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
-    <link rel="stylesheet" href="./css/detail.css" />
+    <link rel="stylesheet" href="./css/cart.css" />
   </head>
   <body>
     <section id="header">
@@ -65,7 +65,7 @@
             </div>
             <div class="cart">
               <a
-                href="./cart.html"
+                href="./shopping-cart.html"
                 class="text-dark position-relative"
               >
                 <span class="fs-4"
@@ -89,95 +89,83 @@
             <li class="breadcrumb-item">
               <a href="./index.html">Trang chủ</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
-            <li class="breadcrumb-item active" aria-current="page">Giới thiệu</li>
+            <li class="breadcrumb-item "><a href="./product.html">Sản phẩm</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Giỏ hàng (1)</li>
           </ol>
         </nav>
       </div>
     </section>
-    <section class="address">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="slider-sync">
-                <div class="slider-for">
-                    <div>
-                        <img src="./img/Jacket/jacket1.png" alt="">
+    <div class="shopping-cart-container mt-5">
+        <div class="container">
+            <div class="row shopping-cart">
+                <div class="col-md-8">
+                    <div class="cart-title border-bottom mb-3">
+                        <h2>Giỏ hàng của bạn</h2>
                     </div>
-                    <div>
-                        <img src="./img/Jacket/jacket2.png" alt="">
+                    <p class="fst-italic message">Không có sản phẩm trong giỏ hàng</p>
+                    <div class="product-list">
+                        <div class="product-item d-flex border mb-4">
+                            <div class="image">
+                                <img src="./img/T-Shirt/t6.png" alt="" />
+                            </div>
+                            <div class="info d-flex flex-column justify-content-between px-4 py-3 flex-grow-1">
+                                <div>
+                                    <div class="d-flex ">
+                                        <h2 class="text-dark fs-5 fw-normal">
+                                            Áo thun siêu đẹp (M)
+                                        </h2>
+                                        
+                                    </div>
+                                    <p class="text-black-50 d-flex justify-content-between ">
+                                        <span class="border d-inline-block me-3">
+                                            <span class="py-2 px-3 d-inline-block fw-bold bg-light">-</span>
+                                            <span class="py-2 px-3 d-inline-block fw-bold">1</span>
+                                            <span class="py-2 px-3 d-inline-block fw-bold bg-light">+</span>
+                                        </span>
+                                        <button class="text-primary border-0 bg-transparent fw-light">
+                                            <span><i class="fa-solid fa-trash-can"></i></span>
+                                            Xóa
+                                        </button>
+                                    </p>
+                                </div>
+                                <div>
+                                    
+                                    <h2 class="text-danger fs-5 fw-normal">
+                                        500.000 VND
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <img src="./img/Jacket/jacket3.png" alt="">
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="bill border">
+                        <div class="border-bottom mb-2 p-3 fs-5 fw-normal  text-center">
+                            <h2>Thông tin đơn hàng</h2>
+                        </div>
+                        <div class=" mb-2 p-3 fs-5 fw-normal d-flex justify-content-between align-items-center">
+                            <span class="text-black fw-bold">Tổng tiền</span>
+                            <span class="total-money fw-bold" id="total-money">9.000.000 VND</span>
+                        </div>
+                        <div class="note  mb-2 p-3 fs-5 fw-normal d-flex justify-content-between align-items-center discount-box">
+                            <ul>
+                                <li>Phí vận chuyển sẽ được tính ở trang thanh toán.
+                                </li>
+                                <li>Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</li>
+                            </ul>
+                        </div>
+                        <div class="discount-form text-center ">
+                            <button class="text-white border-0 w-50 text-center h-75 fw-bold"
+                                id="btn-apply"><a href="./payment.html">Thanh toán</a></button>
+                        </div>
                     </div>
-                    <div>
-                        <img src="./img/Jacket/jacket4.png" alt="">
-                    </div>
-                    <div>
-                        <img src="./img/Jacket/jacket5.png" alt="">
-                    </div>
-                </div>
-            
-                <ul class="slider-nav">
-                    <li>
-                        <img src="./img/Jacket/jacket1.png" alt="" width="100%">
-                    </li>
-                    <li>
-                        <img src="./img/Jacket/jacket2.png" alt="" width="100%">
-                    </li>
-                    <li>
-                        <img src="./img/Jacket/jacket3.png" alt="" width="100%">
-                    </li>
-                    <li>
-                        <img src="./img/Jacket/jacket4.png" alt="" width="100%">
-                    </li>
-                    <li>
-                        <img src="./img/Jacket/jacket5.png" alt="" width="100%">
-                    </li>
-                </ul>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6">
-            <div id="detail">
-                <h2 class="product-name fs-3">Áo thun siêu đẹp</h2>
-                <p class="product-price text-danger fs-4 fw-bold mb-4">600,000đ</p>
-
-                <div class="product-size mb-4">
-                    <span class="border py-2 px-3 border-dark me-2">M</span>
-                    <span class="border py-2 px-3 border-dark me-2">S</span>
-                    <span class="border py-2 px-3 border-dark me-2">L</span>
-                    <span class="border py-2 px-3 border-dark me-2">XL</span>
-                </div>
-
-                <div class="d-flex align-items-center mb-4">
-                    <span class="border d-inline-block me-3">
-                        <span class="py-2 px-3 d-inline-block fw-bold btn-minus-count">-</span>
-                        <span class="py-2 px-3 d-inline-block fw-bold count">1</span>
-                        <span class="py-2 px-3 d-inline-block fw-bold btn-plus-count">+</span>
-                    </span>
-                    <button class="btn btn-add-to-cart"><a href="./cart.html">Thêm vào giỏ hàng</a></button>
-                </div>
-                <div class="item-detail d-flex text-center justify-content-between">
-                    <p>Freeship đơn hàng giá trị trên 1 triệu đồng</p>
-                    <p>Đổi hàng chưa qua sử dụng trong vòng 30 ngày
-                    </p>
-                </div>
-                <div class="product-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem sint impedit
-                        reiciendis ducimus, ipsa quo quibusdam dolorum quisquam magnam dolore eius cum. Sed
-                        nihil itaque dolorum impedit nostrum vel a distinctio? Molestias voluptate soluta
-                        repellat ullam? Magni, laudantium! Excepturi corrupti eaque, dolorum voluptatem nostrum
-                        nemo. Quo nam itaque officia dolores.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, dignissimos?
-                        Exercitationem iure architecto temporibus aliquam, numquam, culpa aperiam placeat
-                        voluptatem tempora nemo alias? Similique, rerum eius. Et provident voluptatem tenetur.
-                    </p>
-                </div>
-                <div class="size-im">
-                    <img src="./img/choose-size.png" alt="">
                 </div>
             </div>
         </div>
+    </div>
+          </div>
+          
         </div>
          
         </div>
