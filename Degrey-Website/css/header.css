@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -48,7 +49,7 @@ a:hover{
 }
 .menu li {
   text-transform: uppercase;
-  padding: 16px 20px 20px 20px;
+  padding: 16px 20px 20px 10px;
   cursor: pointer;
 }
 .menu li:hover {
@@ -62,7 +63,7 @@ a:hover{
 }
 
 #header input {
-  padding: 9px 9px 10px 50px;
+  padding: 9px 9px 10px 15px;
   width: 100%;
   background: #fff;
   border: 1px solid #ececec;
@@ -130,4 +131,34 @@ a:hover{
 }
 .login i:hover{
   color: #111;
+}
+.search-box{
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+}
+.search-input{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: white;
+  padding: 20px 100px 20px 20px;
+  font-size: 25px;
+  outline: none;
+}
+.search-box.open{
+  width: 235px;
+}
+.search-btn {
+  position: absolute;
+  top:0;
+  right:0;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  outline: none;
 }

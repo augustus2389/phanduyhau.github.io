@@ -159,7 +159,9 @@
 .btn2:hover a {
   color: white;
 }
-
+.open{
+  display: block;
+}
 @media (max-width: 990px) {
   .menu-icon {
     display: inline-block;
@@ -226,9 +228,9 @@
   }
 }
 @media (max-width: 768px) {
-  #header input {
-    padding: 9px 0px 10px 44px;
-  }
+ .open {
+  width: 0;
+ }
   .footer-item {
     margin-bottom: 50px;
   }

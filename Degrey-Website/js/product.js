@@ -1,3 +1,30 @@
+$(".icon-filter").click(function () {
+  $(".product-filter").css("right", "0");
+  $("#overlay").css("display", "block");
+});
+
+$("#overlay").click(function () {
+  $(".product-filter").css("right", "-250px");
+  $("#overlay").css("display", "none");
+});
+$(".icon-filte").click(function () {
+  $("body").css("overflow-y", "hidden");
+})
+$("#overlay").click(function () { 
+  $("body").css("overflow-y", "scroll");
+});
+$(window).resize(() => {
+  if ($(window).innerWidth() > 768) {
+    $(".product-filter").css("right", "-250px");
+    $("#overlay").css("display", "none");
+  }
+});
+
+
+
+
+
+
 $(".image-slider").slick({
     dots: true,
     infinite: true,

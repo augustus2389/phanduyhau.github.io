@@ -65,9 +65,7 @@
   }
 }
 @media (max-width: 768px) {
-  #header input {
-    padding: 9px 0px 10px 44px;
-  }
+  
   .footer-item {
     margin-bottom: 50px;
   }

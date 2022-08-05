@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="./css/product.css" />
   </head>
   <body>
+    <div id="overlay"></div>
+
     <section id="header">
       <div class="container">
         <div class="header-item d-flex justify-content-between">
@@ -74,7 +76,6 @@
           </div>
         </div>
       </div>
-      <div id="overlay"></div>
     </section>
     <section class="breadcrumb-item">
       <div class="container">
@@ -101,7 +102,7 @@
               <h1>Tất cả sản phẩm</h1>
             </div>
           </div>
-          <div class="col-lg-9 col-md-9 col-sm-7">
+          <div class="col-lg-9 col-md-12 col-sm-12">
             <div class="sort-name d-flex">
               <p>Xếp theo:</p>
               <form>
@@ -164,6 +165,12 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
+            <div class="filter-icon">
+              
+              <span class="icon-filter">
+                <i class="fa-solid fa-filter"></i>
+              </span>
+            </div>
             <div class="product-filter">
               <div class="filter-title">
                 <p>Tìm theo sản phẩm</p>
@@ -181,7 +188,7 @@
               </div>
               <div class="filter">
                 <p>Lọc giá</p>
-                <ul>
+                <ul data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                   <form>
                     <li>
                       <label for="price"

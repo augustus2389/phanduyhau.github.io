@@ -13,7 +13,11 @@ $(window).resize(() => {
     $("#overlay").css("display", "none");
   }
 });
-console.log($("li:nth-child(2)").text());
+var btnSearch = document.querySelector('.search-btn')
+btnSearch.addEventListener('click',function(){
+  this.parentElement.classList.toggle('open');
+  this.previousElementSibling.focus();
+})
 
 $(".image-slider").slick({
   dots: true,
