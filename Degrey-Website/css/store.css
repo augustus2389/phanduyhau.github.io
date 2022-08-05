@@ -71,12 +71,12 @@ h2 {
 a:hover {
   color: black;
 }
-.submenu-link li {
+/* .submenu-link li {
   list-style-type: none;
   border: none;
   font-size: 13px;
   display: none;
-}
+} */
 
 .link i:hover .submenu-link {
   display: block;

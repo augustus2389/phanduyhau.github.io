@@ -166,7 +166,7 @@ $(".suggest-content").slick({
 
 $(function () {
   var url = window.location.href;
-  $("#header a").each(function () {
+  $(".nav  a").each(function () {
     if (url == this.href) {
       $(this).closest("li").addClass("active");
     }

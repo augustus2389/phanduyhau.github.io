@@ -16,6 +16,12 @@ a {
   text-decoration: none;
   color: #4a4a4a;
 }
+a:hover{
+  color: #4a4a4a;;
+}
+.nav-link:hover {
+  color: #4a4a4a;;
+}
 .header-logo {
   order: -1;
 }
@@ -23,7 +29,11 @@ a {
   height: 85px;
 }
 .menu {
-  margin-top: 8px;
+  margin-top: 5px;
+}
+.menu a{
+  text-decoration: none;
+  color: #4a4a4a;
 }
 .menu-icon {
   font-size: 32px;
@@ -38,11 +48,14 @@ a {
 }
 .menu li {
   text-transform: uppercase;
-  padding: 16px 20px 33px 20px;
+  padding: 16px 20px 20px 20px;
   cursor: pointer;
 }
 .menu li:hover {
   border-bottom: 2px solid black;
+}
+.dropdown-item:hover {
+  background-color: transparent;
 }
 #header ul li.active {
   border-bottom: 2px solid black;
@@ -62,15 +75,12 @@ a {
   outline: none;
 }
 .login ul{
-  z-index: 2;
   list-style-type: none;
   padding: 0;
-  background-image: url(/Degrey-Website/img/banner-cro.png);
+
 }
 .login li{
-  width: 83px;
-  margin-top: 10px;
-  border-bottom: 1px solid gray;
+ 
 }
 #header .header-action {
   padding-top: 22px;
@@ -85,8 +95,8 @@ a {
   padding: 10px 20px;
   color: #c5cee0;
 }
-.header .cart i {
-  margin-top: 10px;
+.header-item .cart {
+ 
 }
 .cart-count {
   top: -20px;
@@ -114,8 +124,8 @@ a {
   transform: translateX(-50%);
   z-index: 10;
 } */
-.login i{
-  margin: 5px 20px;
+.login {
+  margin: 0 10px;
   font-size: 25px;
 }
 .login i:hover{
