@@ -27,7 +27,7 @@
   align-items: center;
   font-size: 20px;
   line-height: 1;
-  z-index: 5;
+  z-index: 1;
   margin: 0 12px;
   border-radius: 50%;
 }
@@ -159,9 +159,9 @@
 .btn2:hover a {
   color: white;
 }
-.open{
+/* .open{
   display: block;
-}
+} */
 @media (max-width: 990px) {
   .menu-icon {
     display: inline-block;
@@ -228,9 +228,9 @@
   }
 }
 @media (max-width: 768px) {
- .open {
-  width: 0;
- }
+  .open {
+    width: 0;
+  }
   .footer-item {
     margin-bottom: 50px;
   }
@@ -247,4 +247,112 @@
   }
 }
 
+/* Test cart */
 
+.cart {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding-top: 30px;
+}
+.cart > h2 {
+  margin-bottom: 20px;
+}
+.cart table {
+  width: 100%;
+}
+.cart table thead tr th:first-child {
+  text-align: left;
+}
+.cart table tr td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px 0;
+}
+.price-total {
+  text-align: right;
+}
+.price-total p {
+  font-weight: 700;
+}
+.cart table thead tr th:last-child {
+  text-align: right;
+}
+.cart table tbody tr td:last-child {
+  text-align: right;
+}
+.cart {
+  z-index: 6;
+  position: fixed;
+  height: 100%;
+  width: 450px;
+  right: -450px;
+  top: 0;
+  background-color: white;
+  padding: 12px 10px;
+  overflow-y: scroll;
+  transition: all 0.5s ease;
+}
+.cart-title i {
+  margin: 10px;
+}
+.product-item .image img {
+  height: 110px;
+  object-fit: cover;
+}
+.cart-title h2 {
+  color: #8b572a;
+  text-transform: uppercase;
+}
+.info {
+  padding-top: 5px;
+}
+.info h2 {
+  font-size: 16px;
+  font-weight: 600;
+  padding-right: 124px;
+}
+.info button {
+  margin-top: -7px;
+}
+.text-danger {
+  font-size: 14px;
+}
+.cart-btn {
+  cursor: pointer;
+  border: 1px solid #ff0000;
+  background-color: #ff0000;
+  color: white;
+  font-weight: 700;
+  width: 100%;
+  line-height: 40px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+  font-size: 12px;
+}
+.cart-btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: white;
+}
+.btn3:before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.25s linear;
+}
+.btn3:hover:before {
+  width: 100%;
+}
+.cart-btn.btn3:hover {
+  color: #ff0000;
+}
+.close-cart {
+  background: none;
+  border: none;
+}

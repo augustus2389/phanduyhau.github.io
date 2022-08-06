@@ -1,3 +1,48 @@
+const btnSearch = document.querySelector('.search-btn');
+const addCart = document.querySelectorAll('.social .add-cart')
+
+
+
+
+
+
+btnSearch.addEventListener('click',function(){
+  this.parentElement.classList.toggle('open');
+  this.previousElementSibling.focus();
+})
+
+
+addCart.forEach(function(cart,index){
+  cart.addEventListener("click",function(event){
+    let btnItem = event.target;
+    let product = btnItem.parentElement;
+    let p2 = product.parentElement;
+    let p3 = p2.parentElement;
+
+    console.log(product)
+  })
+})
+
+
+
+
+
+
+
+
+$(".shopping-cart").click(function(){
+  $(".cart").css("right","0");
+  $("#overlay").css("display", "block");
+})
+$(".close-cart").click(function(){
+  $(".cart").css("right","-450px");
+  $("#overlay").css("display", "none");
+})
+$("#overlay").click(function () {
+  $(".cart").css("right", "-450px");
+  $("#overlay").css("display", "none");
+});
+
 $(".menu-icon").click(function () {
   $(".menu ul").css("left", "0");
   $("#overlay").css("display", "block");
@@ -13,12 +58,6 @@ $(window).resize(() => {
     $("#overlay").css("display", "none");
   }
 });
-var btnSearch = document.querySelector('.search-btn')
-btnSearch.addEventListener('click',function(){
-  this.parentElement.classList.toggle('open');
-  this.previousElementSibling.focus();
-})
-
 $(".image-slider").slick({
   dots: true,
   infinite: true,
