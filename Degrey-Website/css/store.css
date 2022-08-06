@@ -1,11 +1,12 @@
-@import url(./header.css);
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@300;700;800&family=Quicksand:wght@300;400;500;700&family=Roboto:ital,wght@0,100;0,500;1,300&display=swap");
+@import url(./header.css);
 @import url(./footer.css);
 @import url(./responsive.css);
+
 :root {
   --primary-color: #8b572a;
 }
-h1 {
+.address-content h1 {
   color: var(--primary-color);
   font-weight: 700;
   line-height: 1.2;
@@ -13,7 +14,7 @@ h1 {
   margin: 20px 0px 40px 10px;
   text-transform: uppercase;
 }
-h2 {
+.address-content h2 {
   color: #8b572a;
   margin: 20px 0 13px 0;
   font-weight: 700;

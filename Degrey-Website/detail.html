@@ -10,7 +10,8 @@
       type="image/x-icon"
     />
     <link rel="icon" href="./img/favicon (2).ico" type="image/x-icon" />
-    <title>Degrey</title>
+    <title>DEGREY </title>
+
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -39,48 +40,147 @@
             </div>
           </div>
           <div class="menu navbar-nav">
-            <ul>
-              <li><a href="./index.html">Trang chủ</a></li>
-              <li>
-                <a href="./product.html">Sản phẩm</a>
-                <!-- <ul class="sub-menu">
-                  <li><a href="#">Tất cả sản phẩm</a></li>
-                  <li><a href="#">Áo</a></li>
-                  <li><a href="#">Quần</a></li>
-                  <li><a href="#">Phụ kiện</a></li>
-                </ul> -->
+            <ul class="nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link " href="./index.html">Trang chủ <span class="sr-only">(current)</span></a>
               </li>
-              <li><a href="./store.html">Cửa hàng</a></li>
-              <li><a href="./intro.html">Giới thiệu</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản phẩm</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="./product.html">Tất cả các sản phẩm</a>
+                  <a class="dropdown-item" href="./product.html">Áo</a>
+                  <a class="dropdown-item" href="./product.html">Quần</a>
+                  <a class="dropdown-item" href="./product.html">Phụ kiện khác</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./store.html">Cửa hàng</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="./intro.html" tabindex="-1" aria-disabled="true">Giới thiệu</a>
+              </li>
             </ul>
           </div>
           <div class="header-action d-flex justify-content-around">
-            <div class="search position-relative">
-              <input type="text" placeholder="Tìm kiếm sản phẩm" />
-              <div
-                class="search-icon position-absolute top-50 start-0 translate-middle-y"
-              >
+            <div class="search-box">
+              <input type="text" class="search-input" placeholder="Nhập sản phẩm tìm kiếm">
+              <button class="search-btn">
                 <i class="fa-solid fa-magnifying-glass"></i>
-              </div>
+              </button>
             </div>
-            <div class="cart">
-              <a
-                href="./cart.html"
-                class="text-dark position-relative"
-              >
+            <div class="shopping-cart position-relative">
                 <span class="fs-4"
                   ><i class="fa-solid fa-cart-shopping"></i
                 ></span>
                 <span
                   class="cart-count bg-white px-1 rounded-2 position-absolute border"
-                  >2</span
-                >
-              </a>
+                  >2</span>
             </div>
           </div>
         </div>
       </div>
       <div id="overlay"></div>
+    </section>
+    <section class="cart">
+      <div class="cart-title d-flex justify-content-center border-bottom position-relative">
+        <i class="fa-solid fa-cart-shopping"></i><h2>Giỏ hàng</h2>
+        <button class="close-cart position-absolute top-0 start-0 translate-middle">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="product-item d-flex border mb-4 mt-3">
+        <div class="image">
+            <img src="./img/T-Shirt/t6.png" alt="" />
+        </div>
+        <div class="info d-flex flex-column justify-content-between px-1 ">
+            <div>
+                <div class="d-flex ">
+                    <h2 class="text-dark">
+                        Áo thun siêu đẹp (M)
+                    </h2>
+                    <button class="text-primary border-0 bg-transparent fw-light">
+                      <span><i class="fa-solid fa-trash-can"></i></i></span>
+                     
+                  </button>
+                </div>
+                <p class="count text-black-50 text-start">
+                    <span class="border d-inline-block me-3">
+                        <span class="px-2 d-inline-block fw-bold bg-light">-</span>
+                        <span class="px-2 d-inline-block fw-bold">1</span>
+                        <span class="px-2 d-inline-block fw-bold bg-light">+</span>
+                    </span>
+                    <h3 class="text-danger fw-bold text-start">
+                      500.000 VND
+                  </h3>
+                </p>
+            </div>
+        </div>
+      </div>
+      <div class="product-item d-flex border mb-4 mt-3">
+        <div class="image">
+            <img src="./img/T-Shirt/t6.png" alt="" />
+        </div>
+        <div class="info d-flex flex-column justify-content-between px-1 ">
+            <div>
+                <div class="d-flex ">
+                    <h2 class="text-dark">
+                        Áo thun siêu đẹp (M)
+                    </h2>
+                    <button class="text-primary border-0 bg-transparent fw-light">
+                      <span><i class="fa-solid fa-trash-can"></i></i></span>
+                     
+                  </button>
+                </div>
+                <p class="count text-black-50 text-start">
+                    <span class="border d-inline-block me-3">
+                        <span class="px-2 d-inline-block fw-bold bg-light">-</span>
+                        <span class="px-2 d-inline-block fw-bold">1</span>
+                        <span class="px-2 d-inline-block fw-bold bg-light">+</span>
+                    </span>
+                    <h3 class="text-danger fw-bold text-start">
+                      500.000 VND
+                  </h3>
+                </p>
+            </div>
+        </div>
+      </div>
+      <div class="product-item d-flex border mb-4 mt-3">
+        <div class="image">
+            <img src="./img/T-Shirt/t6.png" alt="" />
+        </div>
+        <div class="info d-flex flex-column justify-content-between px-1 ">
+            <div>
+                <div class="d-flex ">
+                    <h2 class="text-dark">
+                        Áo thun siêu đẹp (M)
+                    </h2>
+                    <button class="text-primary border-0 bg-transparent fw-light">
+                      <span><i class="fa-solid fa-trash-can"></i></i></span>
+                     
+                  </button>
+                </div>
+                <p class="count text-black-50 text-start">
+                    <span class="border d-inline-block me-3">
+                        <span class="px-2 d-inline-block fw-bold bg-light">-</span>
+                        <span class="px-2 d-inline-block fw-bold">1</span>
+                        <span class="px-2 d-inline-block fw-bold bg-light">+</span>
+                    </span>
+                    <h3 class="text-danger fw-bold text-start">
+                      500.000 VND
+                  </h3>
+                </p>
+            </div>
+        </div>
+      </div>
+      
+
+    </div>
+    <div class="price-total d-flex justify-content-between border-top p-1">
+      <p>Tổng tiền: </p> <span class="text-danger fw-bold ">320.000 VND</span>  
+    </div>
+    <button class="cart-btn btn3">
+      Xem giỏ hàng</a>
+    </button>
     </section>
     <section class="breadcrumb-item">
       <div class="container">
@@ -141,14 +241,14 @@
             <div id="detail">
                 <h2 class="product-name fs-3">Áo thun siêu đẹp</h2>
                 <p class="product-price text-danger fs-4 fw-bold mb-4">600,000đ</p>
-
+    
                 <div class="product-size mb-4">
                     <span class="border py-2 px-3 border-dark me-2">M</span>
                     <span class="border py-2 px-3 border-dark me-2">S</span>
                     <span class="border py-2 px-3 border-dark me-2">L</span>
                     <span class="border py-2 px-3 border-dark me-2">XL</span>
                 </div>
-
+    
                 <div class="d-flex align-items-center mb-4">
                     <span class="border d-inline-block me-3">
                         <span class="py-2 px-3 d-inline-block fw-bold btn-minus-count">-</span>
@@ -183,12 +283,13 @@
         </div>
       </div>
     </section>
+    
 
     <section class="footer">
       <hr />
       <div class="container">
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="footer-item">
               <div class="footer-content">
                 <h3>Về DEGREY</h3>
@@ -203,7 +304,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="footer-item">
               <div class="footer-content">
                 <h3>Địa chỉ</h3>
@@ -219,7 +320,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="footer-item">
               <div class="footer-content">
                 <h3>Hỗ trợ khách hàng</h3>
@@ -233,7 +334,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="footer-item">
               <div class="footer-content">
                 <h3>Chăm sóc khách hàng</h3>
@@ -248,11 +349,18 @@
                 </div>
                 <h3>Follow Us</h3>
                 <div class="contact-icon">
-                  <i class="fa-brands fa-facebook-square"></i>
-                  <i class="fa-brands fa-instagram"></i>
+                  <a href="https://www.facebook.com/degrey.saigon">
+                    <i class="fa-brands fa-facebook-square"></i
+                  ></a>
+                  <a href="https://www.instagram.com/degrey.saigon/">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+
                   <i class="fa-brands fa-twitter"></i>
                   <i class="fa-brands fa-google-plus-g"></i>
-                  <i class="fa-brands fa-youtube"></i>
+                  <a href="https://www.youtube.com/degreyvn">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
                 </div>
               </div>
             </div>
@@ -264,6 +372,7 @@
       <hr />
       <p>Copyright © 2022 DEGREY VIETNAM</p>
     </section>
+
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-1.11.0.min.js"
@@ -277,6 +386,11 @@
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/detail.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
+
+
+
+
+

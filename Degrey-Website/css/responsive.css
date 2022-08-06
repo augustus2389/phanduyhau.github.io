@@ -6,7 +6,11 @@
   #header ul li.active {
     border-bottom: none;
   }
-
+  .navbar-nav .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    border: none;
+  }
   .menu ul {
     position: fixed;
     top: 0;
@@ -35,6 +39,8 @@
   }
   .menu ul li:nth-child(2) {
     background-image: url(/Degrey-Website/img/li/li2.png);
+    background-size: 100% 200px;
+    background-repeat: no-repeat;
   }
   .menu ul li:nth-child(3) {
     background-image: url(/Degrey-Website/img/li/li3.png);
@@ -45,6 +51,12 @@
   .menu {
     font-size: 10px;
   }
+  .dropdown-item{
+    padding: 0.25rem 0rem;
+  }
+  /* .dropdown-menu{
+    background-image: url(/Degrey-Website/img/li/li4.png);
+  } */
   .menu .menu-icon i {
   }
   .menu-icon {

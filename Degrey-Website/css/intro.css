@@ -2,7 +2,7 @@
 @import url(./CustomBootstrap.css);
 @import url(./header.css);
 @import url(./footer.css);
-@import url(./card.css);
+
 :root {
   --primary-color: #8b572a;
 }

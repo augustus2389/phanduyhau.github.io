@@ -23,63 +23,58 @@
   </head>
   <body>
     <section id="header">
-        <div class="container">
-          <div class="header-item d-flex justify-content-between">
-            <div class="icon-menu d-flex align-items-center">
-              <span class="menu-icon">
-                <i class="fa-solid fa-bars"></i>
-              </span>
-              <div class="header-logo">
-                <a href="./index.html"> <img src="./img/logo.svg" alt="" /></a>
-              </div>
+      <div class="container">
+        <div class="header-item d-flex justify-content-between">
+          <div class="icon-menu d-flex align-items-center">
+            <span class="menu-icon">
+              <i class="fa-solid fa-bars"></i>
+            </span>
+            <div class="header-logo">
+              <a href="./index.html"> <img src="./img/logo.svg" alt="" /></a>
             </div>
-            <div class="menu navbar-nav">
-              <ul>
-                <li><a href="./index.html">Trang chủ </a></li>
-                <li>
-                  <a href="./product.html">Sản phẩm</a>
-                  <!-- <ul class="sub-menu">
-                    <li><a href="#">Tất cả sản phẩm</a></li>
-                    <li><a href="#">Áo</a></li>
-                    <li><a href="#">Quần</a></li>
-                    <li><a href="#">Phụ kiện</a></li>
-                  </ul> -->
-                </li>
-                <li><a href="./store.html">Cửa hàng</a></li>
-                <li><a href="./intro.html">Giới thiệu</a></li>
-              </ul>
-            </div>
-            <div class="header-action d-flex justify-content-around">
-              <div class="search position-relative">
-                <input type="text" placeholder="Tìm kiếm sản phẩm" />
-                <div
-                  class="search-icon position-absolute top-50 start-0 translate-middle-y"
-                >
-                  <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="menu navbar-nav">
+            <ul class="nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link " href="./index.html">Trang chủ <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản phẩm</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="./product.html">Tất cả các sản phẩm</a>
+                  <a class="dropdown-item" href="./product.html">Áo</a>
+                  <a class="dropdown-item" href="./product.html">Quần</a>
+                  <a class="dropdown-item" href="./product.html">Phụ kiện khác</a>
                 </div>
-              </div>
-              <div class="login">
-               <a href="./login.html"> <i class="fa-solid fa-user"></i></a>
-              </div>
-              <div class="cart">
-                <a
-                  href="./shopping-cart.html"
-                  class="text-dark position-relative"
-                >
-                  <span class="fs-4"
-                    ><i class="fa-solid fa-cart-shopping"></i
-                  ></span>
-                  <span
-                    class="cart-count bg-white px-1 rounded-2 position-absolute border"
-                    >2</span
-                  >
-                </a>
-              </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./store.html">Cửa hàng</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="./intro.html" tabindex="-1" aria-disabled="true">Giới thiệu</a>
+              </li>
+            </ul>
+          </div>
+          <div class="header-action d-flex justify-content-around">
+            <div class="search-box">
+              <input type="text" class="search-input" placeholder="Nhập sản phẩm tìm kiếm">
+              <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <div class="shopping-cart position-relative">
+                <span class="fs-4"
+                  ><i class="fa-solid fa-cart-shopping"></i
+                ></span>
+                <span
+                  class="cart-count bg-white px-1 rounded-2 position-absolute border"
+                  >2</span>
             </div>
           </div>
         </div>
-        <div id="overlay"></div>
-      </section>
+      </div>
+      <div id="overlay"></div>
+    </section>
     <section class="sign-in">
         <div class="container">
             <div class="wapper">
@@ -97,8 +92,8 @@
                   <div class="input__field">
                     <input id="password" type="password" placeholder="Password" />
                   </div>
-                  <button id="btn" class="btn btn-login">Login</button>
-                  <a href="signup.html" >Sign Up</a>
+                  <button id="btn" class="btn btn-login">Đăng nhập</button>
+                  <a href="signup.html" >Đăng ký</a>
                   
                 </form>
               </div>

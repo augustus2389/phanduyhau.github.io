@@ -8,8 +8,8 @@
 body{
     font-family: "Quicksand", sans-serif;
 }
-.product-item .image img {
-    height: 150px;
+.product-item-list .image img {
+    height: 154px;
     object-fit: cover;
 }
 

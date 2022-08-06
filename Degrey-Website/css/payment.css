@@ -15,6 +15,9 @@ ul {
 body {
   font-family: "Quicksand", sans-serif;
 }
+.cart-title a{
+  text-transform: uppercase;
+}
 ::placeholder {
   color: var(--primary);
   font-weight: 400;

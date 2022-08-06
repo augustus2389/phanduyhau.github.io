@@ -32,3 +32,16 @@ function login(e) {
     alert("dang nhap that bai");
   }
 }
+$('#navbarDropdown').click(function() {
+  $('.dropdown-menu').slideToggle(300, "linear");
+});
+
+$('.dropdown-menu').mouseleave(function() {
+  $(this).slideToggle(300, "linear");
+});
+
+
+btnSearch.addEventListener('click',function(){
+  this.parentElement.classList.toggle('open');
+  this.previousElementSibling.focus();
+})
