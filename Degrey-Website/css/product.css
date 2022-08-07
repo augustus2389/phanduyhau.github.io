@@ -36,6 +36,12 @@ h1 {
 .filter-title i {
   margin: 4px;
 }
+.filter-header{
+  margin-top: 10px;
+}
+.filter-header button{
+  display: none;
+}
 .filter ul {
   padding: 0;
 }
@@ -128,6 +134,9 @@ h1 {
   
   .filter ul {
     margin-left: 10px;
+  }
+  .filter-header button{
+    display: block;
   }
   .icon-filter {
     display: inline-block;

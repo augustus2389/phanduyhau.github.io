@@ -1,5 +1,61 @@
 const btnSearch = document.querySelector('.search-btn');
 const addCart = document.querySelectorAll('.social .add-cart')
+const cardItemEl = document.querySelector('.product-list-jacket')
+
+
+const renderCardJacket = (arr) =>{
+  cardItemEl.innerHTML = "";
+  let html = "";
+  arr.forEach((p)=>{
+    html += `<div
+    class="col-xl-2_4 col-lg-2_4 .col-xxl-2_4 col-md-4 col-sm-6 col-6"
+  >
+    <div class="card-item ">
+      <div class="card-image position-relative">
+        <img src="${p.images[0]}" alt="${p.name}" />
+          <ul class="social position-absolute top-50 end-0 translate-middle-y">
+            <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+          <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+          </ul>
+         <span class="flash-tag position-absolute">${p.tag}</span>  
+      </div>
+      <div class="card-title">
+        <h3>${p.name}</h3>
+        <p>${formatMoney(
+          p.price
+        )}</p>
+      </div>
+      <button class="btn btn--detail">
+        <a href="./detail.html?id=${p.id}">Chi tiết</a>
+      </button>
+    </div>
+  </div>`
+  });
+  cardItemEl.innerHTML = html;
+
+}
+const formatMoney = (number) => {
+  return number.toLocaleString("it-IT", { style: "currency", currency: "VND" });
+};
+renderCardJacket(products);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 $('#navbarDropdown').click(function() {
@@ -15,21 +71,6 @@ btnSearch.addEventListener('click',function(){
   this.parentElement.classList.toggle('open');
   this.previousElementSibling.focus();
 })
-
-
-addCart.forEach(function(cart,index){
-  cart.addEventListener("click",function(event){
-    let btnItem = event.target;
-    let product = btnItem.parentElement;
-    let p2 = product.parentElement;
-    let p3 = p2.parentElement;
-
-    console.log(product)
-  })
-})
-
-
-
 
 
 
@@ -254,90 +295,3 @@ $(document).ready(function() {
 
 
 
-$(function() {
-
-  var siteSticky = function() {
-		$(".js-sticky-header").sticky({topSpacing:0});
-	};
-	siteSticky();
-
-	var siteMenuClone = function() {
-
-		$('.js-clone-nav').each(function() {
-			var $this = $(this);
-			$this.clone().attr('class', 'site-nav-wrap').appendTo('.site-mobile-menu-body');
-		});
-
-
-		setTimeout(function() {
-			
-			var counter = 0;
-      $('.site-mobile-menu .has-children').each(function(){
-        var $this = $(this);
-        
-        $this.prepend('<span class="arrow-collapse collapsed">');
-
-        $this.find('.arrow-collapse').attr({
-          'data-toggle' : 'collapse',
-          'data-target' : '#collapseItem' + counter,
-        });
-
-        $this.find('> ul').attr({
-          'class' : 'collapse',
-          'id' : 'collapseItem' + counter,
-        });
-
-        counter++;
-
-      });
-
-    }, 1000);
-
-		$('body').on('click', '.arrow-collapse', function(e) {
-      var $this = $(this);
-      if ( $this.closest('li').find('.collapse').hasClass('show') ) {
-        $this.removeClass('active');
-      } else {
-        $this.addClass('active');
-      }
-      e.preventDefault();  
-      
-    });
-
-		$(window).resize(function() {
-			var $this = $(this),
-				w = $this.width();
-
-			if ( w > 768 ) {
-				if ( $('body').hasClass('offcanvas-menu') ) {
-					$('body').removeClass('offcanvas-menu');
-				}
-			}
-		})
-
-		$('body').on('click', '.js-menu-toggle', function(e) {
-			var $this = $(this);
-			e.preventDefault();
-
-			if ( $('body').hasClass('offcanvas-menu') ) {
-				$('body').removeClass('offcanvas-menu');
-				$this.removeClass('active');
-			} else {
-				$('body').addClass('offcanvas-menu');
-				$this.addClass('active');
-			}
-		}) 
-
-		// click outisde offcanvas
-		$(document).mouseup(function(e) {
-	    var container = $(".site-mobile-menu");
-	    if (!container.is(e.target) && container.has(e.target).length === 0) {
-	      if ( $('body').hasClass('offcanvas-menu') ) {
-					$('body').removeClass('offcanvas-menu');
-				}
-	    }
-		});
-	}; 
-	siteMenuClone();
-
-});

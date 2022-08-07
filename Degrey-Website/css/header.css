@@ -98,7 +98,7 @@ a:hover {
   color: #c5cee0;
 }
 .header-item .shopping-cart {
-  margin: 0px 10px;
+  margin: 3px 10px;
 }
 .cart-count {
   top: -10px;
@@ -114,7 +114,7 @@ a:hover {
   background-color: #111;
   opacity: 0.4;
   overflow: hidden;
-  z-index: 2;
+  z-index: 6;
   display: none;
 }
 /* #header{

@@ -4,54 +4,71 @@ const productSizeEl = document.querySelector(".product-size");
 const btnMinusCount = document.querySelector(".btn-minus-count");
 const btnPlusCount = document.querySelector(".btn-plus-count");
 const countEl = document.querySelector(".count");
-
 const btnAddToCart = document.querySelector(".btn-add-to-cart");
+const imgMain = document.querySelector(".slider-for")
+const imgSub = document.querySelector(".slider-nav")
+const btnSearch = document.querySelector('.search-btn');
+const addCart = document.querySelectorAll('.social .add-cart')
 
 
+// let product;
+// let count = 1;
+// const renderProduct = obj => {
+//   nameEl.innerText = obj.name;
+//   priceEl.innerText = formatMoney(obj.price);
+//   descriptionEl.innerText = obj.description; 
+//   productSizeEl.innerHTML = product.sizes.map(size => {
+//       return `<span class="border py-2 px-3 border-dark me-2" onclick="choseSize(this)">${size}</span>`
+//   }).join("");
+// }
+// const choseSize = ele => {
 
-let product;
-let count = 1;
-const renderProduct = obj => {
-  nameEl.innerText = obj.name;
-  priceEl.innerText = formatMoney(obj.price);
-  descriptionEl.innerText = obj.description;
+// const selectedEl = document.querySelector(".selected");
+//   if(selectedEl) {
+//       selectedEl.classList.remove("selected", "bg-dark", "text-white");
+//   }
+// }
+// renderProduct(product)
 
-  // Hiển thị size (duyệt mảng -> cộng chuỗi -> hiển thị)
-  productSizeEl.innerHTML = product.sizes.map(size => {
-      return `<span class="border py-2 px-3 border-dark me-2" onclick="choseSize(this)">${size}</span>`
-  }).join("");
+// const renderMainImg = (arr) => {
+//   imgMain.innerHTML = "";
+//   let html = "";
+//   arr.forEach((img) => {
+//     html+= `div>
+//     <img src="${img}" alt="">
+// </div>`
+//   });
+//   imgMain.innerHTML = html
+// }
+// renderMainImg(product.images)
 
-  // Hiển thị hình ảnh (duyệt mảng -> cộng chuỗi -> hiển thị)
-}
+// const renderSubImg = (arr) => {
+//   imgSub.innerHTML = "";
+//   let html = "";
+//   arr.forEach((img) =>{
+//     html+=`li>
+//     <img src="${img}" alt="" width="100%">
+// </li>`
+//   })
+//   imgSub.innerHTML = html;
+// }
+// renderSubImg(product.images)
 
-const choseSize = ele => {
-  // Cách 1:
-  const selectedEl = document.querySelector(".selected");
-  if(selectedEl) {
-      selectedEl.classList.remove("selected", "bg-dark", "text-white");
-  }
 
-  // Cách 2:
-  // const sizeEls = document.querySelectorAll(".product-size span");
-  // Array.from(sizeEls).map(size => size.classList.remove("selected", "bg-dark", "text-white"));
+// // Tăng số lượng
+// btnPlusCount.addEventListener("click", () => {
+//   count++;
+//   countEl.innerText = count;
+// })
 
-  // ele.classList.add("selected", "bg-dark", "text-white");
-}
-
-// Tăng số lượng
-btnPlusCount.addEventListener("click", () => {
-  count++;
-  countEl.innerText = count;
-})
-
-// Giảm số lượng
-btnMinusCount.addEventListener("click", () => {
-  count--;
-  if (count < 1) {
-      count = 1;
-  }
-  countEl.innerText = count;
-})
+// // Giảm số lượng
+// btnMinusCount.addEventListener("click", () => {
+//   count--;
+//   if (count < 1) {
+//       count = 1;
+//   }
+//   countEl.innerText = count;
+// })
 
 // Thêm vào giỏ hàng
 // btnAddToCart.addEventListener("click", () => {
@@ -75,6 +92,68 @@ btnMinusCount.addEventListener("click", () => {
 // alert("Thêm vào giỏ hàng thành công");
 // })
 
+// Hiện thị giỏ hàng
+$(".shopping-cart").click(function(){
+  $(".cart").css("right","0");
+  $("#overlay").css("display", "block");
+})
+$(".close-cart").click(function(){
+  $(".cart").css("right","-450px");
+  $("#overlay").css("display", "none");
+})
+$("#overlay").click(function () {
+  $(".cart").css("right", "-450px");
+  $("#overlay").css("display", "none");
+});
+
+// Hiện thị menu c2
+$('#navbarDropdown').click(function() {
+  $('.dropdown-menu').slideToggle(300, "linear");
+});
+
+$('.dropdown-menu').mouseleave(function() {
+  $(this).slideToggle(300, "linear");
+});
+$(function () {
+  var url = window.location.href;
+  $(".nav  a").each(function () {
+    if (url == this.href) {
+      $(this).closest("li").addClass("active");
+    }
+  });
+});
+
+
+
+// Nút search
+btnSearch.addEventListener('click',function(){
+  this.parentElement.classList.toggle('open');
+  this.previousElementSibling.focus();
+})
+
+// Hiện ra menu
+$(".menu-icon").click(function () {
+  $(".menu ul").css("left", "0");
+  $("#overlay").css("display", "block");
+});
+
+$("#overlay").click(function () {
+  $(".menu ul").css("left", "-250px");
+  $("#overlay").css("display", "none");
+});
+$(window).resize(() => {
+  if ($(window).innerWidth() > 768) {
+    $(".menu ul").css("left", "-250px");
+    $("#overlay").css("display", "none");
+  }
+});
+
+
+
+
+
+
+
 $('.slider-for').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -89,10 +168,7 @@ $('.slider-for').slick({
   $('.slider-nav').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
-    // autoplay:true,
-    // centerMode:true,
-    // arrows:true,
-    // autoplaySpeed: 1000,
+
     asNavFor: '.slider-for',
     focusOnSelect: true,
     arrows:false,
