@@ -151,6 +151,7 @@ let products = [
         ],
         description: 'Chất liệu: vải gió Dáng xuông Chống thấm nước khi đi mưa',
         price: 629000,
+        description_image:"https://bizweb.dktcdn.net/100/414/728/files/flamy-skull-hoodie.jpg?v=1638873147829",
         sizes: ["M", "L","XL"],
         tag:"New Arrival",
         category : "Áo Jacket"

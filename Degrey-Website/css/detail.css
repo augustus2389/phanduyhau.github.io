@@ -63,6 +63,9 @@
 .slider-nav li {
   margin: 0 5px;
 }
+.product-size span{
+  cursor: pointer;
+}
 .btn-minus-count,
 .btn-plus-count {
   cursor: pointer;
