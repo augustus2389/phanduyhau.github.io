@@ -1,0 +1,44 @@
+@import url(./header.css);
+@import url(./footer.css);
+@import url(./responsive.css);
+:root{
+    --primary:#8b572a;
+    --secondary:#E80E0E;
+}
+body{
+    font-family: "Quicksand", sans-serif;
+}
+.product-item-list .image img {
+    height: 154px;
+    object-fit: cover;
+}
+
+.discount-form {
+    height: 50px;
+}
+.bill {
+    border-radius: 5%;
+}
+.cart-title h2{
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 600;
+}
+.bill h2{
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 20px;
+}
+.total-money{
+    color: var(--secondary) ;
+}
+.note ul{
+    padding-left: 15px;
+}
+.discount-form button{
+    background-color: var(--secondary);
+    border-radius: 10px;
+}
+.discount-form a{
+    color: white;
+}

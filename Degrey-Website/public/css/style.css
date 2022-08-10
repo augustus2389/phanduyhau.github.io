@@ -1,0 +1,253 @@
+
+@import url(./CustomBootstrap.css);
+@import url(./header.css);
+@import url(./footer.css);
+@import url(./card.css);
+@import url(./responsive.css);
+
+.image-mini .mini-item {
+  display: none;
+}
+
+.slick-prev {
+  left: 0;
+}
+.slick-next {
+  right: 0;
+}
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  line-height: 1;
+  z-index: 1;
+  margin: 0 12px;
+  border-radius: 50%;
+}
+.slick-arrow:hover {
+  background-color: gray;
+  color: white;
+}
+.slick-dots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 0 20px;
+  list-style-type: none;
+}
+.slick-dots button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 100rem;
+  background-color: gray;
+  border: none;
+  outline: none;
+  transition: all 0.2s linear;
+}
+.slick-dots .slick-active button {
+  background-color: #111;
+}
+.image .sp {
+  display: none;
+}
+.daily {
+  padding-bottom: 75px;
+}
+.daily h2 {
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 15px 0 8px 10px;
+  color: #8b572a;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.daily-title h3 {
+  padding: 10px 10px 0px 10px;
+  font-weight: 600;
+  font-size: 17px;
+  color: #4a4a4a;
+}
+.daily-content p {
+  font-size: 13px;
+  padding: 0px 10px;
+  color: #000000;
+  margin: 0;
+  width: 237px;
+}
+.daily .daily-card {
+  border: 2px solid gray;
+  border-radius: 7px;
+  height: 100%;
+}
+.daily-copyright {
+  text-align: right;
+  padding: 10px;
+}
+.suggest-image {
+  padding-bottom: 30px;
+}
+.daily-copyright button {
+  background: rgba(0, 0, 0, 0.05);
+  color: #4a4a4a;
+  border: 1px solid 0, 0.08;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 5px;
+  padding: 2px 10px 3px;
+  border-radius: 15px;
+  letter-spacing: -0.25px;
+  min-width: 100px;
+  outline: none;
+}
+.suggest {
+  background-color: #f5f5f5;
+}
+.suggest h2 {
+  color: #4a4a4a;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 30px 0;
+}
+.suggest-item {
+  margin-right: 20px;
+}
+.more-btn {
+  cursor: pointer;
+  border: 1px solid gray;
+  background-color: #8b572a;
+  color: white;
+  font-weight: 700;
+  width: 200px;
+  line-height: 40px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+  font-size: 12px;
+}
+.more-btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: black;
+}
+.btn2:before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.25s linear;
+}
+.btn2:hover:before {
+  width: 100%;
+}
+.btn2:hover a {
+  color: white;
+}
+/* .open{
+  display: block;
+} */
+@media (max-width: 990px) {
+  .menu-icon {
+    display: inline-block;
+  }
+  #header ul li.active {
+    border-bottom: none;
+  }
+
+  .menu ul {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    overflow: hidden;
+    background-color: white;
+    z-index: 10002;
+    flex-direction: column;
+    transition: all 0.3s;
+    padding: 0;
+  }
+  .menu ul li {
+    margin: 10px 0;
+    transition: all 0.5s;
+    margin-left: 0;
+  }
+  li a {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .menu ul li:nth-child(1) {
+    margin-top: 0;
+    background-image: url(/Degrey-Website/img/li/li\ 1.png);
+  }
+  .menu ul li:nth-child(2) {
+    background-image: url(/Degrey-Website/img/li/li2.png);
+  }
+  .menu ul li:nth-child(3) {
+    background-image: url(/Degrey-Website/img/li/li3.png);
+  }
+  .menu ul li:nth-child(4) {
+    background-image: url(/Degrey-Website/img/li/li4.png);
+  }
+  .menu {
+    font-size: 10px;
+  }
+  .menu .menu-icon i {
+  }
+  .menu-icon {
+    line-height: 15px;
+  }
+  .menu ul li:hover {
+    background-color: aliceblue;
+    color: aqua;
+  }
+  .image-item .image {
+    margin-top: 10px;
+  }
+  .image-mini .mini-item {
+    display: block;
+  }
+  #header .header-logo {
+    margin: 0 15px;
+  }
+}
+@media (max-width: 768px) {
+  .open {
+    width: 0;
+  }
+  .footer-item {
+    margin-bottom: 50px;
+  }
+
+}
+@media (max-width: 567px) {
+  .image .pc-tablet {
+    display: none;
+  }
+  .image .sp {
+    display: block;
+  }
+  .suggest-image img {
+    margin: 0 auto;
+  }
+  
+}
+
+/* Test cart */
+

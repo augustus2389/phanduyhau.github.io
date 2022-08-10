@@ -9,20 +9,19 @@
       href="./img/favicon (2).ico"
       type="image/x-icon"
     />
-    <link rel="icon" href="./img/favicon (2).ico" type="image/x-icon" />
+    <link rel="icon" href="../public/img/favicon (2).ico" type="image/x-icon" />
     <title>Degrey</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../libary/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
-    <link rel="stylesheet" href="./css/store.css" />
+    <link rel="stylesheet" href="../public/css/store.css" />
   </head>
   <body>
-    <div id="overlay"></div>
-
     <section id="header">
       <div class="container">
         <div class="header-item d-flex justify-content-between">
@@ -31,7 +30,7 @@
               <i class="fa-solid fa-bars"></i>
             </span>
             <div class="header-logo">
-              <a href="./index.html"> <img src="./img/logo.svg" alt="" /></a>
+              <a href="./index.html"> <img src="../public/img/logo.svg" alt="" /></a>
             </div>
           </div>
           <div class="menu navbar-nav">
@@ -76,6 +75,7 @@
       </div>
       <div id="overlay"></div>
     </section>
+    <div id="overlay"></div>
     <section class="cart">
       <div class="cart-title d-flex justify-content-center border-bottom position-relative">
         <i class="fa-solid fa-cart-shopping"></i><h2>Giỏ hàng</h2>
@@ -85,7 +85,7 @@
       </div>
       <div class="product-item d-flex border mb-4 mt-3">
         <div class="image">
-            <img src="./img/T-Shirt/t6.png" alt="" />
+            <img src="../public/img/T-Shirt/t6.png" alt="" />
         </div>
         <div class="info d-flex flex-column justify-content-between px-1 ">
             <div>
@@ -113,7 +113,7 @@
       </div>
       <div class="product-item d-flex border mb-4 mt-3">
         <div class="image">
-            <img src="./img/T-Shirt/t6.png" alt="" />
+            <img src="../public/img/T-Shirt/t6.png" alt="" />
         </div>
         <div class="info d-flex flex-column justify-content-between px-1 ">
             <div>
@@ -141,7 +141,7 @@
       </div>
       <div class="product-item d-flex border mb-4 mt-3">
         <div class="image">
-            <img src="./img/T-Shirt/t6.png" alt="" />
+            <img src="../public/img/T-Shirt/t6.png" alt="" />
         </div>
         <div class="info d-flex flex-column justify-content-between px-1 ">
             <div>
@@ -168,7 +168,7 @@
         </div>
       </div>
       
-    
+
     </div>
     <div class="price-total d-flex justify-content-between border-top p-1">
       <p>Tổng tiền: </p> <span class="text-danger fw-bold ">320.000 VND</span>  
@@ -192,7 +192,7 @@
     <section class="banner">
       <div class="container">
         <div class="banner-image">
-          <img src="./img/store-banner.png" alt="" />
+          <img src="../public/img/store-banner.png" alt="" />
         </div>
       </div>
     </section>
@@ -214,51 +214,27 @@
               </ul>
               <b>Hotline: 0336311117</b>
               <p><b>Facebook</b>: https://www.facebook.com/degrey.saigon/</p>
-              <p><b>Instagram</b>:https://www.instagram.com/degrey.saigon/</p>
+              <p><b>Instagram</b>: https://www.instagram.com/degrey.saigon/</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="link-page">
               <h2>Danh mục Page</h2>
-              <div class="link">
-                <ul class="nav d-flex flex-column ">
-                  <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="./index.html">Trang chủ</a>
+              <nav id="sidebar" >
+                <ul class="list-unstyled">
+                  <li>
+                      <a href="./product.html">SẢN PHẦM DEGREY</a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Sản phẩm</a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="./product.html">HCM - Q.Phú Nhuận: 43 Huỳnh Văn Bánh</a></li>
-                      <li><a class="dropdown-item" href="./product.html">HCM - Q.Tân Phú: 905 Lũy Bán Bích</a></li>
-                      <li><a class="dropdown-item" href="./product.html">HCM - Q.1: 26 Lý Tự Trọng (TNP)</a></li>
-                      <li><a class="dropdown-item" href="./product.html">ĐÀ LẠT -  11 Khu Hoà Bình, P.1</a></li>
-                    </ul>
+                  <li>
+                      <a href="./store.html">STORE | CỬA HÀNG</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./store.html">Cửa hàng</a>
+                  <li>
+                      <a href="#">DEGREY | ABOUT US</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link " href="./intro.html" tabindex="-1" aria-disabled="true">Giới thiệu</a>
-                  </li>
-                </ul>
-                <!-- <ul>
-                  <li><a href="./product.html">Sản phẩm Degrey</a></li>
-                  <li><a href="./store.html">STORE | Cửa hàng
-                  
-                  <i class="fa-solid fa-plus"></i></a>
-                    <ul class="dropdown-menu">
-                      <li>HCM - Q.Phú Nhuận: 43 Huỳnh Văn Bánh</li>
-                      <li>HCM - Q.Tân Phú: 905 Lũy Bán Bích</li>
-                      <li>HCM - Q.1: 26 Lý Tự Trọng (TNP)</li>
-                      <li>HCM - Q.1: 90 Lê Lai (TNP)</li>
-                      <li>ĐÀ LẠT -  11 Khu Hoà Bình, P.1</li>
-                    </ul>
-                  </li>
-                  <li><a href="./intro.html">Degrey | ABOUT US</a></li>
-                </ul> -->
-              </div>
+              </ul>
+            </nav>
               <div class="image-store">
-                <img src="./img/Store2.png" alt="" />
+                <img src="../public/img/Store2.png" alt="" />
                 <div class="glow-wrap">
                   <i class="glow"></i>
                 </div>
@@ -285,7 +261,7 @@
                 </p>
               </div>
               <div class="footer-logo">
-                <img src="./img/logo-footer.svg" alt="" />
+                <img src="../public/img/logo-footer.svg" alt="" />
               </div>
             </div>
           </div>
@@ -362,9 +338,12 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/product.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../public/js/store.js">
+       
+    </script>
   </body>
 </html>
 
