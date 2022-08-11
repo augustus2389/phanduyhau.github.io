@@ -43,7 +43,42 @@ renderCard(products)
 
 
 
+const filterPrices = document.querySelectorAll(".giaTien")
+let productFilterPrice = []
 
+function filterPrice(price1, price2) {
+  let productFilterTrue;
+  if(!price2) {
+    productFilterTrue = products.filter((p) => p.price >= price1);
+  } else {
+    productFilterTrue = products.filter((p) => p.price > price1 && p.price < price2);
+  }
+
+  renderCard(productFilterTrue)
+  // productFilterPrice = productFilterPrice.push(productFilterTrue)
+  // renderCard(productFilterPrice)
+}
+
+// Array.from(filterPrices).forEach((input) =>{
+//   input.addEventListener("change",(e) =>{
+//     let inputValue = e.target.value
+//     console.log(inputValue)
+//     if(e.target.checked == true){
+//       let productFilterTrue = products.filter((p) =>{
+//         console.log(p.price)
+
+//         return p.price == inputValue;
+//       })
+//       productFilterPrice = productFilterPrice.concat(productFilterTrue)
+//       renderCard(productFilterPrice)
+//     } else{
+//       productFilterPrice = productFilterPrice.filter((p) =>{
+//         return p.price != inputValue
+//       })
+//       renderCard(productFilterPrice)
+//     }
+//   })
+// })
 
 
 

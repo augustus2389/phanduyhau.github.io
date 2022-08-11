@@ -296,13 +296,11 @@
                     <li>
                       <label for="price"
                         ><input
-                        
+                        onchange="filterPrice(100000)"
                           type="radio"
                           name="price"
-                          value="Dưới
-                          
-                    100.000đ"
-                    class="giaTien"
+                          value="100000"
+                          class="giaTien"
                           id="price"
                         />Dưới 100.000đ</label
                       >
@@ -310,11 +308,11 @@
                     <li>
                       <label for="price2"
                         ><input
-                        
+                        onchange="filterPrice(100000,250000)"
                           type="radio"
                           name="price"
                           class="giaTien"
-                          value="100.000đ - 250.000đ"
+                          value="250000"
                           id="price2"
                         />100.000đ - 250.000đ</label
                       >
@@ -322,11 +320,11 @@
                     <li>
                       <label for="price3"
                         ><input
-                        
+                        onchange="filterPrice(250000,500000)"
                           type="radio"
                           name="price"
                           class="giaTien"
-                          value="250.000đ - 500.000đ"
+                          value="500.000"
                           id="price3"
                         />250.000đ - 500.000đ</label
                       >
@@ -334,11 +332,11 @@
                     <li>
                       <label for="price4"
                         ><input
-                        
+                          onchange="filterPrice(500000,800000)"
                           type="radio"
                           name="price"
                           class="giaTien"
-                          value="500.000đ - 800.000đ"
+                          value="800000"
                           id="price4"
                         />500.000đ - 800.000đ</label
                       >
@@ -346,11 +344,11 @@
                     <li>
                       <label for="price5"
                         ><input
-                        
+                        onchange="filterPrice(800000)"
                           type="radio"
                           name="price"
                           class="giaTien"
-                          value="800.000đ Trở lên"
+                          value="800000"
                           id="price5"
                         />800.000đ Trở lên</label
                       >
