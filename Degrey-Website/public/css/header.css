@@ -254,6 +254,9 @@ a:hover {
   transition: 0.5s;
   font-size: 12px;
 }
+.cart-btn a{
+  color: white;
+}
 .cart-btn:before {
   content: "";
   position: absolute;
@@ -270,7 +273,7 @@ a:hover {
 .btn3:hover:before {
   width: 100%;
 }
-.cart-btn.btn3:hover {
+.cart-btn.btn3 :hover {
   color: #ff0000;
 }
 .close-cart {
