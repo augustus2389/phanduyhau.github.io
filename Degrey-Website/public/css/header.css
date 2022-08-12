@@ -168,7 +168,7 @@ a:hover {
 
 
 .navbar-nav .dropdown-menu {
-  position: fixed;
+  position: absolute;
 }
 .cart {
   width: 50%;
@@ -228,7 +228,7 @@ a:hover {
   padding-top: 5px;
 }
 .info h2 {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   padding-right: 10px;
 }
@@ -273,10 +273,16 @@ a:hover {
 .btn3:hover:before {
   width: 100%;
 }
-.cart-btn.btn3 :hover {
+.cart .btn3:hover a{
   color: #ff0000;
 }
+
 .close-cart {
   background: none;
   border: none;
 }
+
+
+
+
+

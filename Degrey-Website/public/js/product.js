@@ -53,36 +53,29 @@ function filterPrice(price1, price2) {
   } else {
     productFilterTrue = products.filter((p) => p.price > price1 && p.price < price2);
   }
-
   renderCard(productFilterTrue)
-  // productFilterPrice = productFilterPrice.push(productFilterTrue)
-  // renderCard(productFilterPrice)
 }
 
-// Array.from(filterPrices).forEach((input) =>{
-//   input.addEventListener("change",(e) =>{
-//     let inputValue = e.target.value
-//     console.log(inputValue)
-//     if(e.target.checked == true){
-//       let productFilterTrue = products.filter((p) =>{
-//         console.log(p.price)
-
-//         return p.price == inputValue;
-//       })
-//       productFilterPrice = productFilterPrice.concat(productFilterTrue)
-//       renderCard(productFilterPrice)
-//     } else{
-//       productFilterPrice = productFilterPrice.filter((p) =>{
-//         return p.price != inputValue
-//       })
-//       renderCard(productFilterPrice)
-//     }
-//   })
-// })
-
-
-
-
+// filter by rating
+let inputRating = document.querySelectorAll(".clothes")
+let productFilterRating = []
+Array.from(inputRating).forEach((input) =>{
+  input.addEventListener("change",(e) =>{
+    let inputValue = e.target.value
+    if(e.target.checked == true){
+      let productFilterTrue = products.filter((p) =>{
+        return p.category == inputValue;
+      })
+      productFilterRating = productFilterRating.concat(productFilterTrue)
+      renderCard(productFilterRating)
+    } else{
+      productFilterRating = productFilterRating.filter((p) =>{
+        return p.category != inputValue;
+      })
+      renderCard(productFilterRating)
+    }
+  })
+})
 
 
 

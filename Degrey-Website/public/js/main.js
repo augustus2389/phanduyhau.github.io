@@ -5,7 +5,7 @@ const cardTshirtEl = document.querySelector('.product-list-tshirt');
 const cardPantsEl = document.querySelector('.product-list-pants');
 
 const productJacket = products.filter((p)=>{
-  return p.category == "Áo Khoác Jacket"
+  return p.category == "Jacket"
 })
 const renderCardJacket = (arr) =>{
   cardJacketEl.innerHTML = "";
@@ -16,7 +16,7 @@ const renderCardJacket = (arr) =>{
   >
     <div class="card-item ">
       <div class="card-image position-relative">
-        <img src="${p.images[0]}" alt="${p.name}" />
+         <a href="./detail.html?id=${p.id}"><img src="${p.images[0]}" alt="${p.name}" /></a>
           <ul class="social position-absolute top-50 end-0 translate-middle-y">
             <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
           <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
@@ -38,7 +38,7 @@ const renderCardJacket = (arr) =>{
   cardJacketEl.innerHTML = html;
 }
 const productTshirt = products.filter((p)=>{
-  return p.category == "Áo thun Tshirt"
+  return p.category == "Tshirt"
 })
 const renderCardTshirt = (arr) =>{
   cardTshirtEl.innerHTML = "";
@@ -71,7 +71,7 @@ const renderCardTshirt = (arr) =>{
   cardTshirtEl.innerHTML = html;
 }
 const productPants = products.filter((p)=>{
-  return p.category == "Quần Pants"
+  return p.category == "Pants"
 })
 const renderCardPants = (arr) =>{
   cardPantsEl.innerHTML = "";

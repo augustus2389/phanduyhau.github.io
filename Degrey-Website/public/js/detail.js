@@ -111,28 +111,28 @@ const renderDescriptionImg = (arr) => {
 }
 renderDescriptionImg(product.descriptionImg)
 
-// const renderProductOther = (arr) =>{
-//   productOtherEl.innerHTML = "";
-//   console.log(arr)
+const renderProductOther = (arr) =>{
+  productOtherEl.innerHTML = "";
+  console.log(arr)
 
-//   let html = "";
-//   arr.map((p)=>{
-//     html += ` <div class="card-item ">
-//     <div class="card-image position-relative">
-//       <img src="${p.images[0]}" alt="${p.name}" />
-//     </div>
-//     <div class="card-title">
-//       <h3>${p.name}</h3>
-//       <p>${formatMoney(
-//         p.price
-//       )}</p>
-//     </div>
-//   </div>`
-//   }).join("")
-//   console.log(html)
-//   productOtherEl.innerHTML = html;
-// }
-// renderProductOther(products)
+  let html = "";
+  arr.map((p)=>{
+    html += ` <div class="card-item ">
+    <div class="card-image position-relative">
+      <img src="${p.images[0]}" alt="${p.name}" />
+    </div>
+    <div class="card-title">
+      <h3>${p.name}</h3>
+      <p>${formatMoney(
+        p.price
+      )}</p>
+    </div>
+  </div>`
+  }).join("")
+  console.log(html)
+  productOtherEl.innerHTML = html;
+}
+renderProductOther(products)
 // Thêm vào giỏ hàng
 btnAddToCart.addEventListener("click", () => {
   // Kiểm tra xem đã chọn size hay chưa
@@ -232,23 +232,23 @@ $(".slider-nav").slick({
 });
 
 
-// $(".product-other").slick({
-//   dots: true,
-//   infinite: true,
-//   speed: 300,
-//   fade: true,
-//   slidesToShow: 6,
-//   slidesToScroll: 4,
-//   autoplay: true,
-//   autoplaySpeed: 3000,
-//   prevArrow: `<button type='button' class='slick-prev pull-left slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>`,
-//   nextArrow: `<button type='button' class='slick-next pull-right slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>`,
-//   responsive: [
-//     {
-//       breakpoint: 568,
-//       settings: {
-//         arrows: false,
-//       },
-//     },
-//   ],
-// });
+$(".product-other").slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  fade: true,
+  slidesToShow: 6,
+  slidesToScroll: 4,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  prevArrow: `<button type='button' class='slick-prev pull-left slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>`,
+  nextArrow: `<button type='button' class='slick-next pull-right slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>`,
+  responsive: [
+    {
+      breakpoint: 568,
+      settings: {
+        arrows: false,
+      },
+    },
+  ],
+});

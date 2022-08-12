@@ -16,7 +16,7 @@ let products = [
     descriptionImg:"https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287"  ,
     sizes: ["M", "L", "XL"],
     tag: "Best Seller",
-    category: "Áo Khoác Jacket",
+    category: "Jacket",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ let products = [
     descriptionImg:"https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287"  ,
     sizes: ["S", "M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo Khoác Jacket",
+    category: "Jacket",
   },
 
   {
@@ -53,7 +53,7 @@ let products = [
     descriptionImg:"https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287"  ,
     sizes: ["S", "M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo Khoác Jacket",
+    category: "Jacket",
   },
   {
     id: 4,
@@ -71,7 +71,7 @@ let products = [
     descriptionImg:"https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287"  ,
     sizes: ["L", "XL"],
     tag: "New Arrival",
-    category: "Áo Khoác Jacket",
+    category: "Jacket",
   },
   {
     id: 5,
@@ -89,7 +89,7 @@ let products = [
     descriptionImg:"https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287"  ,
     sizes: ["S", "M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo Khoác Jacket",
+    category: "Jacket",
   },
   {
     id: 6,
@@ -109,7 +109,7 @@ let products = [
     price: 799000,
     sizes: ["S", "M", "L", "XL"],
     tag: "Hot Item",
-    category: "Áo Khoác Jacket",
+    category: "Jacket",
   },
   {
     id: 7,
@@ -128,7 +128,7 @@ let products = [
     price: 450000,
     sizes: ["S", "M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo Khoác Jacket",
+    category: "Jacket",
   },
   {
     id: 8,
@@ -147,7 +147,7 @@ let products = [
     price: 499000,
     sizes: ["S", "M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo Khoác Jacket",
+    category: "Jacket",
   },
   {
     id: 9,
@@ -165,7 +165,7 @@ let products = [
     price: 549000,
     sizes: ["S", "M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo Khoác Jacket",
+    category: "Jacket",
   },
   {
     id: 10,
@@ -183,7 +183,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/flamy-skull-hoodie.jpg?v=1638873147829",
     sizes: ["M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo Khoác Jacket",
+    category: "Jacket",
   },
   {
     id: 11,
@@ -203,7 +203,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-a9a35638-f098-43c9-a5e1-5ebd4959af11.jpg?v=1651827687547",
     sizes: ["M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo thun Tshirt",
+    category: "Tshirt",
   },
 
   {
@@ -223,7 +223,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-a9a35638-f098-43c9-a5e1-5ebd4959af11.jpg?v=1651827687547",
     sizes: ["M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo thun Tshirt",
+    category: "Tshirt",
   },
 
   {
@@ -244,7 +244,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-a9a35638-f098-43c9-a5e1-5ebd4959af11.jpg?v=1651827687547",
     sizes: ["M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo thun Tshirt",
+    category: "Tshirt",
   },
   {
     id: 14,
@@ -263,7 +263,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-a9a35638-f098-43c9-a5e1-5ebd4959af11.jpg?v=1651827687547",
     sizes: ["M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo thun Tshirt",
+    category: "Tshirt",
   },
   {
     id: 15,
@@ -282,7 +282,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-a9a35638-f098-43c9-a5e1-5ebd4959af11.jpg?v=1651827687547",
     sizes: ["M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo thun Tshirt",
+    category: "Tshirt",
   },
   {
     id: 16,
@@ -301,7 +301,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-a9a35638-f098-43c9-a5e1-5ebd4959af11.jpg?v=1651827687547",
     sizes: ["M", "L", "XL"],
     tag: "Best Seller",
-    category: "Áo thun Tshirt",
+    category: "Tshirt",
   },
   {
     id: 17,
@@ -320,7 +320,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-a9a35638-f098-43c9-a5e1-5ebd4959af11.jpg?v=1651827687547",
     sizes: ["M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo thun Tshirt",
+    category: "Tshirt",
   },
   {
     id: 18,
@@ -339,7 +339,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-a9a35638-f098-43c9-a5e1-5ebd4959af11.jpg?v=1651827687547",
     sizes: ["M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo thun Tshirt",
+    category: "Tshirt",
   },
   {
     id: 19,
@@ -359,7 +359,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-a9a35638-f098-43c9-a5e1-5ebd4959af11.jpg?v=1651827687547",
     sizes: ["M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo thun Tshirt",
+    category: "Tshirt",
   },
   {
     id: 20,
@@ -378,7 +378,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-a9a35638-f098-43c9-a5e1-5ebd4959af11.jpg?v=1651827687547",
     sizes: ["M", "L", "XL"],
     tag: "New Arrival",
-    category: "Áo thun Tshirt",
+    category: "Tshirt",
   },
   {
     id: 21,
@@ -397,7 +397,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-f55cba26-bb71-4ed5-969c-ce4a0e379cc3.jpg?v=1656491455414",
     tag: "New Arrival",
     sizes: ["M", "L", "S"],
-    category: "Quần Pants",
+    category: "Pants",
   },
   {
     id: 22,
@@ -416,7 +416,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/baseball-short.jpg?v=1647074053520",
     tag: "New Arrival",
     sizes: ["S", "M", "L", "XL"],
-    category: "Quần Pants",
+    category: "Pants",
   },
   {
     id: 23,
@@ -435,7 +435,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-quan-short-gio-3e3649bc-787a-4e48-890b-3249d3157f23.jpg?v=1635435686866",
     tag: "New Arrival",
     sizes: ["S", "M", "L", "XL"],
-    category: "Quần Pants",
+    category: "Pants",
   },
   {
     id: 24,
@@ -454,7 +454,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/star-cargo-pants.jpg?v=1645102652954",
     tag: "New Arrival",
     sizes: ["M", "L", "XL"],
-    category: "Quần Pants",
+    category: "Pants",
   },
   {
     id: 25,
@@ -473,7 +473,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/c-star-shortpants.jpg?v=1656320419767",
     tag: "New Arrival",
     sizes: ["M", "L", "XL"],
-    category: "Quần Pants",
+    category: "Pants",
   },
   {
     id: 26,
@@ -492,7 +492,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/274550221-332538792246481-1442329021557829193-n.jpg?v=1647074028881",
     tag: "New Arrival",
     sizes: ["M", "L", "XL"],
-    category: "Quần Pants",
+    category: "Pants",
   },
   {
     id: 27,
@@ -511,7 +511,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/cargo-pant.jpg?v=1646204132745",
     tag: "New Arrival",
     sizes: ["M", "L", "XL"],
-    category: "Quần Pants",
+    category: "Pants",
   },
   {
     id: 28,
@@ -530,7 +530,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/cargo-pants-1.jpg?v=1637911462576",
     tag: "New Arrival",
     sizes: ["M", "L", "XL"],
-    category: "Quần Pants",
+    category: "Pants",
   },
   {
     id: 29,
@@ -549,7 +549,7 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/bang-size-t-shirt-f55cba26-bb71-4ed5-969c-ce4a0e379cc3.jpg?v=1656491455414",
     tag: "New Arrival",
     sizes: ["S", "M", "L", "XL"],
-    category: "Quần Pants",
+    category: "Pants",
   },
   {
     id: 30,
@@ -568,6 +568,6 @@ let products = [
       "https://bizweb.dktcdn.net/100/414/728/files/straight-pants.jpg?v=1651634948469",
     tag: "New Arrival",
     sizes: ["M", "L", "S"],
-    category: "Quần Pants",
+    category: "Pants",
   },
 ];
