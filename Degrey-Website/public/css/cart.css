@@ -109,6 +109,7 @@ body{
   @media (min-width: 768px) {
     .button-82-front {
       font-size: 1.25rem;
+      padding: 8px 15px;
     }
   }
   
@@ -146,9 +147,29 @@ body{
   .button-82-pushable:focus:not(:focus-visible) {
     outline: none;
   }
-
+  @media (max-width:990px) {
+    .info-clothes{
+        padding: 10px;
+    }
+    .price{
+        padding: 10px;
+    }
+  }
+  @media (max-width:768px) {
+    .info-clothes{
+        padding: 10px;
+    }
+  }
+  
   @media (max-width:567px) {
     .info{
         margin-left: 5px;
     }
+    .price{
+        padding: 0 ;
+    }
+    .info-clothes{
+        padding: 0px;
+    }
   }
+  
