@@ -12,7 +12,11 @@ body{
     height: 154px;
     object-fit: cover;
 }
-
+.btn-minus-count,
+.btn-plus-count {
+  cursor: pointer;
+  background-color: #ddd;
+}
 .discount-form {
     height: 60px;
 }
@@ -149,7 +153,7 @@ body{
   }
   @media (max-width:990px) {
     .info-clothes{
-        padding: 10px;
+        padding: 10px 0 0 10px;
     }
     .price{
         padding: 10px;
@@ -157,7 +161,7 @@ body{
   }
   @media (max-width:768px) {
     .info-clothes{
-        padding: 10px;
+        padding: 10px 0 0 10px;
     }
   }
   
@@ -170,6 +174,9 @@ body{
     }
     .info-clothes{
         padding: 0px;
+    }
+    .info h2{
+        padding-right: 0;
     }
   }
   
