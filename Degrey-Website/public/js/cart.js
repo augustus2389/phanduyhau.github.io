@@ -22,27 +22,27 @@ const renderProductSidebar = () => {
     <div class="image">
       <img src="${p.image}" alt="${p.name}" />
     </div>
-    <div class="info d-flex flex-column justify-content-between px-lg-1 px-sm-0">
+    <div class="info d-flex justify-content-between px-1">
         <div>
-            <div class="d-flex ">
+            <div class="">
                 <h2 class="text-dark">
                 ${p.name} (${p.size})
                 </h2>
-                <button class="text-primary border-0 bg-transparent fw-light">
-                  <span><i class="fa-solid fa-trash-can"></i></i></span>
-                 
-              </button>
+                
             </div>
-            <p class="count text-black-50 text-start">
+            <div class="count d-flex justify-content-between ">
                 <span class="border d-inline-block me-3">
                     <span class="px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
                     <span class="px-2 d-inline-block fw-bold">${p.count}</span>
                     <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
                 </span>
-                <h3 class="text-danger fw-bold text-start">
-                ${p.price} 
+                <button class="text-primary border-0 bg-transparent fw-light">
+                  <span><i class="fa-solid fa-trash-can"></i></i></span>
+              </button>
+            </div>
+            <h3 class="text-danger fw-bold text-start">
+                ${formatMoney(p.price)}
               </h3>
-            </p>
         </div>
     </div>
   </div>`
@@ -50,7 +50,6 @@ const renderProductSidebar = () => {
   productItemSidabar.innerHTML = html;
 }
 
-renderProductSidebar(items)
 
 
 
@@ -160,6 +159,7 @@ const updateTotalMoney = () => {
 };
 updateTotalMoney();
 renderProduct(items);
+renderProductSidebar(items)
 
 
 // Hiện thị giỏ hàng
