@@ -180,7 +180,7 @@
       <a href="./cart.html">Xem giỏ hàng</a>
     </button>
     </section>
-    <section class="image-mini container d-flex">
+    <section class="image-mini container d-flex position-relative">
       <div class="mini-item">
         <div class="image">
           <img src="../public/img/slide-mini/img 1.png" alt="" class="tablet" />
@@ -300,6 +300,15 @@
         </div>
       </div>
     </section>
+    <section class="popup-coupon">
+      <div class="popup-image position-relative" >
+        <img src="../public/img/popup/popup-discount.png" alt="popup-discount-code">
+        <button class="cancel-popup position-absolute top-0 start-100 translate-middle " >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      
+    </section>
     <section class="card">
       <div class="container">
         <div class="jacket">
@@ -310,11 +319,12 @@
             >
               <div class="card-item ">
                 <div class="card-image position-relative">
-                  <img src="./img/Jacket/jacket1.png" alt="" />
+                  <img src="./public/img/Jacket/jacket1.png" alt="" />
                     <ul class="social position-absolute top-50 end-0 translate-middle-y">
-                      <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
-                    <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
+                      <li><button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i></button></li>
+                    <li><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"><i class="fa-solid fa-bag-shopping"></i></button></li>
                     </ul>
+                    
                    <span class="flash-tag position-absolute">New Arrival</span>  
                 </div>
                 <div class="card-title">
@@ -345,7 +355,7 @@
             >
               <div class="card-item ">
                 <div class="card-image position-relative">
-                  <img src="./img/T-Shirt/t1.png" alt="" />
+                  <img src="../public/img/T-Shirt/t1.png" alt="" />
                     <ul class="social position-absolute top-50 end-0 translate-middle-y">
                       <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
                     <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
@@ -536,6 +546,7 @@
     ></script>
     <script src="../public/js/bootstrap.bundle.min.js"></script>
     <script src="../public/js/data.js"></script>
+    <script src="../public/js/shopping-cart.js"></script>
     <script src="../public/js/main.js"></script>
   </body>
 </html>

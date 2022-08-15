@@ -101,10 +101,10 @@
 .btn-add-to-cart:hover:before {
   width: 100%;
 }
-.btn-add-to-cart a {
+.btn-add-to-cart  {
   color: white;
 }
-.btn-add-to-cart:hover a {
+.btn-add-to-cart:hover  {
   color: white;
 }
 .item-detail p{

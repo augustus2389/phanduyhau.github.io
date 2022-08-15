@@ -5,6 +5,7 @@ const sizeEl = document.querySelector(".product-size");
 const priceEl = document.querySelector(".product-price");
 const descriptionImg = document.querySelector(".description-image");
 console.log(descriptionImg)
+const btnSearch = document.querySelector('.search-btn');
 const descriptionEl = document.querySelector(".product-description");
 const productSizeEl = document.querySelector(".product-size");
 const nameEl = document.querySelector(".product-name");
@@ -134,7 +135,7 @@ const renderProductOther = (arr) =>{
 }
 renderProductOther(products)
 // Thêm vào giỏ hàng
-btnAddToCart.addEventListener("click", () => {
+btnAddToCart.addEventListener("click", (e) => {
   // Kiểm tra xem đã chọn size hay chưa
   const sizeSelectedEl = document.querySelector(".product-size .selected");
   if (!sizeSelectedEl) {
@@ -149,11 +150,11 @@ btnAddToCart.addEventListener("click", () => {
     count: count,
     size: sizeSelectedEl.innerText,
   };
-
-  renderProduct(product);
+  // renderProduct(product);
   // Thêm vào giỏ hàng
   addItemToAdd(item);
   alert("Thêm vào giỏ hàng thành công");
+  window.location.assign("../../Degrey-Website/page/cart.html")
 });
 
 // Hiện thị giỏ hàng

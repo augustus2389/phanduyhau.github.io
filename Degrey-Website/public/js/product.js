@@ -59,24 +59,29 @@ function filterPrice(price1, price2) {
 // filter by rating
 let inputRating = document.querySelectorAll(".clothes")
 let productFilterRating = []
+let checkedNumberRating = 0
 Array.from(inputRating).forEach((input) =>{
   input.addEventListener("change",(e) =>{
     let inputValue = e.target.value
     if(e.target.checked == true){
+      checkedNumberRating ++
       let productFilterTrue = products.filter((p) =>{
         return p.category == inputValue;
       })
       productFilterRating = productFilterRating.concat(productFilterTrue)
       renderCard(productFilterRating)
     } else{
+      checkedNumberRating --
       productFilterRating = productFilterRating.filter((p) =>{
         return p.category != inputValue;
       })
       renderCard(productFilterRating)
     }
+    if(checkedNumberRating == 0){
+      renderCard(products)
+    }
   })
 })
-
 
 
 

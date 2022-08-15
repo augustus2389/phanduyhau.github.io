@@ -169,7 +169,7 @@ let products = [
   },
   {
     id: 10,
-    name: "MONOGRAM CAMO HOODED COACH JACKETT",
+    name: "MONOGRAM CAMO HOODED COACH",
     images: [
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0340.jpg?v=1637578318957",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0343.jpg?v=1637578318957",
