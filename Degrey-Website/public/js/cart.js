@@ -71,7 +71,7 @@ const renderProduct = () => {
     <div class="image col-lg-3 col-md-3 col-sm-4">
         <img src="${p.image}" alt="${p.name}" />
     </div>
-    <div class="info col-lg-9 col-md-9 d-flex flex-column justify-content-between pe-lg-2 py-lg-3 p-sm-0 flex-grow-1">
+    <div class="info col-lg-9 col-md-9 d-flex flex-column justify-content-between px-lg-2 pt-lg-3 p-sm-0 flex-grow-1">
         <div class="info-clothes">
             <div class="d-flex ">
                 <h2 class="text-dark ">
@@ -92,7 +92,7 @@ const renderProduct = () => {
         </div>
         <div>
             
-            <h2 class="price text-danger fw-normal">
+            <h2 class="price text-danger fw-bold">
             ${formatMoney(p.price)}
             </h2>
         </div>

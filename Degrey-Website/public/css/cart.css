@@ -12,10 +12,22 @@ body{
     height: 154px;
     object-fit: cover;
 }
+.product-item-sidebar .image {
+  width: 59%;
+}
+.product-item-sidebar .info {
+  width: 98%;
+}
+.count {
+  margin: 10px 0;
+}
 .btn-minus-count,
 .btn-plus-count {
   cursor: pointer;
   background-color: #ddd;
+}
+.product-item-list img{
+  width: 100%;
 }
 .discount-form {
     height: 60px;
