@@ -9,14 +9,16 @@ body{
     font-family: "Quicksand", sans-serif;
 }
 .product-item-list .image img {
-    height: 154px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 .product-item-sidebar .image {
+  height: 110px;
   width: 59%;
 }
 .product-item-sidebar .info {
-  width: 98%;
+  width: 99%;
 }
 .count {
   margin: 10px 0;
