@@ -36,7 +36,6 @@ if (id) {
   window.location.href = "./404.html";
 }
 
-
 //Format Tiền
 const formatMoney = (number) => {
   return number.toLocaleString("it-IT", { style: "currency", currency: "VND" });
@@ -66,7 +65,6 @@ renderProduct(product);
 btnPlusCount.addEventListener("click", () => {
   count++;
   countEl.innerText = +count;
-  console.log(countEl)
 })
 
 // Giảm số lượng
@@ -130,7 +128,6 @@ const renderProductOther = (arr) =>{
     </div>
   </div>`
   }).join("")
-  console.log(html)
   productOtherEl.innerHTML = html;
 }
 renderProductOther(products)

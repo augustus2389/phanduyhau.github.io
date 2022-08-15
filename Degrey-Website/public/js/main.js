@@ -1,13 +1,61 @@
 const btnSearch = document.querySelector(".search-btn");
+const productCartSideBar = document.querySelector(".product-cart-sidebar")
 const addCart = document.querySelectorAll(".social .add-cart");
 const cardJacketEl = document.querySelector(".product-list-jacket");
 const cardTshirtEl = document.querySelector(".product-list-tshirt");
 const cardPantsEl = document.querySelector(".product-list-pants");
 const btnAddToCart = document.querySelector(".btn-add-to-cart");
-
+// const btnSelectOption = document.querySelector(".")
 const productJacket = products.filter((p) => {
   return p.category == "Jacket";
 });
+// let items = getDataCartFromLocalStorage()
+// let renderCartSideBar = (arr =[]) => {
+//   productCartSideBar.innerHTML = ""
+//   let html = ""
+//   if(arr.length == 0) {
+//     productCartSideBar.innerHTML = "Hiện tại chưa có sản phẩm"
+//     return
+//   }
+//   arr.forEach((p) =>{
+//     html += `<div class="product-item d-flex border mb-4 mt-3">
+//     <div class="image">
+//         <img src="${p.image}" alt="${p.name}" />
+//     </div>
+//     <div class="info d-flex flex-column justify-content-between px-1 ">
+//         <div>
+//             <div class="d-flex ">
+//                 <h2 class="text-dark">
+//                 ${p.name} (${p.size})
+//                 </h2>
+//                 <button class="text-primary border-0 bg-transparent fw-light">
+//                   <span><i class="fa-solid fa-trash-can"></i></i></span>
+                 
+//               </button>
+//             </div>
+//             <p class="count text-black-50 text-start">
+//                 <span class="border d-inline-block me-3">
+//                     <span class="px-2 d-inline-block fw-bold bg-light">-</span>
+//                     <span class="px-2 d-inline-block fw-bold">1</span>
+//                     <span class="px-2 d-inline-block fw-bold bg-light">+</span>
+//                 </span>
+//                 <h3 class="text-danger fw-bold text-start">
+//                 ${p.price}
+//               </h3>
+//             </p>
+//         </div>
+//     </div>
+//   </div>`
+//   })
+//   productCartSideBar.innerHTML = html
+// }
+// renderCartSideBar(items)
+
+
+
+
+
+
 const renderCardJacket = (arr) => {
   cardJacketEl.innerHTML = "";
   let html = "";
@@ -118,18 +166,6 @@ const renderCardJacket = (arr) => {
   });
   cardJacketEl.innerHTML = html;
 };
-// const renderModal = document.querySelector(".render-modal")
-// const flashDetail = (id) => {
-//   let p = products.filter((p) => {
-//     return p.id == id;
-//   })[0]
-
-//   console.log(p)
-//  renderModal.innerHTML = "";
-//  renderModal.innerHTML = `
-//  `
-// }
-
 const productTshirt = products.filter((p) => {
   return p.category == "Tshirt";
 });
@@ -272,8 +308,6 @@ $("#overlay").click(function () {
   $(".popup-coupon").css("display", "none");
   $("#overlay").css("display", "none");
 });
-
-
 
 $(".image-slider").slick({
   dots: true,

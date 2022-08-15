@@ -33,26 +33,26 @@ const addItemToAdd = item => {
     // TH3 : Id và size tồn tại => Cập nhật số lượng
 
     // Lấy cart từ localStorage
-    let cart = getDataFromLocalStorage();
+    let shoppingCart = getDataFromLocalStorage();
 
     // Nếu cart không tồn tại -> tại mới
-    if(cart.length == 0) {
-        cart.push(item);
+    if(shoppingCart.length == 0) {
+        shoppingCart.push(item);
     } else {
         // Tìm kiếm sản phẩm đã tồn tại trong giỏ hàng hay chưa
-        let product = cart.find(p => p.id == item.id && p.size == item.size);
+        let product = shoppingCart.find(p => p.id == item.id && p.size == item.size);
 
         // Nếu chưa tồn tại -> thêm vào
         // Nếu tồn tại -> cập nhật số lượng
         if(!product) {
-            cart.push(item);
+            shoppingCart.push(item);
         } else {
             product.count += item.count;
         }
     }
 
     // Lưu dữ liệu của cart sau khi thêm vào localStorage
-    setDataToLocalStorage(cart);
+    setDataToLocalStorage(shoppingCart);
 
     // Cập nhật lại số lượng trên giao diện
     updateTotalCart();
@@ -60,8 +60,8 @@ const addItemToAdd = item => {
 
 const updateTotalCart = () => {
     // Lấy cart từ localStorage
-    let cart = getDataFromLocalStorage();
-    document.querySelector(".cart-count").innerText = cart.length;
+    let shoppingCart = getDataFromLocalStorage();
+    document.querySelector(".cart-count").innerText = shoppingCart.length;
 }
 
 updateTotalCart();
