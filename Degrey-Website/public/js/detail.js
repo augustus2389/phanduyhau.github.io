@@ -109,27 +109,27 @@ const renderDescriptionImg = (arr) => {
 }
 renderDescriptionImg(product.descriptionImg)
 
-const renderProductOther = (arr) =>{
-  productOtherEl.innerHTML = "";
-  console.log(arr)
+// const renderProductOther = (arr) =>{
+//   productOtherEl.innerHTML = "";
+//   console.log(arr)
 
-  let html = "";
-  arr.map((p)=>{
-    html += ` <div class="card-item ">
-    <div class="card-image position-relative">
-      <img src="${p.images[0]}" alt="${p.name}" />
-    </div>
-    <div class="card-title">
-      <h3>${p.name}</h3>
-      <p>${formatMoney(
-        p.price
-      )}</p>
-    </div>
-  </div>`
-  }).join("")
-  productOtherEl.innerHTML = html;
-}
-renderProductOther(products)
+//   let html = "";
+//   arr.map((p)=>{
+//     html += ` <div class="card-item ">
+//     <div class="card-image position-relative">
+//       <img src="${p.images[0]}" alt="${p.name}" />
+//     </div>
+//     <div class="card-title">
+//       <h3>${p.name}</h3>
+//       <p>${formatMoney(
+//         p.price
+//       )}</p>
+//     </div>
+//   </div>`
+//   }).join("")
+//   productOtherEl.innerHTML = html;
+// }
+// renderProductOther(products)
 // Thêm vào giỏ hàng
 btnAddToCart.addEventListener("click", (e) => {
   // Kiểm tra xem đã chọn size hay chưa
