@@ -8,34 +8,58 @@
 body{
     font-family: "Quicksand", sans-serif;
 }
-.product-item-list .image img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.product-item-sidebar .row > *{
+  padding: 0;
 }
-.product-item-sidebar .image {
+.name-product h2{
+  text-align: center;
+  font-size: 11px;
+}
+
+.count-sidebar {
+  margin: 14px 0;
+}
+.cart-info{
+  background-color: #fff;
+  padding: 4vh 5vh;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+.product-item .image img {
+  height: 154px;
+  object-fit: cover;
+}
+.product-item-sidebar .image img{
   height: 110px;
-  width: 59%;
+  object-fit: cover;
 }
-.product-item-sidebar .info {
-  width: 99%;
-}
-.count {
-  margin: 10px 0;
+.product-item-sidebar .info{
+  width: 63%;
 }
 .btn-minus-count,
 .btn-plus-count {
   cursor: pointer;
   background-color: #ddd;
 }
+.count-product {
+  padding: 5px 10px;
+}
+
 .product-item-list img{
   width: 100%;
+}
+.close{
+  margin-left: auto;
+  font-size: 0.7rem;
 }
 .discount-form {
     height: 60px;
 }
 .bill {
     border-radius: 5%;
+}
+.cart-detail .info {
+  margin: 10px;
 }
 .cart-title h2{
     color: var(--primary);
@@ -192,5 +216,16 @@ body{
     .info h2{
         padding-right: 0;
     }
+    .cart-detail .info p {
+      font-size: 10px;
+    }
   }
   
+@media (max-width:320px) {
+  .count-product {
+    padding: 5px;
+  }
+  .cart-detail .info {
+    margin: 18px 5px;
+}
+}

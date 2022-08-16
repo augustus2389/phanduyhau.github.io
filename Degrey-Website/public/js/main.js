@@ -1,60 +1,56 @@
 const btnSearch = document.querySelector(".search-btn");
 const productCartSideBar = document.querySelector(".product-cart-sidebar")
+const message = document.querySelector(".message");
 const addCart = document.querySelectorAll(".social .add-cart");
 const cardJacketEl = document.querySelector(".product-list-jacket");
 const cardTshirtEl = document.querySelector(".product-list-tshirt");
 const cardPantsEl = document.querySelector(".product-list-pants");
 const btnAddToCart = document.querySelector(".btn-add-to-cart");
 // const btnSelectOption = document.querySelector(".")
+let items = getDataFromLocalStorage();
 const productJacket = products.filter((p) => {
   return p.category == "Jacket";
 });
-// let items = getDataCartFromLocalStorage()
-// let renderCartSideBar = (arr =[]) => {
-//   productCartSideBar.innerHTML = ""
-//   let html = ""
-//   if(arr.length == 0) {
-//     productCartSideBar.innerHTML = "Hiện tại chưa có sản phẩm"
-//     return
-//   }
-//   arr.forEach((p) =>{
-//     html += `<div class="product-item d-flex border mb-4 mt-3">
-//     <div class="image">
-//         <img src="${p.image}" alt="${p.name}" />
-//     </div>
-//     <div class="info d-flex flex-column justify-content-between px-1 ">
-//         <div>
-//             <div class="d-flex ">
-//                 <h2 class="text-dark">
-//                 ${p.name} (${p.size})
-//                 </h2>
-//                 <button class="text-primary border-0 bg-transparent fw-light">
-//                   <span><i class="fa-solid fa-trash-can"></i></i></span>
-                 
-//               </button>
-//             </div>
-//             <p class="count text-black-50 text-start">
-//                 <span class="border d-inline-block me-3">
-//                     <span class="px-2 d-inline-block fw-bold bg-light">-</span>
-//                     <span class="px-2 d-inline-block fw-bold">1</span>
-//                     <span class="px-2 d-inline-block fw-bold bg-light">+</span>
-//                 </span>
-//                 <h3 class="text-danger fw-bold text-start">
-//                 ${p.price}
-//               </h3>
-//             </p>
-//         </div>
-//     </div>
-//   </div>`
-//   })
-//   productCartSideBar.innerHTML = html
-// }
-// renderCartSideBar(items)
-
-
-
-
-
+const productItemSidabar = document.querySelector(".product-item-sidebar")
+const renderProductSidebar = () => {
+  if (items.length == 0) {
+    productList.classList.add("d-none");
+    return
+  }
+  productItemSidabar.innerHTML = "";
+  let html = "";
+  items.forEach((p) => {
+    html += `<div class="product-item d-flex border mb-2">
+    <div class="image">
+      <img src="${p.image}" alt="${p.name}" />
+    </div>
+    <div class="info d-flex justify-content-between px-1">
+        <div>
+            <div class="name-product">
+                <h2 class="text-dark">
+                ${p.name} (${p.size})
+                </h2>
+                
+            </div>
+            <div class="count-sidebar text-black-50 d-flex justify-content-between ">
+                <span class="border d-inline-block me-3">
+                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
+                    <span class="px-2 d-inline-block fw-bold">${p.count}</span>
+                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
+                </span>
+                <button class="text-primary border-0 bg-transparent fw-light">
+                  <span><i class="fa-solid fa-trash-can"></i></i></span>
+              </button>
+            </div>
+            <h3 class="text-danger fw-bold text-start">
+                ${formatMoney(p.price)}
+              </h3>
+        </div>
+    </div>
+  </div>`
+  });
+  productItemSidabar.innerHTML = html;
+}
 
 const renderCardJacket = (arr) => {
   cardJacketEl.innerHTML = "";
@@ -72,8 +68,8 @@ const renderCardJacket = (arr) => {
           /></a>
           <ul class="social position-absolute top-50 end-0 translate-middle-y">
             <li>
-              <button class="btn-add-to-cart">
-                <i class="fa-solid fa-cart-plus"></i>
+              <button class="btn-add-to-cart"  onclick = 'addCartJacket(${p.id})'>
+              <i class="fa-solid fa-eye"></i>
               </button>
             </li>
 
@@ -166,6 +162,23 @@ const renderCardJacket = (arr) => {
   });
   cardJacketEl.innerHTML = html;
 };
+let addCartJacket = (id) =>{
+  let product = products.find(p => p.id == id)
+  let item ={
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    size: sizeSelectedEl.innerText,
+    image: product.images[0],
+    count: 1
+  }
+  addItemToAdd(item)
+  alert("Thêm vào giỏ hàng thành công")
+  // let productCartSideBar = getDataCartFromLocalStorage()
+  renderProductSidebar(productCartSideBar)
+  updateTotalMoneysidebar()
+}
+
 const productTshirt = products.filter((p) => {
   return p.category == "Tshirt";
 });
@@ -180,7 +193,9 @@ const renderCardTshirt = (arr) => {
       <div class="card-image position-relative">
         <img src="${p.images[0]}" alt="${p.name}" />
           <ul class="social position-absolute top-50 end-0 translate-middle-y">
-            <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+            <li><button class="btn-add-to-cart"  onclick = 'addCartTshirt(${p.id})'>
+            <i class="fa-solid fa-cart-plus"></i>
+          </button></li>
           <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
           </ul>
          <span class="flash-tag position-absolute">${p.tag}</span>  
@@ -197,6 +212,25 @@ const renderCardTshirt = (arr) => {
   });
   cardTshirtEl.innerHTML = html;
 };
+// Thêm sản phẩm Tshirt vào cart 
+let addCartTshirt = (id) =>{
+  let product = products.find(p => p.id == id)
+  let item ={
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    size: sizeSelectedEl.innerText,
+    image: product.images[0],
+    count: 1
+  }
+  addItemToAdd(item)
+  alert("Thêm vào giỏ hàng thành công")
+  // let productCartSideBar = getDataCartFromLocalStorage()
+  renderProductSidebar(productCartSideBar)
+  updateTotalMoneysidebar()
+}
+
+// Render Pant
 const productPants = products.filter((p) => {
   return p.category == "Pants";
 });
@@ -211,7 +245,9 @@ const renderCardPants = (arr) => {
       <div class="card-image position-relative">
         <img src="${p.images[0]}" alt="${p.name}" />
           <ul class="social position-absolute top-50 end-0 translate-middle-y">
-            <li><a href=""><i class="fa-solid fa-cart-plus"></i></a></li>
+            <li><button class="btn-add-to-cart"  onclick = 'addCartPants(${p.id})'>
+            <i class="fa-solid fa-cart-plus"></i>
+          </button></li>
           <li><a href=""><i class="fa-solid fa-bag-shopping"></i></a></li>
           </ul>
          <span class="flash-tag position-absolute">${p.tag}</span>  
@@ -228,28 +264,40 @@ const renderCardPants = (arr) => {
   });
   cardPantsEl.innerHTML = html;
 };
-const formatMoney = (number) => {
-  return number.toLocaleString("it-IT", { style: "currency", currency: "VND" });
-};
-renderCardPants(productPants);
-renderCardJacket(productJacket);
-renderCardTshirt(productTshirt);
-
-btnAddToCart.addEventListener("click", () => {
-  // Cấu trúc item thêm vào giỏ hàng
-  let item = {
+let addCartPants = (id) =>{
+  let product = products.find(p => p.id == id)
+  let item ={
     id: product.id,
     name: product.name,
     price: product.price,
+    size: product.size,
     image: product.images[0],
-    count: 1,
-    size: sizeSelectedEl.innerText,
-  };
+    count: 1
+  }
+  addItemToAdd(item)
+  alert("Thêm vào giỏ hàng thành công")
+  // let productCartSideBar = getDataCartFromLocalStorage()
+  renderProductSidebar(productCartSideBar)
+  updateTotalMoneysidebar()
+}
+const formatMoney = (number) => {
+  return number.toLocaleString("it-IT", { style: "currency", currency: "VND" });
+};
+const totalMoneyElSidebar = document.getElementById("total-money-sidebar");
+const updateTotalMoneysidebar = () => {
+  let totalMoney = 0;
+  items.map((e) => {
+    totalMoney += e.count * e.price;
+  });
+  totalMoneyElSidebar.innerText = formatMoney(totalMoney);
+};
+updateTotalMoneysidebar(totalMoneyElSidebar)
+renderCardPants(productPants);
+renderCardJacket(productJacket);
+renderCardTshirt(productTshirt);
+renderProductSidebar(items)
 
-  // Thêm vào giỏ hàng
-  addItemToAdd(item);
-  alert("Thêm vào giỏ hàng thành công");
-});
+
 
 $("#navbarDropdown").click(function () {
   $(".dropdown-menu").slideToggle(300, "linear");

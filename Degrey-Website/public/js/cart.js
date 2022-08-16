@@ -1,13 +1,14 @@
 const btnSearch = document.querySelector('.search-btn');
 const productList = document.querySelector(".product-list");
-const productItemSidabar = document.querySelector(".product-item-sidebar")
+
 const message = document.querySelector(".message");
 const totalMoneyEl = document.getElementById("total-money");
+const totalMoneyElSidebar = document.getElementById("total-money-sidebar");
 
-console.log(productItemSidabar)
 // Lấy ra sản phẩm có trong giỏ hàng
 let items = getDataFromLocalStorage();
 
+const productItemSidabar = document.querySelector(".product-item-sidebar")
 const renderProductSidebar = () => {
   if (items.length == 0) {
     productList.classList.add("d-none");
@@ -18,19 +19,19 @@ const renderProductSidebar = () => {
   productItemSidabar.innerHTML = "";
   let html = "";
   items.forEach((p) => {
-    html += `<div class="product-item d-flex border mb-4 mt-3">
+    html += `<div class="product-item d-flex border mb-2">
     <div class="image">
       <img src="${p.image}" alt="${p.name}" />
     </div>
     <div class="info d-flex justify-content-between px-1">
         <div>
-            <div class="">
+            <div class="name-product">
                 <h2 class="text-dark">
                 ${p.name} (${p.size})
                 </h2>
                 
             </div>
-            <div class="count d-flex justify-content-between ">
+            <div class="count-sidebar text-black-50 d-flex justify-content-between ">
                 <span class="border d-inline-block me-3">
                     <span class="px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
                     <span class="px-2 d-inline-block fw-bold">${p.count}</span>
@@ -67,23 +68,23 @@ const renderProduct = () => {
   let html = "";
 
   items.forEach((p) => {
-    html += `<div class="product-item-list d-flex border mb-4">
-    <div class="image col-lg-3 col-md-3 col-sm-4">
+    html += `<div class="product-item d-flex border mb-4">
+    <div class="image ">
         <img src="${p.image}" alt="${p.name}" />
     </div>
-    <div class="info col-lg-9 col-md-9 d-flex flex-column justify-content-between px-lg-2 pt-lg-3 p-sm-0 flex-grow-1">
+    <div class="info d-flex flex-column justify-content-between flex-grow-1">
         <div class="info-clothes">
-            <div class="d-flex ">
-                <h2 class="text-dark ">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="text-dark fw-bold mb-lg-3 mb-sm-1">
                 ${p.name} (${p.size})
-                </h2>
+                </p>
                 
             </div>
-            <p class="text-black-50 d-flex mt-3 justify-content-between ">
-                <span class="d-inline-block ">
-                    <span class="rounded-circle border bg-light px-2 d-inline-block fw-bold onclick="minusCount(${p.id}, '${p.size}')">-</span>
-                    <span class="count py-1 px-2 d-inline-block fw-bold">${p.count}</span>
-                    <span class="rounded-circle border bg-light  px-2 d-inline-block fw-bold onclick="plusCount(${p.id}, '${p.size}')"">+</span>
+            <p class="text-black-50 d-flex justify-content-between ">
+                <span class="border d-inline-block ">
+                    <span class="count-product d-inline-block fw-bold bg-light onclick="minusCount(${p.id}, '${p.size}')">-</span>
+                    <span class="count-product  d-inline-block fw-bold">${p.count}</span>
+                    <span class="count-product d-inline-block fw-bold bg-light onclick="plusCount(${p.id}, '${p.size}')"">+</span>
                 </span>
                 <button class="text-primary border-0 bg-transparent fw-light" onclick="deleteProduct(${p.id}, '${p.size}')">
                     <span><i class="fa-solid fa-trash-can mt-3"></i></span>
@@ -146,7 +147,7 @@ const formatMoney = (number) => {
   return number.toLocaleString("it-IT", { style: "currency", currency: "VND" });
 };
 
-renderProduct(items);
+// renderProduct(items);
 
 
 //Tính tiền
@@ -157,6 +158,15 @@ const updateTotalMoney = () => {
   });
   totalMoneyEl.innerText = formatMoney(totalMoney);
 };
+
+const updateTotalMoneysidebar = () => {
+  let totalMoney = 0;
+  items.map((e) => {
+    totalMoney += e.count * e.price;
+  });
+  totalMoneyElSidebar.innerText = formatMoney(totalMoney);
+};
+updateTotalMoneysidebar()
 updateTotalMoney();
 renderProduct(items);
 renderProductSidebar(items)
