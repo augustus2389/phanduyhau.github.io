@@ -1,6 +1,5 @@
 const breadcrumbItemActive = document.querySelector(".breadcrumb-item.active");
 const breadcrumbItem = document.querySelector(".breadcrumb .breadcrumb-item:nth-child(2)")
-console.log(breadcrumbItem)
 const sizeEl = document.querySelector(".product-size");
 const priceEl = document.querySelector(".product-price");
 const descriptionImg = document.querySelector(".description-image");

@@ -115,15 +115,19 @@
   }
   .card-image .social li {
     margin-bottom: 10px;
-    transform: translateX(100px);
+    /* transform: translateX(100px); */
+    display: none;
     transition: 0.5s all ;
     
   }
   .card-item:hover .social li{
-    transform: translateX(0);
+    transition: 0.5s all ;
+    /* transform: translateX(0); */
+    display: block;
   }
-  .card-image .social li a{
+  .card-image .social li button{
     color: #666;
+    border: none;
     background-color: #fff;
     font-size: 16px;
     line-height: 40px;
@@ -131,7 +135,7 @@
     display: block;
     transition: 0.5s all ;
   }
-  .card-image .social a:hover{
+  .card-image .social button:hover{
     color: #fff;
     background-color: #03aae8;
   }
