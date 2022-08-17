@@ -245,4 +245,7 @@ body {
   .province select{
     margin-bottom: 20px;
   }
+  .button-discount span:last-child {
+    top: 50%;
+  }
 }

@@ -62,7 +62,6 @@ const updateTotalCart = () => {
     // Lấy cart từ localStorage
     let shoppingCart = getDataFromLocalStorage();
     document.querySelector(".cart-count").innerText = shoppingCart.length;
-    document.querySelector(".breadcrumb-item.active").innertext = "Giỏ hàng" + shoppingCart.length;
 }
 
 updateTotalCart();
