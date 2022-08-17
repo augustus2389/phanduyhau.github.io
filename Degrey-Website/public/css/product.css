@@ -3,6 +3,7 @@
 @import url(./footer.css);
 @import url(./responsive.css);
 @import url(./card.css);
+@import url(./cartSidebar.css);
 :root {
   --primary: #ff4c4c;
 }
@@ -130,11 +131,7 @@ h1 {
 }
 
 
-@media (max-width: 990px) {
-  .card-item {
-    margin-bottom: 100px;
-  }
-  
+@media (max-width: 990px) {  
   .filter ul {
     margin-left: 10px;
   }

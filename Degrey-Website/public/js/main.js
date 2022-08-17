@@ -14,7 +14,7 @@ const productJacket = products.filter((p) => {
 const productItemSidabar = document.querySelector(".product-item-sidebar");
 const renderProductSidebar = () => {
   if (items.length == 0) {
-    productList.classList.add("d-none");
+    // productList.classList.add("d-none");
     return;
   }
   productItemSidabar.innerHTML = "";
@@ -165,7 +165,7 @@ let addCartJacket = (id) => {
     id: product.id,
     name: product.name,
     price: product.price,
-    size: sizeSelectedEl.innerText,
+    // size: sizeSelectedEl.innerText,
     image: product.images[0],
     count: 1,
   };
@@ -679,3 +679,24 @@ $(document).ready(function () {
     return false;
   });
 });
+
+
+
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}

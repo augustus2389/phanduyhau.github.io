@@ -13,6 +13,7 @@ img {
   max-width: 100%;
 }
 #header {
+  
 }
 a {
   text-decoration: none;
@@ -86,7 +87,7 @@ a:hover {
 .login li {
 }
 #header .header-action {
-  padding-top: 22px;
+  padding: 22px 5px;
 }
 #header .search {
   height: 43px;

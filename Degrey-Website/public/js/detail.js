@@ -74,7 +74,7 @@ btnMinusCount.addEventListener("click", () => {
   }
   countEl.innerText = +count;
 })
-
+console.log(imgMain)
 const renderMainImg = (arr) => {
   imgMain.innerHTML = "";
   let html = "";

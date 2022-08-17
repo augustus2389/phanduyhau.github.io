@@ -1,10 +1,10 @@
 // key là cart
 // value = array
 // Thêm vào local storage
-const setDataToLocalStorage = arr => {
+const setDataToLocalStorage = (arr) => {
     localStorage.setItem("shopping-cart", JSON.stringify(arr));
 }
-
+console.log(setDataToLocalStorage)
 // Lấy ra từ localStorage
 const getDataFromLocalStorage = () => {
     const localStorageValue = localStorage.getItem("shopping-cart");
@@ -62,6 +62,7 @@ const updateTotalCart = () => {
     // Lấy cart từ localStorage
     let shoppingCart = getDataFromLocalStorage();
     document.querySelector(".cart-count").innerText = shoppingCart.length;
+    document.querySelector(".breadcrumb-item.active").innertext = "Giỏ hàng" + shoppingCart.length;
 }
 
 updateTotalCart();

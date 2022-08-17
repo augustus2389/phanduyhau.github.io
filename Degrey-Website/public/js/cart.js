@@ -74,17 +74,17 @@ const renderProduct = () => {
     </div>
     <div class="info d-flex flex-column justify-content-between flex-grow-1">
         <div class="info-clothes">
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="">
                 <p class="text-dark fw-bold mb-lg-3 mb-sm-1">
                 ${p.name} (${p.size})
                 </p>
                 
             </div>
-            <p class="text-black-50 d-flex justify-content-between ">
+            <p class="text-black-50 d-flex justify-content-between my-3">
                 <span class="border d-inline-block ">
-                    <span class="count-product d-inline-block fw-bold bg-light onclick="minusCount(${p.id}, '${p.size}')">-</span>
+                    <span class="count-product d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
                     <span class="count-product  d-inline-block fw-bold">${p.count}</span>
-                    <span class="count-product d-inline-block fw-bold bg-light onclick="plusCount(${p.id}, '${p.size}')"">+</span>
+                    <span class="count-product d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
                 </span>
                 <button class="text-primary border-0 bg-transparent fw-light" onclick="deleteProduct(${p.id}, '${p.size}')">
                     <span><i class="fa-solid fa-trash-can mt-3"></i></span>
@@ -104,17 +104,15 @@ const renderProduct = () => {
 };
 
 //  Xóa sản phẩm
-
 const deleteProduct = (id, size) => {
   let isConfirm = confirm("Bạn có muốn xóa không?");
   if (isConfirm) {
     items = items.filter((p) => p.id != id || p.size != size);
-    setDataFromLocalStorage(items);
+    // setDataFromLocalStorage(items);
     updateTotalCart();
     renderProduct(items);
   }
 };
-
 
 // Thay đổi số lượng
 // Tăng số lượng
@@ -126,10 +124,11 @@ const plusCount = (id, size) => {
   product.count++;
 
   // Lưu lại vào localStorage
-  setDataFromLocalStorage(items);
+  // setDataFromLocalStorage(items);
 
   // Hiển thị lại giao diện
   renderProduct(items);
+  updateTotalMoney()
 };
 
 // Giảm số lượng
@@ -141,6 +140,8 @@ const minusCount = (id, size) => {
   }
   // setDataFromLocalStorage(items);
   renderProduct(items);
+  updateTotalMoney()
+
 };
 // Format tiền VND
 const formatMoney = (number) => {

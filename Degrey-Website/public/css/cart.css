@@ -26,7 +26,7 @@ body{
   border-top-left-radius: 1rem;
 }
 .product-item .image img {
-  height: 154px;
+  height: 180px;
   object-fit: cover;
 }
 .product-item-sidebar .image img{
@@ -43,11 +43,20 @@ body{
 }
 .count-product {
   padding: 5px 10px;
+  cursor: pointer;
 }
-
+.product-list .image{
+  width: 23%;
+}
+.product-list img{
+  width: 100%;
+}
 .product-item-list img{
   width: 100%;
 }
+/* .info-clothes p:nth-child(1){
+  width: 250px;
+} */
 .close{
   margin-left: auto;
   font-size: 0.7rem;
@@ -60,6 +69,7 @@ body{
 }
 .cart-detail .info {
   margin: 10px;
+  width: 50%;
 }
 .cart-title h2{
     color: var(--primary);
@@ -190,20 +200,25 @@ body{
     outline: none;
   }
   @media (max-width:990px) {
-    .info-clothes{
+    /* .info-clothes{
         padding: 10px 0 0 10px;
-    }
+    } */
     .price{
         padding: 5px 0 0 10px;
     }
+    .product-list .image {
+      width: 35%;
+    }
   }
   @media (max-width:768px) {
-    .info-clothes{
+    /* .info-clothes{
         padding: 10px 0 0 10px;
-    }
+    } */
+    
   }
   
   @media (max-width:567px) {
+   
     .info{
         margin-left: 5px;
     }
@@ -217,15 +232,24 @@ body{
         padding-right: 0;
     }
     .cart-detail .info p {
-      font-size: 10px;
+      font-size: 14px;
     }
   }
   
+  @media (max-width:420px) {
+    .product-list .image {
+      width: 50%;
+  }
+  
+  }
 @media (max-width:320px) {
   .count-product {
     padding: 5px;
   }
   .cart-detail .info {
-    margin: 18px 5px;
+    margin: 10px 5px;
+}
+.product-list .image {
+  width: 60%;
 }
 }

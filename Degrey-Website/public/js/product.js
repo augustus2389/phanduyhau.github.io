@@ -1,15 +1,17 @@
 const btnSearch = document.querySelector('.search-btn');
 const addCart = document.querySelectorAll('.social .add-cart');
+const message = document.querySelector(".message");
+
 const totalMoneyElSidebar = document.getElementById("total-money-sidebar");
 
 const productList = document.querySelector('.product-list')
 const productItemSidabar = document.querySelector(".product-item-sidebar")
 const renderProductSidebar = () => {
   if (items.length == 0) {
-    productList.classList.add("d-none");
+    // productList.classList.add("d-none");
     return
-  } else {
-    message.classList.add("d-none");
+  // } else {
+  //   message.classList.add("d-none");
   }
   productItemSidabar.innerHTML = "";
   let html = "";
@@ -109,11 +111,11 @@ function filterPrice(price1, price2) {
   renderCard(productFilterTrue)
 }
 
-// filter by rating
-let inputRating = document.querySelectorAll(".clothes")
+// filter catgory
+let filterCatgory = document.querySelectorAll(".clothes")
 let productFilterRating = []
 let checkedNumberRating = 0
-Array.from(inputRating).forEach((input) =>{
+Array.from(filterCatgory).forEach((input) =>{
   input.addEventListener("change",(e) =>{
     let inputValue = e.target.value
     if(e.target.checked == true){
@@ -139,6 +141,36 @@ Array.from(inputRating).forEach((input) =>{
 renderProductSidebar(items)
 
 
+let inputValuePrice = document.querySelector(".sortPrice")
+inputValuePrice.addEventListener("change", (e) =>{
+  if(e.target.value == 1){
+    let productSortUp = products.sort((a,b) =>{
+      return a.price - b.price
+    }) 
+    renderCard(productSortUp)
+  } else if(e.target.value == 2){
+    let productSortDown = products.sort((a,b) =>{
+      return b.price - a.price
+    })
+    renderCard(productSortDown)
+  } 
+})
+
+let inputValuePrice2 = document.querySelector(".sortPrice2")
+inputValuePrice2.addEventListener("change", (e) =>{
+  if(e.target.value == 1){
+    let productSortUp = products.sort((a,b) =>{
+      return a.price - b.price
+    }) 
+    renderCard(productSortUp)
+  } else if(e.target.value == 2){
+    let productSortDown = products.sort((a,b) =>{
+      return b.price - a.price
+    })
+    renderCard(productSortDown)
+  } 
+})
+
 
 
 
@@ -156,7 +188,6 @@ $("#overlay").click(function () {
   $(".product-filter").css("right", "-250px");
   $("#overlay").css("display", "none");
 });
-
 $("#overlay").click(function () { 
   $("body").css("overflow-y", "scroll");
 });
