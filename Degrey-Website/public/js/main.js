@@ -84,7 +84,7 @@ const renderCardJacket = (arr) => {
                 data-bs-target="#exampleModal${p.id}"
                 role="button"
               >
-                <i class="fa-solid fa-bag-shopping"></i>
+              <i class="fa-solid fa-eye"></i>
               </button>
             </li>
           </ul>
@@ -207,7 +207,7 @@ const renderCardTshirt = (arr) => {
               data-bs-target="#exampleModal${p.id}"
               role="button"
             >
-              <i class="fa-solid fa-bag-shopping"></i>
+            <i class="fa-solid fa-eye"></i>
             </button>
           </li>
         </ul>
@@ -321,7 +321,7 @@ const renderCardPants = (arr) => {
             <button class="btn-add-to-cart"  onclick = 'addCartJacket(${
               p.id
             })'>
-              <i class="fa-solid fa-cart-plus"></i>
+            <i class="fa-solid fa-eye"></i>
             </button>
           </li>
 
