@@ -18,6 +18,12 @@ img {
   background-color: white;
   z-index: 9; */
 }
+#header .active-header {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 9;
+}
 a {
   text-decoration: none;
   color: #4a4a4a;

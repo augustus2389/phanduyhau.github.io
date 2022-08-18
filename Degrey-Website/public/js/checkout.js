@@ -152,3 +152,8 @@ Array.from(BtnCoppyRight).forEach((btn)=>{
     btn.innerHTML = "Đã áp dụng";
   })
 })
+
+async function paste(input) {
+  const text = await navigator.clipboard.readText();
+  input.value = text;
+}

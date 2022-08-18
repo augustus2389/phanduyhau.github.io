@@ -159,14 +159,6 @@ const formatMoney = (number) => {
 
 
 //Tính tiền
-const updateSubTotalMoney = () => {
-  let totalMoney = 0;
-  items.map((e) => {
-    totalMoney += e.count * e.price;
-  });
-  subTotal.innerText = formatMoney(totalMoney);
-};
-
 
 const updateTotalMoney = () => {
   let totalMoney = 0;
@@ -183,7 +175,13 @@ const updateTotalMoneysidebar = () => {
   });
   totalMoneyElSidebar.innerText = formatMoney(totalMoney);
 };
-
+const updateSubTotalMoney = () => {
+  let totalMoney = 0;
+  items.map((e) => {
+    totalMoney += e.count * e.price;
+  });
+  subTotal.innerText = formatMoney(totalMoney);
+};
 updateSubTotalMoney()
 updateTotalMoneysidebar()
 updateTotalMoney();

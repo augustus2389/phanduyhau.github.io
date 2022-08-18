@@ -48,6 +48,8 @@ const renderProductSidebar = () => {
   productItemSidabar.innerHTML = html;
 }
 
+
+
 let items = getDataFromLocalStorage();
 const formatMoney = (number) => {
   return number.toLocaleString("it-IT", { style: "currency", currency: "VND" });
@@ -164,10 +166,25 @@ const renderCard = (arr) => {
   });
   productList.innerHTML = html;
 }
-renderCard(products)
+// renderCard(products)
 
 
-
+const getUrl = () => {
+  const category = window.location.hash.slice(1).split("&")
+  console.log(category)
+  const data = products.filter((p) =>{
+    if(category.length == 2){
+      return p.category == category[0] || p.category == category[1]
+    } else if (category.length == 1 && category[0] !== '') {
+      return p.category.toLowerCase() == category[0].toLowerCase();
+    } else {
+      return true;
+    }
+  })
+  console.log(data)
+  renderCard(data) 
+}
+getUrl();
 
 
 
