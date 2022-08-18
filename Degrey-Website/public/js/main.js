@@ -145,7 +145,7 @@ const renderCardJacket = (arr) => {
                         <span class="count py-1 px-2 d-inline-block fw-bold ">1</span>
                         <span class="rounded-circle  px-2 d-inline-block fw-bold btn-plus-count">+</span>
                     </span>
-                    <button class="btn btn-add-to-cart">Thêm vào giỏ hàng</button>
+                    <button class="btn-icon  btn-add-to-cart">Thêm vào giỏ hàng</button>
                 </div>
                     </div>
                     </div>
@@ -268,7 +268,7 @@ const renderCardTshirt = (arr) => {
                       <span class="count py-1 px-2 d-inline-block fw-bold ">1</span>
                       <span class="rounded-circle  px-2 d-inline-block fw-bold btn-plus-count">+</span>
                   </span>
-                  <button class="btn btn-add-to-cart">Thêm vào giỏ hàng</button>
+                  <button class="btn-icon  btn-add-to-cart">Thêm vào giỏ hàng</button>
               </div>
                   </div>
                   </div>
@@ -393,7 +393,7 @@ const renderCardPants = (arr) => {
                       <span class="count py-1 px-2 d-inline-block fw-bold ">1</span>
                       <span class="rounded-circle  px-2 d-inline-block fw-bold btn-plus-count">+</span>
                   </span>
-                  <button class="btn btn-add-to-cart">Thêm vào giỏ hàng</button>
+                  <button class="btn-icon btn-add-to-cart">Thêm vào giỏ hàng</button>
               </div>
                   </div>
                   </div>
@@ -482,7 +482,7 @@ $(window).resize(() => {
   }
 });
 function loadPopup() {
-  $(".popup-coupon").css("top", "40px");
+  // $(".popup-coupon").css("top", "40px");
   $("#overlay").css("display", "block");
 }
 setTimeout(function () {

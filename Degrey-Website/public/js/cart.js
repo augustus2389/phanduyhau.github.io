@@ -1,6 +1,7 @@
 const btnSearch = document.querySelector('.search-btn');
 const productList = document.querySelector(".product-list");
-
+const subTotal = document.getElementById("sub-total-money")
+console.log(subTotal)
 const message = document.querySelector(".message");
 const totalMoneyEl = document.getElementById("total-money");
 const totalMoneyElSidebar = document.getElementById("total-money-sidebar");
@@ -93,7 +94,7 @@ const renderProduct = () => {
         </div>
         <div>
             
-            <h2 class="price text-danger fw-bold">
+            <h2 class="price text-danger fw-bold" id="sub-total-money">
             ${formatMoney(p.price)}
             </h2>
         </div>
@@ -108,11 +109,13 @@ const deleteProduct = (id, size) => {
   let isConfirm = confirm("Bạn có muốn xóa không?");
   if (isConfirm) {
     items = items.filter((p) => p.id != id || p.size != size);
-    // setDataFromLocalStorage(items);
+    setDataToLocalStorage(items);
     updateTotalCart();
     renderProduct(items);
   }
 };
+
+
 
 // Thay đổi số lượng
 // Tăng số lượng
@@ -124,11 +127,13 @@ const plusCount = (id, size) => {
   product.count++;
 
   // Lưu lại vào localStorage
-  // setDataFromLocalStorage(items);
-
+  setDataToLocalStorage(items);
   // Hiển thị lại giao diện
   renderProduct(items);
+  updateSubTotalMoney()
   updateTotalMoney()
+  updateTotalMoneysidebar()
+  renderProductSidebar(items)
 };
 
 // Giảm số lượng
@@ -138,10 +143,12 @@ const minusCount = (id, size) => {
   if (product.count < 1) {
     product.count = 1;
   }
-  // setDataFromLocalStorage(items);
+  setDataToLocalStorage(items);
   renderProduct(items);
+  updateSubTotalMoney()
+  updateTotalMoneysidebar()
   updateTotalMoney()
-
+  renderProductSidebar(items)
 };
 // Format tiền VND
 const formatMoney = (number) => {
@@ -152,6 +159,15 @@ const formatMoney = (number) => {
 
 
 //Tính tiền
+const updateSubTotalMoney = () => {
+  let totalMoney = 0;
+  items.map((e) => {
+    totalMoney += e.count * e.price;
+  });
+  subTotal.innerText = formatMoney(totalMoney);
+};
+
+
 const updateTotalMoney = () => {
   let totalMoney = 0;
   items.map((e) => {
@@ -167,6 +183,8 @@ const updateTotalMoneysidebar = () => {
   });
   totalMoneyElSidebar.innerText = formatMoney(totalMoney);
 };
+
+updateSubTotalMoney()
 updateTotalMoneysidebar()
 updateTotalMoney();
 renderProduct(items);

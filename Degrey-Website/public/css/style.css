@@ -113,12 +113,19 @@
 }
 
 .popup-coupon {
-  position: fixed;
+  /* position: fixed;
   z-index: 99;
   left: 400px;
   margin: auto;
   top: -550px;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: all 0.5s ease; 
+  z-index: 99;
+
 }
 .cancel-popup {
   position: absolute;
@@ -195,7 +202,7 @@
   background: #111;
   cursor: pointer;
   position: relative;
-  z-index: 99;
+  z-index: 5;
   border-radius: 10px;
   user-select: none;
   -webkit-user-select: none;
@@ -263,7 +270,6 @@
   #header ul li.active {
     border-bottom: none;
   }
-
   .menu ul {
     position: fixed;
     top: 0;
