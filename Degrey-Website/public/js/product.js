@@ -6,67 +6,16 @@ const totalMoneyElSidebar = document.getElementById("total-money-sidebar");
 
 const productList = document.querySelector('.product-list')
 const productItemSidabar = document.querySelector(".product-item-sidebar")
-const renderProductSidebar = () => {
-  if (items.length == 0) {
-    // productList.classList.add("d-none");
-    return
-  // } else {
-  //   message.classList.add("d-none");
-  }
-  productItemSidabar.innerHTML = "";
-  let html = "";
-  items.forEach((p) => {
-    html += `<div class="product-item d-flex border mb-2">
-    <div class="image">
-      <img src="${p.image}" alt="${p.name}" />
-    </div>
-    <div class="info d-flex justify-content-between px-1">
-        <div>
-            <div class="name-product">
-                <h2 class="text-dark">
-                ${p.name} (${p.size})
-                </h2>
-                
-            </div>
-            <div class="count-sidebar text-black-50 d-flex justify-content-between ">
-                <span class="border d-inline-block me-3">
-                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
-                    <span class="px-2 d-inline-block fw-bold">${p.count}</span>
-                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
-                </span>
-                <button class="text-primary border-0 bg-transparent fw-light">
-                  <span><i class="fa-solid fa-trash-can"></i></i></span>
-              </button>
-            </div>
-            <h3 class="text-danger fw-bold text-start">
-                ${formatMoney(p.price)}
-              </h3>
-        </div>
-    </div>
-  </div>`
-  });
-  productItemSidabar.innerHTML = html;
-}
-
-
-
 let items = getDataFromLocalStorage();
 const formatMoney = (number) => {
   return number.toLocaleString("it-IT", { style: "currency", currency: "VND" });
 };
-const updateTotalMoneysidebar = () => {
-  let totalMoney = 0;
-  items.map((e) => {
-    totalMoney += e.count * e.price;
-  });
-  totalMoneyElSidebar.innerText = formatMoney(totalMoney);
-};
-updateTotalMoneysidebar()
 
 const renderCard = (arr) => {
   productList.innerHTML = "";
   let html = "";
-  arr.forEach((p) => {
+  arr.forEach((p,i) => {
+    if(i >= start && i < end){
     html += `<div class="col-xl-2_4 col-lg-2_4 .col-xxl-2_4 col-md-4 col-sm-6 col-6">
     <div class="card-item">
       <div class="card-image position-relative">
@@ -162,16 +111,149 @@ const renderCard = (arr) => {
           </div>
         </div>
       </div>
-  </div>`
+  </div>`}
   });
   productList.innerHTML = html;
 }
 // renderCard(products)
+let btnNext = document.querySelector(".btn-next")
+let btnPrev = document.querySelector(".btn-prev")
+
+let perPage = 9;
+let currentPage = 1
+let start = 0
+let end = perPage 
+let totalPage = Math.ceil(products.length / perPage)
+
+
+let renderListPage = () =>{
+  for(i=1; i <= totalPage; i++){
+    btnNext.insertAdjacentHTML("beforebegin",`<li class="pagination-item pagination-page ${i == 1 ? 'pagination-item-active' :''}">${i}
+    </li>`)
+  }
+}
+renderListPage()
+
+
+let btnPage = document.querySelectorAll(".pagination-page")
+
+Array.from(btnPage).forEach((page,i) =>{
+  page.addEventListener("click", (e) => {
+    let pageActive = document.querySelectorAll(".pagination-item-active")
+    Array.from(pageActive).forEach((p) =>{
+      p.classList.remove("pagination-item-active")
+    })
+    e.target.classList.add("pagination-item-active")
+    currentPage = i+1
+    start = (currentPage - 1)*perPage
+    end = currentPage*perPage
+    renderCard(products)
+  })
+})
+
+
+btnNext.addEventListener("click", (e) =>{
+  currentPage++
+  if(currentPage > totalPage){
+    currentPage = totalPage
+  }
+
+  Array.from(btnPage).forEach((page,i) =>{
+    if(i == currentPage-1){
+      page.classList.add("pagination-item-active")
+    }else{
+      page.classList.remove("pagination-item-active")
+    }
+  })
+
+  start = (currentPage - 1)*perPage
+  end = currentPage*perPage
+  renderCard(products)
+})
+
+btnPrev.addEventListener("click", (e) =>{
+  currentPage--
+  if(currentPage <= 1){
+    currentPage = 1
+  }
+
+  Array.from(btnPage).forEach((page,i) =>{
+    if(i == currentPage-1){
+      page.classList.add("pagination-item-active")
+    }else{
+      page.classList.remove("pagination-item-active")
+    }
+  })
+
+  start = (currentPage - 1)*perPage
+  end = currentPage*perPage
+  renderCard(products)
+})
+
+renderCard(products)
+
+
+
+
+
+const renderProductSidebar = () => {
+  if (items.length == 0) {
+    // productList.classList.add("d-none");
+    return
+  // } else {
+  //   message.classList.add("d-none");
+  }
+  productItemSidabar.innerHTML = "";
+  let html = "";
+  items.forEach((p) => {
+    html += `<div class="product-item d-flex border mb-2">
+    <div class="image">
+      <img src="${p.image}" alt="${p.name}" />
+    </div>
+    <div class="info d-flex justify-content-between px-1">
+        <div>
+            <div class="name-product">
+                <h2 class="text-dark">
+                ${p.name} (${p.size})
+                </h2>
+                
+            </div>
+            <div class="count-sidebar text-black-50 d-flex justify-content-between ">
+                <span class="border d-inline-block me-3">
+                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
+                    <span class="px-2 d-inline-block fw-bold">${p.count}</span>
+                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
+                </span>
+                <button class="text-primary border-0 bg-transparent fw-light">
+                  <span><i class="fa-solid fa-trash-can"></i></i></span>
+              </button>
+            </div>
+            <h3 class="text-danger fw-bold text-start">
+                ${formatMoney(p.price)}
+              </h3>
+        </div>
+    </div>
+  </div>`
+  });
+  productItemSidabar.innerHTML = html;
+}
+
+
+
+
+const updateTotalMoneysidebar = () => {
+  let totalMoney = 0;
+  items.map((e) => {
+    totalMoney += e.count * e.price;
+  });
+  totalMoneyElSidebar.innerText = formatMoney(totalMoney);
+};
+updateTotalMoneysidebar()
+
 
 
 const getUrl = () => {
   const category = window.location.hash.slice(1).split("&")
-  console.log(category)
   const data = products.filter((p) =>{
     if(category.length == 2){
       return p.category == category[0] || p.category == category[1]
@@ -181,7 +263,6 @@ const getUrl = () => {
       return true;
     }
   })
-  console.log(data)
   renderCard(data) 
 }
 getUrl();
@@ -261,7 +342,7 @@ inputValuePrice2.addEventListener("change", (e) =>{
   } 
 })
 
-
+// Phân trang Pagination
 
 
 
@@ -377,3 +458,11 @@ $(".image-slider").slick({
 //      return false;
 //     });
 // ;
+$(function () {
+  var url = window.location.href;
+  $(".nav  a").each(function () {
+    if (url == this.href) {
+      $(this).closest("li").addClass("active");
+    }
+  });
+});

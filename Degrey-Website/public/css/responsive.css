@@ -35,18 +35,18 @@
   }
   .menu ul li:nth-child(1) {
     margin-top: 0;
-    background-image: url(../public/img/li/li\ 1.png)
+    background-image: url(../)
   }
   .menu ul li:nth-child(2) {
-    background-image: url(../public/img/li/li2.png);
+    background-image: url(C:\Users\Administrator\OneDrive-vinhuni.edu.vn\Desktop\phanduyhau.github.io\Degrey-Website\public\img\li\li3.png);
     background-size: 100% 215px;
     background-repeat: no-repeat;
   }
   .menu ul li:nth-child(3) {
-    background-image: url(/Degrey-Website/img/li/li3.png);
+    background-image: url(../public/img/li/li2.png);
   }
   .menu ul li:nth-child(4) {
-    background-image: url(/Degrey-Website/img/li/li4.png);
+    background-image: url(https://file.hstatic.net/1000281824/file/z3533341677298_db51ad287d63951b60ac97056764ee9a_c472a182fc0f4463a587b270c6f169a4.jpg);
   }
   .menu {
     font-size: 10px;
@@ -74,9 +74,6 @@
   }
   #header .header-logo {
     margin: 0 15px;
-  }
-  .popup-coupon {
-    display: none;
   }
 }
 @media (max-width: 768px) {

@@ -6,8 +6,37 @@ const cardJacketEl = document.querySelector(".product-list-jacket");
 const cardTshirtEl = document.querySelector(".product-list-tshirt");
 const cardPantsEl = document.querySelector(".product-list-pants");
 const btnAddToCart = document.querySelector(".btn-add-to-cart");
-// const btnSelectOption = document.querySelector(".")
+const searchInput = document.querySelector(".search-input");
+
 let items = getDataFromLocalStorage();
+
+// let searchProductHeader = () =>{
+//   let inputValue = searchInput.value
+//   let productFilter = products.filter(p => p.name.toLowerCase().includes(inputValue.toLowerCase()))
+//   renderSearchProducList(productFilter)
+// }
+// searchProductHeader(productFilter)
+
+
+
+const selectorBtn = () => {
+  document.body.addEventListener('click', (e) => {
+    const btn = e.target.closest('.select-size');
+    if(!btn) return;
+    const parent = btn.parentElement;
+    const b = parent.querySelector('.text-white')
+    if(b) {
+      b.classList.remove("text-white");
+      b.classList.remove('bg-dark');
+    }
+    btn.classList.add("text-white");
+    btn.classList.add('bg-dark');
+    return btn.dataset.size;
+  })
+}
+selectorBtn();
+
+
 const productJacket = products.filter((p) => {
   return p.category == "Jacket";
 });
@@ -34,15 +63,15 @@ const renderProductSidebar = () => {
             </div>
             <div class="count-sidebar text-black-50 d-flex justify-content-between ">
                 <span class="border d-inline-block me-3">
-                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${
+                    <span class="minus-sidebar px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${
                       p.id
                     }, '${p.size}')">-</span>
                     <span class="px-2 d-inline-block fw-bold">${p.count}</span>
-                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${
+                    <span class="plus-sidebar px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${
                       p.id
                     }, '${p.size}')">+</span>
                 </span>
-                <button class="text-primary border-0 bg-transparent fw-light">
+                <button class="text-primary border-0 bg-transparent fw-light" onclick="deleteProduct(${p.id}, '${p.size}')">
                   <span><i class="fa-solid fa-trash-can"></i></i></span>
               </button>
             </div>
@@ -55,6 +84,47 @@ const renderProductSidebar = () => {
   });
   productItemSidabar.innerHTML = html;
 };
+
+//  Xóa sản phẩm
+const deleteProduct = (id, size) => {
+  let isConfirm = confirm("Bạn có muốn xóa không?");
+  if (isConfirm) {
+    items = items.filter((p) => p.id != id || p.size != size);
+    setDataToLocalStorage(items);
+    updateTotalCart();
+    renderProductSidebar(items);
+  }
+};
+
+// Thay đổi số lượng
+// Tăng số lượng
+const plusCount = (id, size) => {
+  // Lấy ra sản phẩm tương ứng
+  let product = items.find((p) => p.id == id && p.size == size);
+
+  // Tăng số lượng
+  product.count++;
+
+  // Lưu lại vào localStorage
+  setDataToLocalStorage(items);
+  // Hiển thị lại giao diện
+  updateTotalMoneysidebar()
+  renderProductSidebar(items)
+};
+
+// Giảm số lượng
+const minusCount = (id, size) => {
+  let product = items.find((p) => p.id == id && p.size == size);
+  product.count--;
+  if (product.count < 1) {
+    product.count = 1;
+  }
+  setDataToLocalStorage(items);
+  updateTotalMoneysidebar()
+  renderProductSidebar(items)
+};
+
+
 
 const renderCardJacket = (arr) => {
   cardJacketEl.innerHTML = "";
@@ -132,10 +202,10 @@ const renderCardJacket = (arr) => {
                 <div class="size d-flex mx-1 mb-2">
                   <span class="fw-bold me-3">Kích cỡ:</span>
                 <div class="product-size mb-2">
-                    <span class="border py-1 px-2 border-dark me-2" >M</span>
-                    <span class="border py-1 px-2 border-dark me-2">S</span>
-                    <span class="border py-1 px-2 border-dark me-2">L</span>
-                    <span class="border py-1 px-2 border-dark me-2">XL</span>
+                    <span data-size = "S" class="select-size border py-1 px-2 border-dark me-2" >S</span>
+                    <span data-size = "M" class="select-size border py-1 px-2 border-dark me-2">M</span>
+                    <span data-size = "L" class="select-size border py-1 px-2 border-dark me-2">L</span>
+                    <span data-size = "XL" class="select-size border py-1 px-2 border-dark me-2">XL</span>
                 </div>
                 </div>
                 <div class="d-flex  align-items-center mb-2 flex-wrap">
@@ -426,6 +496,14 @@ let addCartPants = (id) => {
 const formatMoney = (number) => {
   return number.toLocaleString("it-IT", { style: "currency", currency: "VND" });
 };
+// const totalMoneyElProduct = document.getElementById("total-product");
+// const updateTotalMoneyProduct = () => {
+//   let totalMoney = 0;
+//   items.map((e) => {
+//     totalMoney += e.count * e.price;
+//   });
+//   totalMoneyElProduct.innerText = formatMoney(totalMoney);
+// };
 const totalMoneyElSidebar = document.getElementById("total-money-sidebar");
 const updateTotalMoneysidebar = () => {
   let totalMoney = 0;
@@ -684,7 +762,6 @@ $(document).ready(function () {
 
 mybutton = document.getElementById("myBtn");
 const header = document.getElementById("header")
-console.log(header)
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 

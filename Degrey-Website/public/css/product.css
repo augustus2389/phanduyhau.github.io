@@ -129,7 +129,45 @@ h1 {
 .btn2:hover a {
   color: white;
 }
+.shop-paginate{
+  display: flex;
+  padding-top: 25px;
+  border-top: 1px solid #e8e8e8;
+  align-items: center;
+  justify-content: center;
+}
 
+.shop-paginate p{
+  color: #555555;
+  margin: 0;
+}
+
+.shop-paginate{
+  display: flex;
+}
+
+.pagination-item{
+  margin-left: 10px;
+  width: 30px;
+  cursor: pointer;
+  height: 30px;
+  display: block;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555555;
+}
+
+/* .pagination-item:hover{
+  background-color: grey;
+  color: #fff;
+} */
+
+.pagination-item-active{
+  background-color: grey;
+  color: #fff;
+}
 
 @media (max-width: 990px) {  
   .filter ul {

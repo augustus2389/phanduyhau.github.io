@@ -50,6 +50,7 @@ const renderProduct = (obj) => {
     })
     .join("");
 };
+
 const choseSize = (ele) => {
   const sizeEls = document.querySelectorAll(".product-size span");
   Array.from(sizeEls).map((size) =>

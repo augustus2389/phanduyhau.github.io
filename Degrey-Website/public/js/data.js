@@ -570,4 +570,6 @@ let products = [
     sizes: ["M", "L", "S"],
     category: "Pants",
   },
+  
 ];
+

@@ -4,7 +4,6 @@
 const setDataToLocalStorage = (arr) => {
     localStorage.setItem("shopping-cart", JSON.stringify(arr));
 }
-console.log(setDataToLocalStorage)
 // Lấy ra từ localStorage
 const getDataFromLocalStorage = () => {
     const localStorageValue = localStorage.getItem("shopping-cart");

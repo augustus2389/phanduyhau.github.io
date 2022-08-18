@@ -115,8 +115,6 @@ const deleteProduct = (id, size) => {
   }
 };
 
-
-
 // Thay đổi số lượng
 // Tăng số lượng
 const plusCount = (id, size) => {
