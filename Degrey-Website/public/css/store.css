@@ -2,7 +2,7 @@
 @import url(./header.css);
 @import url(./footer.css);
 @import url(./responsive.css);
-
+@import url(./cartSidebar.css);
 :root {
   --primary-color: #8b572a;
 }

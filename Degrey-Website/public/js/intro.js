@@ -1,3 +1,58 @@
+const totalMoneyElSidebar = document.getElementById("total-money-sidebar");
+let items = getDataFromLocalStorage();
+
+const formatMoney = (number) => {
+  return number.toLocaleString("it-IT", { style: "currency", currency: "VND" });
+};
+const productItemSidabar = document.querySelector(".product-item-sidebar")
+const renderProductSidebar = () => {
+  if (items.length == 0) {
+    // productList.classList.add("d-none");
+    return
+  } 
+  // else {
+  //   message.classList.add("d-none");
+  // }
+  productItemSidabar.innerHTML = "";
+  let html = "";
+  items.forEach((p) => {
+    html += `<div class="product-item d-flex border mb-2">
+    <div class="image">
+      <img src="${p.image}" alt="${p.name}" />
+    </div>
+    <div class="info d-flex justify-content-between px-1">
+        <div>
+            <div class="name-product">
+                <h2 class="text-dark">
+                ${p.name} (${p.size})
+                </h2>
+                
+            </div>
+            <div class="count-sidebar text-black-50 d-flex justify-content-between ">
+                <span class="border d-inline-block me-3">
+                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
+                    <span class="px-2 d-inline-block fw-bold">${p.count}</span>
+                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
+                </span>
+                <button class="text-primary border-0 bg-transparent fw-light">
+                  <span><i class="fa-solid fa-trash-can"></i></i></span>
+              </button>
+            </div>
+            <h3 class="text-danger fw-bold text-start">
+                ${formatMoney(p.price)}
+              </h3>
+        </div>
+    </div>
+  </div>`
+  });
+  productItemSidabar.innerHTML = html;
+}
+renderProductSidebar(items)
+
+
+
+
+
 $('#navbarDropdown').click(function() {
     $('.dropdown-menu').slideToggle(300, "linear");
   });
