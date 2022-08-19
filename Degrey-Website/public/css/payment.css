@@ -105,10 +105,10 @@ body {
 	width: 40%;
 }
 
-.form-email  {
+.form-email input  {
   width: 55% !important;
 }
-.form-phone {
+.form-phone input {
   width: 40% !important;
 }
 .methods input {
