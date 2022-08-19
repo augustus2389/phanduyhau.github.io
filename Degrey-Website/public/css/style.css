@@ -159,7 +159,6 @@
   margin-right: 20px;
 }
 .more-btn {
-  cursor: pointer;
   border: 1px solid gray;
   background-color: #8b572a;
   color: white;
@@ -173,6 +172,9 @@
   z-index: 1;
   transition: 0.5s;
   font-size: 12px;
+}
+.more-btn a{
+  color: white;
 }
 .more-btn:before {
   content: "";
