@@ -438,59 +438,6 @@
 
 
 @media (max-width: 990px) {
-  .menu-icon {
-    display: inline-block;
-  }
-  #header ul li.active {
-    border-bottom: none;
-  }
-  .menu ul {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100vh;
-    overflow: hidden;
-    background-color: white;
-    z-index: 10002;
-    flex-direction: column;
-    transition: all 0.3s;
-    padding: 0;
-  }
-  .menu ul li {
-    margin: 10px 0;
-    transition: all 0.5s;
-    margin-left: 0;
-  }
-  li a {
-    font-weight: bold;
-    font-size: 16px;
-  }
-  .menu ul li:nth-child(1) {
-    margin-top: 0;
-    background-image: url(/Degrey-Website/img/li/li\ 1.png);
-  }
-  .menu ul li:nth-child(2) {
-    background-image: url(/Degrey-Website/img/li/li2.png);
-  }
-  .menu ul li:nth-child(3) {
-    background-image: url(/Degrey-Website/img/li/li3.png);
-  }
-  .menu ul li:nth-child(4) {
-    background-image: url(/Degrey-Website/img/li/li4.png);
-  }
-  .menu {
-    font-size: 10px;
-  }
-  .menu .menu-icon i {
-  }
-  .menu-icon {
-    line-height: 15px;
-  }
-  .menu ul li:hover {
-    background-color: aliceblue;
-    color: aqua;
-  }
   .image-item .image {
     margin-top: 10px;
   }

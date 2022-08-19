@@ -3,9 +3,7 @@
     display: inline-block;
   }
 
-  #header ul li.active {
-    border-bottom: none;
-  }
+  
   .navbar-nav .dropdown-menu {
     position: static;
     background-color: transparent;
@@ -35,15 +33,13 @@
   }
   .menu ul li:nth-child(1) {
     margin-top: 0;
-    background-image: url(../)
+    background-image: url(https://file.hstatic.net/1000281824/file/z3533341732237_e9e4d9c68b5cb9dc1d58f4a75206653d_db990baa90a34c37b0365c9ee14fe71c.jpg)
   }
   .menu ul li:nth-child(2) {
-    background-image: url(C:\Users\Administrator\OneDrive-vinhuni.edu.vn\Desktop\phanduyhau.github.io\Degrey-Website\public\img\li\li3.png);
-    background-size: 100% 215px;
-    background-repeat: no-repeat;
+    background-image: url(https://file.hstatic.net/1000281824/file/z3533341777412_f5edd4a273a3ef5093b6567f1acd7b0f_1d288245ef874e9fab99f73c62539549.jpg);
   }
   .menu ul li:nth-child(3) {
-    background-image: url(https://degrey.vn/collections/wallets-vi);
+    background-image: url(https://file.hstatic.net/1000281824/file/z3533341550713_092bf74f5480db827be131b0c89aa215_2753e6d3b5744c92be5149c0cc122f7c.jpg);
   }
   .menu ul li:nth-child(4) {
     background-image: url(https://file.hstatic.net/1000281824/file/z3533341677298_db51ad287d63951b60ac97056764ee9a_c472a182fc0f4463a587b270c6f169a4.jpg);
