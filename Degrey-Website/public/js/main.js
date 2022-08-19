@@ -7,8 +7,38 @@ const cardTshirtEl = document.querySelector(".product-list-tshirt");
 const cardPantsEl = document.querySelector(".product-list-pants");
 const btnAddToCart = document.querySelector(".btn-add-to-cart");
 const searchInput = document.querySelector(".search-input");
-
+const searchFormInputEl = document.querySelector(".seach-input");
+// searchFormInputEl.addEventListener('keydown', (e) => {
+//   if (e.keyCode == 13) {
+//     searchProduct();
+//   }
+// });
+// btnSearch.addEventListener("click", () => {
+//   searchProduct();
+// });
+// const searchProduct = () => {
+//   let value = searchFormInputEl.value;
+//   if (value == "") {
+//     alert("Tên sản phẩm đang bị để trống");
+//     return;
+//   }
+//   let productFilter = products.filter(p=>p.name.toLowerCase().includes(value.toLowerCase()));// Include tìm kiếm 
+//   renderCard(productFilter);
+// };
 let items = getDataFromLocalStorage();
+const simple = (initial) => {
+  let val = initial;
+  return [
+    () => val,
+    (v) => {
+      val = v;
+    },
+  ];
+};
+
+const [param, paramSet] = simple(1);
+const [param1, param1Set] = simple(1);
+const [param2, param2Set] = simple(1);
 
 // let searchProductHeader = () =>{
 //   let inputValue = searchInput.value
@@ -16,26 +46,54 @@ let items = getDataFromLocalStorage();
 //   renderSearchProducList(productFilter)
 // }
 // searchProductHeader(productFilter)
+const addparam = (id) => {
+  const abc = document.querySelector(`#a${id}`);
+  paramSet(param() + 1);
+  abc.innerHTML = `<span class="count py-1 px-2 d-inline-block fw-bold ">${param()}</span>`;
+};
+const exparam = (id) => {
+  const abc = document.querySelector(`#a${id}`);
+  paramSet(param() - 1);
+  abc.innerHTML = `<span class="count py-1 px-2 d-inline-block fw-bold ">${param()}</span>`;
+};
 
-
+const addparam123 = (id) => {
+  const cde = document.querySelector(`#b${id}`);
+  param1Set(param1() + 1);
+  cde.innerHTML = `<span class="count py-1 px-2 d-inline-block fw-bold ">${param1()}</span>`;
+};
+const exparam123 = (id) => {
+  const abc = document.querySelector(`#b${id}`);
+  param1Set(param1() - 1);
+  abc.innerHTML = `<span class="count py-1 px-2 d-inline-block fw-bold ">${param1()}</span>`;
+};
+const addparam12 = (id) => {
+  const cde = document.querySelector(`#c${id}`);
+  param2Set(param2() + 1);
+  cde.innerHTML = `<span class="count py-1 px-2 d-inline-block fw-bold ">${param2()}</span>`;
+};
+const exparam12 = (id) => {
+  const cde = document.querySelector(`#c${id}`);
+  param2Set(param2() - 1);
+  cde.innerHTML = `<span class="count py-1 px-2 d-inline-block fw-bold ">${param2()}</span>`;
+};
 
 const selectorBtn = () => {
-  document.body.addEventListener('click', (e) => {
-    const btn = e.target.closest('.select-size');
-    if(!btn) return;
+  document.body.addEventListener("click", (e) => {
+    const btn = e.target.closest(".select-size");
+    if (!btn) return;
     const parent = btn.parentElement;
-    const b = parent.querySelector('.text-white')
-    if(b) {
+    const b = parent.querySelector(".text-white");
+    if (b) {
       b.classList.remove("text-white");
-      b.classList.remove('bg-dark');
+      b.classList.remove("bg-dark");
     }
     btn.classList.add("text-white");
-    btn.classList.add('bg-dark');
+    btn.classList.add("bg-dark");
     return btn.dataset.size;
-  })
-}
+  });
+};
 selectorBtn();
-
 
 const productJacket = products.filter((p) => {
   return p.category == "Jacket";
@@ -43,7 +101,7 @@ const productJacket = products.filter((p) => {
 const productItemSidabar = document.querySelector(".product-item-sidebar");
 const renderProductSidebar = () => {
   if (items.length == 0) {
-    productItemSidabar.innerHTML = "Chưa có sản phẩm";
+    // productList.classList.add("d-none");
     return;
   }
   productItemSidabar.innerHTML = "";
@@ -71,7 +129,9 @@ const renderProductSidebar = () => {
                       p.id
                     }, '${p.size}')">+</span>
                 </span>
-                <button class="text-primary border-0 bg-transparent fw-light" onclick="deleteProduct(${p.id}, '${p.size}')">
+                <button class="text-primary border-0 bg-transparent fw-light" onclick="deleteProduct(${
+                  p.id
+                }, '${p.size}')">
                   <span><i class="fa-solid fa-trash-can"></i></i></span>
               </button>
             </div>
@@ -89,7 +149,7 @@ const renderProductSidebar = () => {
 const deleteProduct = (id, size) => {
   let isConfirm = confirm("Bạn có muốn xóa không?");
   if (isConfirm) {
-    items = items.filter((p) => p.id != id || p.size != size);
+    items = items.filter((p) => p.id !== id);
     setDataToLocalStorage(items);
     updateTotalCart();
     renderProductSidebar(items);
@@ -101,10 +161,15 @@ const deleteProduct = (id, size) => {
 const plusCount = (id, size) => {
   // Lấy ra sản phẩm tương ứng
   let product = items.find((p) => p.id == id && p.size == size);
+
+  // Tăng số lượng
   product.count++;
+
+  // Lưu lại vào localStorage
   setDataToLocalStorage(items);
-  updateTotalMoneysidebar()
-  renderProductSidebar(items)
+  // Hiển thị lại giao diện
+  updateTotalMoneysidebar();
+  renderProductSidebar(items);
 };
 
 // Giảm số lượng
@@ -115,11 +180,9 @@ const minusCount = (id, size) => {
     product.count = 1;
   }
   setDataToLocalStorage(items);
-  updateTotalMoneysidebar()
-  renderProductSidebar(items)
+  updateTotalMoneysidebar();
+  renderProductSidebar(items);
 };
-
-
 
 const renderCardJacket = (arr) => {
   cardJacketEl.innerHTML = "";
@@ -133,15 +196,8 @@ const renderCardJacket = (arr) => {
               src="${p.images[0]}"
               alt="${p.name}"
           /></a>
-          <ul class="social position-absolute top-50 end-0 translate-middle-y">
-            <li>
-              <button class="btn-add-to-cart"  onclick = 'addCartJacket(${
-                p.id
-              })'>
-                <i class="fa-solid fa-cart-plus"></i>
-              </button>
-            </li>
-
+          <ul class="social position-absolute top-0 end-0">
+            
             <li>
               <button
                 class="button-discount"
@@ -193,7 +249,9 @@ const renderCardJacket = (arr) => {
                       <div class="col-lg-8 col-md-8 col-sm-9">
             <div id="detail ">
                 <p class="product-name fw-bold mx-1">${p.name}</p>
-                <p class="product-price text-danger  fw-bold mb-2 mx-1">${formatMoney(p.price)}</p>
+                <p class="product-price text-danger  fw-bold mb-2 mx-1">${formatMoney(
+                  p.price
+                )}</p>
                 <div class="size d-flex mx-1 mb-2">
                   <span class="fw-bold me-3">Kích cỡ:</span>
                 <div class="product-size mb-2">
@@ -206,11 +264,19 @@ const renderCardJacket = (arr) => {
                 <div class="d-flex  align-items-center mb-2 flex-wrap">
                   <span class="fw-bold me-3 mx-1">Số lượng:</span>
                     <span class="count-product d-inline-block me-3">
-                        <span class="rounded-circle px-2 d-inline-block fw-bold btn-minus-count">-</span>
-                        <span class="count py-1 px-2 d-inline-block fw-bold ">1</span>
-                        <span class="rounded-circle  px-2 d-inline-block fw-bold btn-plus-count">+</span>
+                        <span onclick='exparam(${
+                          p.id
+                        })'  class="rounded-circle px-2 d-inline-block fw-bold btn-minus-count">-</span>
+                        <span id='a${p.id}' class=" ">
+                          <span class="count py-1 px-2 d-inline-block fw-bold ">1</span>
+                        </span>
+                        <span onclick='addparam(${
+                          p.id
+                        })' class="rounded-circle  px-2 d-inline-block fw-bold btn-plus-count">+</span>
                     </span>
-                    <button class="btn-icon btn-add-to-cart">Thêm vào giỏ hàng</button>
+                    <button onclick = 'addCartJacket(${
+                      p.id
+                    })' class="btn-icon btn-add-to-cart">Thêm vào giỏ hàng</button>
                 </div>
                     </div>
                     </div>
@@ -224,13 +290,13 @@ const renderCardJacket = (arr) => {
   });
   cardJacketEl.innerHTML = html;
 };
-let addCartJacket = (id) => {
+const addCartJacket = (id) => {
   let product = products.find((p) => p.id == id);
   let item = {
     id: product.id,
     name: product.name,
     price: product.price,
-    // size: sizeSelectedEl.innerText,
+    size: 'M',
     image: product.images[0],
     count: 1,
   };
@@ -255,15 +321,7 @@ const renderCardTshirt = (arr) => {
             src="${p.images[0]}"
             alt="${p.name}"
         /></a>
-        <ul class="social position-absolute top-50 end-0 translate-middle-y">
-          <li>
-            <button class="btn-add-to-cart"  onclick = 'addCartJacket(${
-              p.id
-            })'>
-              <i class="fa-solid fa-cart-plus"></i>
-            </button>
-          </li>
-
+        <ul class="social position-absolute top-0 end-0">
           <li>
             <button
               class="button-discount"
@@ -315,24 +373,34 @@ const renderCardTshirt = (arr) => {
                     <div class="col-lg-8 col-md-8 col-sm-9">
           <div id="detail ">
               <p class="product-name fw-bold mx-1">${p.name}</p>
-              <p class="product-price text-danger  fw-bold mb-2 mx-1">${formatMoney(p.price)}</p>
+              <p class="product-price text-danger  fw-bold mb-2 mx-1">${formatMoney(
+                p.price
+              )}</p>
               <div class="size d-flex mx-1 mb-2">
                 <span class="fw-bold me-3">Kích cỡ:</span>
               <div class="product-size mb-2">
-                  <span class="border py-1 px-2 border-dark me-2" >M</span>
-                  <span class="border py-1 px-2 border-dark me-2">S</span>
-                  <span class="border py-1 px-2 border-dark me-2">L</span>
-                  <span class="border py-1 px-2 border-dark me-2">XL</span>
+                  <span class="border py-1 px-2 border-dark me-2 select-size" >M</span>
+                  <span class="border py-1 px-2 border-dark me-2 select-size">S</span>
+                  <span class="border py-1 px-2 border-dark me-2 select-size">L</span>
+                  <span class="border py-1 px-2 border-dark me-2 select-size">XL</span>
               </div>
               </div>
               <div class="d-flex  align-items-center mb-2 flex-wrap">
                 <span class="fw-bold me-3 mx-1">Số lượng:</span>
                   <span class="count-product d-inline-block me-3">
-                      <span class="rounded-circle px-2 d-inline-block fw-bold btn-minus-count">-</span>
-                      <span class="count py-1 px-2 d-inline-block fw-bold ">1</span>
-                      <span class="rounded-circle  px-2 d-inline-block fw-bold btn-plus-count">+</span>
+                      <span onclick='exparam123(${
+                        p.id
+                      })' class="rounded-circle px-2 d-inline-block fw-bold btn-minus-count">-</span>
+                      <span id='b${p.id}' class=" ">
+                        <span class="count py-1 px-2 d-inline-block fw-bold ">1</span>
+                       </span>
+                      <span onclick='addparam123(${
+                        p.id
+                      })' class="rounded-circle  px-2 d-inline-block fw-bold btn-plus-count">+</span>
                   </span>
-                  <button class="btn-icon  btn-add-to-cart">Thêm vào giỏ hàng</button>
+                  <button onclick = 'addCartTshirt(${
+                    p.id
+                  })' class="btn-icon  btn-add-to-cart">Thêm vào giỏ hàng</button>
               </div>
                   </div>
                   </div>
@@ -353,7 +421,7 @@ let addCartTshirt = (id) => {
     id: product.id,
     name: product.name,
     price: product.price,
-    size: sizeSelectedEl.innerText,
+    size: 'M',
     image: product.images[0],
     count: 1,
   };
@@ -380,15 +448,10 @@ const renderCardPants = (arr) => {
             src="${p.images[0]}"
             alt="${p.name}"
         /></a>
-        <ul class="social position-absolute top-50 end-0 translate-middle-y">
+        <ul class="social position-absolute top-0 end-0">
           <li>
-            <button class="btn-add-to-cart"  onclick = 'addCartJacket(${
-              p.id
-            })'>
-            <i class="fa-solid fa-eye"></i>
-            </button>
+            
           </li>
-
           <li>
             <button
               class="button-discount"
@@ -440,24 +503,34 @@ const renderCardPants = (arr) => {
                     <div class="col-lg-8 col-md-8 col-sm-9">
           <div id="detail ">
               <p class="product-name fw-bold mx-1">${p.name}</p>
-              <p class="product-price text-danger  fw-bold mb-2 mx-1">${formatMoney(p.price)}</p>
+              <p class="product-price text-danger  fw-bold mb-2 mx-1">${formatMoney(
+                p.price
+              )}</p>
               <div class="size d-flex mx-1 mb-2">
                 <span class="fw-bold me-3">Kích cỡ:</span>
               <div class="product-size mb-2">
-                  <span class="border py-1 px-2 border-dark me-2" >M</span>
-                  <span class="border py-1 px-2 border-dark me-2">S</span>
-                  <span class="border py-1 px-2 border-dark me-2">L</span>
-                  <span class="border py-1 px-2 border-dark me-2">XL</span>
+                  <span class="border py-1 px-2 border-dark me-2 select-size" >M</span>
+                  <span class="border py-1 px-2 border-dark me-2 select-size">S</span>
+                  <span class="border py-1 px-2 border-dark me-2 select-size">L</span>
+                  <span class="border py-1 px-2 border-dark me-2 select-size">XL</span>
               </div>
               </div>
               <div class="d-flex  align-items-center mb-2 flex-wrap">
                 <span class="fw-bold me-3 mx-1">Số lượng:</span>
                   <span class="count-product d-inline-block me-3">
-                      <span class="rounded-circle px-2 d-inline-block fw-bold btn-minus-count">${nameSet(name()+1)}</span>
-                      <span class="count py-1 px-2 d-inline-block fw-bold "> ${name()}</span>
-                      <span class="rounded-circle  px-2 d-inline-block fw-bold btn-plus-count">${nameSet(name()+1)}</span>
+                      <span onclick='exparam12(${
+                        p.id
+                      })'  class="rounded-circle px-2 d-inline-block fw-bold btn-minus-count">-</span>
+                      <span id='c${p.id}' class=" ">
+                        <span class="count py-1 px-2 d-inline-block fw-bold ">1</span>
+                       </span>
+                      <span onclick='addparam12(${
+                        p.id
+                      })'  class="rounded-circle  px-2 d-inline-block fw-bold btn-plus-count">+</span>
                   </span>
-                  <button class="btn-icon btn-add-to-cart">Thêm vào giỏ hàng</button>
+                  <button onclick = 'addCartPants(${
+                    p.id
+                  })' class="btn-icon btn-add-to-cart">Thêm vào giỏ hàng</button>
               </div>
                   </div>
                   </div>
@@ -471,27 +544,13 @@ const renderCardPants = (arr) => {
   });
   cardPantsEl.innerHTML = html;
 };
-const simple = (initial) => {
-  let val = initial;
-  return [
-    () => val,
-    (v)=> {
-      val=v;
-    }
-  ]
-}
-const [name , nameSet] = simple(0)
-
-
-
-
 let addCartPants = (id) => {
   let product = products.find((p) => p.id == id);
   let item = {
     id: product.id,
     name: product.name,
     price: product.price,
-    size: product.size,
+    size: 'M',
     image: product.images[0],
     count: 1,
   };
@@ -766,19 +825,18 @@ $(document).ready(function () {
   });
 });
 
-
-
 mybutton = document.getElementById("myBtn");
-const header = document.getElementById("header")
+const header = document.getElementById("header");
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () {
+  scrollFunction();
+};
 
 function scrollFunction() {
   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
-
   }
 }
 
@@ -788,14 +846,16 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-const floating_btn = document.querySelector('.floating-btn');
-const close_btn = document.querySelector('.close-btn');
-const social_panel_container = document.querySelector('.social-panel-container');
+const floating_btn = document.querySelector(".floating-btn");
+const close_btn = document.querySelector(".close-btn");
+const social_panel_container = document.querySelector(
+  ".social-panel-container"
+);
 
-floating_btn.addEventListener('click', () => {
-	social_panel_container.classList.toggle('visible')
+floating_btn.addEventListener("click", () => {
+  social_panel_container.classList.toggle("visible");
 });
 
-close_btn.addEventListener('click', () => {
-	social_panel_container.classList.remove('visible')
+close_btn.addEventListener("click", () => {
+  social_panel_container.classList.remove("visible");
 });

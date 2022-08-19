@@ -340,8 +340,7 @@ Array.from(filterCatgory).forEach((input) =>{
 renderProductSidebar(items)
 let inputValueName = document.querySelector(".sortAlphabetically");
 inputValueName.addEventListener("change",(e) => {
-  let az 
-  arr.sort((a,b) => {
+  products.sort((a,b) => {
     let sortNamea = a.name.toLowerCase();
     let sortNameb = b.name.toLowerCase();
     if (sortNamea < sortNameb) {
