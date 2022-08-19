@@ -570,6 +570,103 @@ let products = [
     sizes: ["M", "L", "S"],
     category: "Pants",
   },
+  {
+    id: 31,
+    name: "Ví Da Dài Degrey",
+    images: [
+      "https://product.hstatic.net/1000281824/product/6fb464cd3eedfcb3a5fc_d81a6b3d15ef464fb00f6b8c95608f20_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/c206a63d9af258ac01e3_4b4c53a803c04b6dbf092df37dd852c4_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/fd6d6576ae88e855e03e217c49bf7297_acf5b5f071ae439a94de89e39bcc3d91_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/img_8321_90be40214f004266b332943481955ac8_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/d93ae87ab25a7004294b_e02b75fb2f214d51966c0569a1af5e39_master.jpeg",
+
+    ],
+    description:
+      'Chất liệu: vải Khaki Dáng xuông (quần ông đứng). 2 bên túi thêu nổi chữ và logo "ClownZ". Độ bền cao, không sờn rách, không bạc màu khi giặt',
+    price: 199000,
+    descriptionImg:
+      "https://bizweb.dktcdn.net/100/414/728/files/straight-pants.jpg?v=1651634948469",
+    tag: "New Arrival",
+    sizes: ["S", "M"],
+    category: "ACCESSORY",
+  },
+  {
+    id: 32,
+    name: "Ví Da Ngắn Degrey",
+    images: [
+      "https://product.hstatic.net/1000281824/product/7b3ea166686433e630d4686d7c07815d_cc5e9aa068954f04be82e04ec106d69b_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/5bfa9bbfc19f03c15a8e_146affda4b9941148f7c646d21c1f595_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/1f25ba44868b44d51d9a_3e1b4e42caad431084593c6cf5d9eea1_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/4c962f7013bfd1e188ae_0b0b359d7b5d4b688bde8a2cf115759f_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/797742c57e0abc54e51b_9faef09856a64701aebb25609e55d7e9_master.jpeg",
+    ],
+    description:
+      'Chất liệu: vải Khaki Dáng xuông (quần ông đứng). 2 bên túi thêu nổi chữ và logo "ClownZ". Độ bền cao, không sờn rách, không bạc màu khi giặt',
+    price: 649000,
+    descriptionImg:
+      "https://bizweb.dktcdn.net/100/414/728/files/straight-pants.jpg?v=1651634948469",
+    tag: "New Arrival",
+    sizes: ["M"],
+    category: "ACCESSORY",
+  },
+  {
+    id: 33,
+    name: "Túi Trà Sữa",
+    images: [
+      "https://product.hstatic.net/1000281824/product/adde0e5d884ff51bf21b19d83aa3b067_446cd375156b4828b61a3bf86cc3ae26_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/6cc59219570f9551cc1e_1ca6257deb55414ebf412e9caae1d471_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/cd3069b42e11121f17891b93deb87b6a_40bbbe7aadbb40f8923840ebb1396876_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/1aec66feb6193b4f1a363ef76bd46510_8bfcc6b3c3ec4348880e4494c589f47c_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/7a81c982209c9e6faeb6f60e9716f135_bba54419f53949a2b40fd64e6984f13d_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/6e6d289245868410707c8a4f5268ea53_e1e2e5cbc07143e8ad73122a871f9660_master.jpeg",
+    ],
+    description:
+      '- Chất liệu: Canvas. Hoạ tiết: Logo thêu trực tiếp lên túi. Thương hiệu: Degrey. Sản xuất: Việt Nam. Màu sắc và họa tiết được thiết kế riêng bởi team design DEGREY ',
+    price: 649000,
+    descriptionImg:
+      "https://file.hstatic.net/1000281824/file/ad9f09ca9a5658080147_b068cf372416476689d22c28c7199856_grande.jpg",
+    tag: "Hot Item",
+    sizes: ["Nhỏ", "Lớn"],
+    category: "ACCESSORY",
+  },
+  {
+    id: 34,
+    name: "Túi bao tử",
+    images: [
+      "https://product.hstatic.net/1000281824/product/90fb77390c83cedd9792_fad29a03381042e7a8ebb9b1ea7bae7b_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/645fa9eed254100a4945_204b1939e64c4c2f9fc6edd0820ba7fb_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/ebea39db3e70dc22506f1d351ab8373b_09071e0ba1ea46449171d43637708658_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/58fe0d96-8db1-4d5c-98d4-72a7f28dfa34_b6e14b6961df469693d6f09189b06151_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/anh_chup_man_hinh_2022-08-19_luc_00.15.13_85f0d318132a4d758d516a3f8429bbf5_master.png",
+    ],
+    description:
+      '- Chất liệu: Simili. Hoạ tiết: Được in trực tiếp lên sản phẩm.  Size: 20cm X 15cm X 5cm.  Thương hiệu: Degrey. Sản xuất: Việt Nam. Màu sắc và họa tiết được thiết kế riêng bởi team design DEGREY ',
+    price: 290000,
+    descriptionImg:
+      "https://maybalogiare.com/wp-content/uploads/2019/06/kich-thuoc-balo-4-1.jpg",
+    tag: "New Arrival",
+    sizes: ["Nhỏ"],
+    category: "ACCESSORY",
+  },
+  {
+    id: 35,
+    name: "Balo Đám Mây",
+    images: [
+      "https://product.hstatic.net/1000281824/product/d900f6f0407351312255b8e4e8f7e9fc_eceaaf0e088b4a99a895b0282aa84757_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/b8eb06ee325099db205699579dfd2aec_5932b5b25e56479a82b071d8b0c9ce4e_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/420149ee45693c0c23c7f08ef7fd471b_2a321dc8ee2f4593a0c4a846b644a0d9_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/87c15571a1014f23153687ad512c6690_0a8986f4832b414b918fa4cf2ce8b7dc_master.jpeg",
+      "https://product.hstatic.net/1000281824/product/f02ebb4b098c986903dcd63cd8d6aaa7__1__7494ee665a984082be07c7d5a25b410a_master.jpeg",
+    ],
+    description:
+      '- Chất liệu: Canvas pha Poly. Hoạ tiết: Được in trực tiếp lên sản phẩm.  Size: 40cm X 30cm X 12cm. Ngăn chống sốc đựng vừa laptop 15inch. Thương hiệu: Degrey.  Sản xuất: Việt Nam. Màu sắc và họa tiết được thiết kế riêng bởi team design DEGREY',
+    price: 420000,
+    descriptionImg:
+      "https://maybalogiare.com/wp-content/uploads/2019/06/kich-thuoc-balo-4-1.jpg",
+    tag: "New Arrival",
+    sizes: ["L"],
+    category: "ACCESSORY",
+  },
   
 ];
 

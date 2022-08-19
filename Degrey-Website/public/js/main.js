@@ -241,7 +241,7 @@ let addCartJacket = (id) => {
   };
   addItemToAdd(item);
   alert("Thêm vào giỏ hàng thành công");
-  // let productCartSideBar = getDataCartFromLocalStorage()
+  let productCartSideBar = getDataCartFromLocalStorage()
   renderProductSidebar(productCartSideBar);
   updateTotalMoneysidebar();
 };
