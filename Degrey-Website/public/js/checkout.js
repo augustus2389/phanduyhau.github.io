@@ -198,8 +198,7 @@ function checkInputs() {
 	// trim to remove the whitespaces
 	const usernameValue = username.value.trim();
 	const emailValue = email.value.trim();
-	const passwordValue = password.value.trim();
-	const password2Value = password2.value.trim();
+
 	const addressValue = address.value.trim();
   const phoneValue = phone.value.trim();
 	if(usernameValue === '') {
@@ -216,18 +215,6 @@ function checkInputs() {
 		setSuccessFor(email);
 	}
 	
-	if(passwordValue === '') {
-		setErrorFor(password, 'Mật khẩu không được để trống');
-	} else {
-		setSuccessFor(password);
-	}
-	if(password2Value === '') {
-		setErrorFor(password2, 'Vui lòng xác nhận mật khẩu');
-	} else if(passwordValue !== password2Value) {
-		setErrorFor(password2, 'Mật khẩu không hợp lệ');
-	} else{
-		setSuccessFor(password2);
-	}
 
   if(addressValue === '') {
 		setErrorFor(address, 'Địa chỉ không được để trống');
