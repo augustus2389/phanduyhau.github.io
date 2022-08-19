@@ -11,6 +11,21 @@ const Parameter = {
   method: "GET", 
   responseType: "application/json", 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //gọi ajax = axios => nó trả về cho chúng ta là một promise
 let promise = axios(Parameter);
 //Xử lý khi request thành công
@@ -157,3 +172,77 @@ async function paste(input) {
   const text = await navigator.clipboard.readText();
   input.value = text;
 }
+
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
+const address = document.getElementById('address')
+
+form.addEventListener('submit', e => {
+	e.preventDefault();
+	
+	checkInputs();
+});
+
+function checkInputs() {
+	// trim to remove the whitespaces
+	const usernameValue = username.value.trim();
+	const emailValue = email.value.trim();
+	const passwordValue = password.value.trim();
+	const password2Value = password2.value.trim();
+	const addressValue = address.value.trim();
+
+	if(usernameValue === '') {
+		setErrorFor(username, 'Họ và tên không được để trống');
+	} else {
+		setSuccessFor(username);
+	}
+	
+	if(emailValue === '') {
+		setErrorFor(email, 'Email không được để trống');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Email không hợp lệ');
+	} else {
+		setSuccessFor(email);
+	}
+	
+	if(passwordValue === '') {
+		setErrorFor(password, 'Mật khẩu không được để trống');
+	} else {
+		setSuccessFor(password);
+	}
+	
+	if(password2Value === '') {
+		setErrorFor(password2, 'Vui lòng xác nhận mật khẩu');
+	} else if(passwordValue !== password2Value) {
+		setErrorFor(password2, 'Mật khẩu không hợp lệ');
+	} else{
+		setSuccessFor(password2);
+	}
+
+  if(addressValue === '') {
+		setErrorFor(address, 'Địa chỉ không được để trống');
+	} else {
+		setSuccessFor(address);
+	}
+}
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+}
+	
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+

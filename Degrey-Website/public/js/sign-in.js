@@ -11,6 +11,7 @@ function signup(e) {
   var json = JSON.stringify(user);
   localStorage.setItem(username, json);
   alert("dang ky thanh cong");
+  window.location.href = "login.html";
 }
 function login(e) {
   event.preventDefault();

@@ -241,8 +241,7 @@ let addCartJacket = (id) => {
   };
   addItemToAdd(item);
   alert("Thêm vào giỏ hàng thành công");
-  let productCartSideBar = getDataCartFromLocalStorage()
-  renderProductSidebar(productCartSideBar);
+  renderProductSidebar(items);
   updateTotalMoneysidebar();
 };
 
@@ -766,12 +765,11 @@ const header = document.getElementById("header")
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
     mybutton.style.display = "block";
-    header.classList.add(".active-header");
   } else {
     mybutton.style.display = "none";
-    header.classList.remove(".active-header");
+
   }
 }
 
@@ -781,3 +779,14 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+const floating_btn = document.querySelector('.floating-btn');
+const close_btn = document.querySelector('.close-btn');
+const social_panel_container = document.querySelector('.social-panel-container');
+
+floating_btn.addEventListener('click', () => {
+	social_panel_container.classList.toggle('visible')
+});
+
+close_btn.addEventListener('click', () => {
+	social_panel_container.classList.remove('visible')
+});

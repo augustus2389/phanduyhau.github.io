@@ -10,9 +10,14 @@
       type="image/x-icon"
     />
     <link rel="icon" href="../public/img/favicon (2).ico" type="image/x-icon" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
 
-    <title>Degrey</title>
+    <title>DEGREY </title>
     <link rel="stylesheet" href="../libary/bootstrap/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -29,9 +34,9 @@
     <link rel="stylesheet" href="../public/css/payment.css" />
   </head>
   <body>
-    <section class="payment ">
+    <section class="payment">
       <div class="container">
-        <div class="row shopping-cart ">
+        <div class="row shopping-cart">
           <div class="col-lg-6 col-md-10 mt-5 m-auto">
             <div class="cart-title mb-3">
               <h2><a href="./index.html">Degrey Vietnam</a></h2>
@@ -58,95 +63,142 @@
                   </ol>
                 </nav>
               </section>
-             
             </div>
             <div class="validate-form">
-              <h4>Thông tin giao hàng</h4>
-              <p>Bạn đã có tài khoản? <a href="./login.html">Đăng nhập</a></p>
-              <input class="w-100" type="text" placeholder="Họ và tên" />
-              <div class="info-private d-flex justify-content-between">
-                <input type="text" placeholder="Email" />
-                <input type="text" placeholder="Số điện thoại" required pattern="\S+" />
+              <div class="info-pay">
+                <h4>Thông tin giao hàng</h4>
+                <p>Bạn đã có tài khoản? <a href="./login.html">Đăng nhập</a></p>
               </div>
-              <div class="province col-md-auto d-flex justify-content-between">
-                <select
-                  class="form-select form-select-sm me-2"
-                  id="city"
-                  aria-label=".form-select-sm"
-                >
-                  <option value="" selected>Chọn tỉnh thành</option>
-                </select>
+              <form id="form" class="form">
+                <div class="form-control">
+                  <input type="text" placeholder="Họ và tên" id="username" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="info-private d-flex justify-content-between">
+                  <div class="form-control form-email">
+                    <input type="email" placeholder="Email" id="email" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                  </div>
+                  <div class="form-control form-phone">
+                    <input
+                      type="email"
+                      placeholder="Số điện thoại"
+                      id="phone"
+                    />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                  </div>
+                </div>
 
-                <select
-                  class="form-select form-select-sm me-2"
-                  id="district"
-                  aria-label=".form-select-sm"
+                <div class="form-control">
+                  <input type="password" placeholder="Mật khẩu" id="password" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control">
+                  <input
+                    type="password"
+                    placeholder="Xác nhận lại mật khẩu"
+                    id="password2"
+                  />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div
+                  class="province col-md-auto d-flex justify-content-between mb-3" 
                 >
-                  <option value="" selected>Chọn quận huyện</option>
-                </select>
+                  <select
+                    class="form-select form-select-sm me-2 "
+                    id="city"
+                    aria-label=".form-select-sm"
+                  >
+                    <option value="" selected>Chọn tỉnh thành</option>
+                  </select>
 
-                <select
-                  class="form-select form-select-sm"
-                  id="ward"
-                  aria-label=".form-select-sm"
-                >
-                  <option value="" selected>Chọn phường xã</option>
-                </select>
-              </div>
-              <input class="w-100 mt-lg-3 mt-md-3 mt-sm-3 mt-0" type="text" placeholder="Địa chỉ" />
-            </div>
-            <div class="methods">
-              <div class="ship-cod">
-                <h4>Phương thức vận chuyển</h4>
-                <ul>
-                  <form action="">
-                    <li>
-                      <label for=""
-                        ><input type="radio" value="" checked="checked" />Giao
-                        hàng tận nơi</label
-                      >
-                    </li>
-                  </form>
-                </ul>
-              </div>
-              <div class="payment-methods">
-                <h4>Phương thức thanh toán</h4>
-                <ul>
-                  <form>
-                    <li>
-                      <label for="COD"
-                        ><input
-                          type="radio"
-                          name="method"
-                          value="COD"
-                          id="COD"
-                          checked
-                        />Thanh toán khi giao hàng (COD)</label
-                      >
-                    </li>
-                    <li>
-                      <label for="bank"
-                        ><input
-                          type="radio"
-                          name="method"
-                          value="bank"
-                          id="bank"
-                        />Chuyển khoản qua ngân hàng</label
-                      >
-                    </li>
-                  </form>
-                </ul>
-              </div>
-            </div>
-            <div class="footer-payment d-flex justify-content-between">
-              <a href="./cart.html">Quay lại thông tin đơn hàng</a>
-              <button class="border-0 fw-bold text-white p-3">
-                Hoàn thanh thanh toán
-              </button>
+                  <select
+                    class="form-select form-select-sm me-2"
+                    id="district"
+                    aria-label=".form-select-sm"
+                  >
+                    <option value="" selected>Chọn quận huyện</option>
+                  </select>
+
+                  <select
+                    class="form-select form-select-sm"
+                    id="ward"
+                    aria-label=".form-select-sm"
+                  >
+                    <option value="" selected>Chọn phường xã</option>
+                  </select>
+                </div>
+                <div class="form-control">
+                  <input type="text" placeholder="Địa chỉ" id="address" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="methods">
+                  <div class="ship-cod">
+                    <h4>Phương thức vận chuyển</h4>
+                    <ul>
+                      <form action="">
+                        <li>
+                          <label for=""
+                            ><input
+                              type="radio"
+                              value=""
+                              checked="checked"
+                            />Giao hàng tận nơi</label
+                          >
+                        </li>
+                      </form>
+                    </ul>
+                  </div>
+                  <div class="payment-methods">
+                    <h4>Phương thức thanh toán</h4>
+                    <ul>
+                      <li>
+                        <label for="COD"
+                          ><input
+                            type="radio"
+                            name="method"
+                            value="COD"
+                            id="COD"
+                            checked
+                          />Thanh toán khi giao hàng (COD)</label
+                        >
+                      </li>
+                      <li>
+                        <label for="bank"
+                          ><input
+                            type="radio"
+                            name="method"
+                            value="bank"
+                            id="bank"
+                          />Chuyển khoản qua ngân hàng</label
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="footer-payment d-flex justify-content-between">
+                    <a href="./cart.html">Quay lại thông tin đơn hàng</a>
+                    <button class="border-0 fw-bold text-white ">
+                      Xác nhận thanh toán
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
-          <div class="pay col-lg-6 col-md-10 m-auto ">
-            <div class="product-list mt-5 ">
+          <div class="pay col-lg-6 col-md-10 m-auto">
+            <div class="product-list mt-5">
               <div class="product-item d-flex border mb-4">
                 <div class="image">
                   <img src="../public/img/T-Shirt/t6.png" alt="" />
@@ -182,10 +234,14 @@
                 </div>
               </div>
               <hr />
-              
             </div>
             <div class="discount-form d-flex justify-content-between">
-              <input type="text" placeholder="Mã giảm giá" id="discount-form-input" onclick="paste(this)"/>
+              <input
+                type="text"
+                placeholder="Mã giảm giá"
+                id="discount-form-input"
+                onclick="paste(this)"
+              />
               <button class="fw-bold text-white" id="btn-apply">Sử dụng</button>
             </div>
             <div class="apply-discount d-flex justify-content-between py-3">
@@ -208,7 +264,7 @@
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
               >
-                <div class="modal-dialog  modal-sm">
+                <div class="modal-dialog modal-sm">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title" id="exampleModalLabel">
@@ -264,7 +320,9 @@
                           <h3>HANOIKHONGVOIDUOCDAU</h3>
                         </div>
                         <div class="daily-content">
-                          <p>Miễn phí vận chuyển với cước phí thấp hơn 50,000₫</p>
+                          <p>
+                            Miễn phí vận chuyển với cước phí thấp hơn 50,000₫
+                          </p>
                         </div>
                         <div class="daily-copyright">
                           <button
@@ -330,9 +388,7 @@
                 class="mb-2 p-3 fs-5 fw-normal d-flex justify-content-between align-items-center"
               >
                 <span class="text-black-50">Thành tiền:</span>
-                <span class="text-primary" id="total-money"
-                  >9.000.000 VND</span
-                >
+                <span class="text-primary" id="total-money">9.000.000 VND</span>
               </div>
             </div>
           </div>
@@ -431,7 +487,11 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="../public/js/data.js"></script>
     <script src="../public/js/shopping-cart.js"></script>

@@ -85,7 +85,28 @@ const renderProductSidebar = () => {
   });
   productItemSidabar.innerHTML = html;
 }
-
+btnAddToCart.addEventListener("click", (e) => {
+  // Kiểm tra xem đã chọn size hay chưa
+  const sizeSelectedEl = document.querySelector(".product-size .selected");
+  if (!sizeSelectedEl) {
+    alert("Vui lòng chọn size trước khi thêm vào giỏ hàng");
+    return;
+  }
+  let item = {
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: product.images[0],
+    count: count,
+    size: sizeSelectedEl.innerText,
+  };
+  // Thêm vào giỏ hàng
+  addItemToAdd(item);
+  alert("Thêm vào giỏ hàng thành công");
+  let getData = getDataFromLocalStorage()
+  renderProductSidebar(getData)
+  // window.location.assign("../../Degrey-Website/page/cart.html")
+});
 
 
 const renderProduct = (obj) => {
@@ -180,28 +201,11 @@ renderDescriptionImg(product.descriptionImg)
 // }
 // renderProductOther(products)
 // Thêm vào giỏ hàng
-btnAddToCart.addEventListener("click", (e) => {
-  // Kiểm tra xem đã chọn size hay chưa
-  const sizeSelectedEl = document.querySelector(".product-size .selected");
-  if (!sizeSelectedEl) {
-    alert("Vui lòng chọn size trước khi thêm vào giỏ hàng");
-    return;
-  }
-  let item = {
-    id: product.id,
-    name: product.name,
-    price: product.price,
-    image: product.images[0],
-    count: count,
-    size: sizeSelectedEl.innerText,
-  };
-  // renderProduct(product);
-  // Thêm vào giỏ hàng
-  addItemToAdd(item);
-  alert("Thêm vào giỏ hàng thành công");
-  window.location.assign("../../Degrey-Website/page/cart.html")
-});
+
 renderProductSidebar(items)
+
+
+
 // Hiện thị giỏ hàng
 $(".shopping-cart").click(function () {
   $(".cart").css("right", "0");
