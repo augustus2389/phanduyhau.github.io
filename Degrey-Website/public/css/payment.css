@@ -26,7 +26,7 @@ body {
 .validate-form input {
   border: 0.5px solid var(--primary);
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-radius: 10px;
 }
 .form-control {
@@ -67,7 +67,7 @@ body {
 .form-control i {
 	visibility: hidden;
 	position: absolute;
-	top: 23px;
+	top: 14px;
 	right: 10px;
 }
 
@@ -105,11 +105,11 @@ body {
 	width: 40%;
 }
 
-.form-email {
-  width: 55%;
+.form-email  {
+  width: 55% !important;
 }
 .form-phone {
-  width: 40%;
+  width: 40% !important;
 }
 .methods input {
   margin-right: 10px;

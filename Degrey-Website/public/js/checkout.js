@@ -179,7 +179,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 const address = document.getElementById('address')
-
+const phone = document.getElementById('phone')
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	
@@ -193,7 +193,7 @@ function checkInputs() {
 	const passwordValue = password.value.trim();
 	const password2Value = password2.value.trim();
 	const addressValue = address.value.trim();
-
+  const phoneValue = phone.value.trim();
 	if(usernameValue === '') {
 		setErrorFor(username, 'Họ và tên không được để trống');
 	} else {
@@ -226,6 +226,11 @@ function checkInputs() {
 		setErrorFor(address, 'Địa chỉ không được để trống');
 	} else {
 		setSuccessFor(address);
+	}
+  if(phoneValue === '') {
+		setErrorFor(phone, 'Mật khẩu không được để trống');
+	} else {
+		setSuccessFor(phone);
 	}
 }
 
