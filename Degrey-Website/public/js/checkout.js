@@ -182,16 +182,12 @@ const btnCheckout = document.querySelector(".footer-payment button")
 const address = document.getElementById('address')
 const phone = document.getElementById('phone')
 let inputEles = document.querySelectorAll('.form-control');
-btnCheckout.addEventListener("click", (e) =>{
-  Array.from(inputEles).map((ele) =>
-    ele.classList.remove('success', 'error')
-  );
+form.addEventListener('submit', e => {
+	e.preventDefault();
+	
+	checkInputs();
+});
 
-  let isValid = checkInputs();
-  if(isValid){
-    alert("Thanh toán thành công")
-  }
-})
 
 
 function checkInputs() {
