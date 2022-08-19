@@ -178,13 +178,21 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
+const btnCheckout = document.querySelector(".footer-payment button")
 const address = document.getElementById('address')
 const phone = document.getElementById('phone')
-form.addEventListener('submit', e => {
-	e.preventDefault();
-	
-	checkInputs();
-});
+let inputEles = document.querySelectorAll('.form-control');
+btnCheckout.addEventListener("click", (e) =>{
+  Array.from(inputEles).map((ele) =>
+    ele.classList.remove('success', 'error')
+  );
+
+  let isValid = checkInputs();
+  if(isValid){
+    alert("Thanh toán thành công")
+  }
+})
+
 
 function checkInputs() {
 	// trim to remove the whitespaces
@@ -213,7 +221,6 @@ function checkInputs() {
 	} else {
 		setSuccessFor(password);
 	}
-	
 	if(password2Value === '') {
 		setErrorFor(password2, 'Vui lòng xác nhận mật khẩu');
 	} else if(passwordValue !== password2Value) {
@@ -228,10 +235,12 @@ function checkInputs() {
 		setSuccessFor(address);
 	}
   if(phoneValue === '') {
-		setErrorFor(phone, 'Mật khẩu không được để trống');
-	} else {
-		setSuccessFor(phone);
-	}
+		setErrorFor(phone, 'Số điện thoại không được để trống');
+	} else if(!isPhone(phoneValue)){
+    setErrorFor(phone,'Số điện thoại không hợp lệ')
+  } else {
+    setSuccessFor(phone);
+  }
 }
 
 function setErrorFor(input, message) {
@@ -248,6 +257,9 @@ function setSuccessFor(input) {
 	
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+function isPhone(number) {
+  return /(84|0[3|5|7|8|9])+([0-9]{8})\b/.test(number);
 }
 
 

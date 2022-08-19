@@ -1,6 +1,7 @@
 @import url(./header.css);
 @import url(./footer.css);
 @import url(./responsive.css);
+@import url(./cartSidebar.css);
 :root{
     --primary:#8b572a;
     --secondary:#E80E0E;
@@ -40,6 +41,10 @@ body{
 .btn-plus-count {
   cursor: pointer;
   background-color: #ddd;
+}
+.minus-sidebar, .plus-sidebar {
+  cursor: pointer;
+
 }
 .count-product {
   padding: 5px 10px;

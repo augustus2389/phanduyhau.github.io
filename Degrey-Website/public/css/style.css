@@ -311,8 +311,9 @@
 	color: #97A5CE;
 	cursor: pointer;
 	font-size: 20px;
+  background: transparent;
 	position: absolute;
-	top: 5px;
+	top: -3px;
 	right: 5px;
 }
 

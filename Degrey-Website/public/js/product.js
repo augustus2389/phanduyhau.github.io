@@ -224,7 +224,7 @@ const renderProductSidebar = () => {
                     <span class="px-2 d-inline-block fw-bold">${p.count}</span>
                     <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
                 </span>
-                <button class="text-primary border-0 bg-transparent fw-light">
+                <button class="text-primary border-0 bg-transparent fw-light" onclick="deleteProduct(${p.id}, '${p.size}')">
                   <span><i class="fa-solid fa-trash-can"></i></i></span>
               </button>
             </div>
@@ -238,7 +238,35 @@ const renderProductSidebar = () => {
   productItemSidabar.innerHTML = html;
 }
 
+const deleteProduct = (id, size) => {
+  let isConfirm = confirm("Bạn có muốn xóa không?");
+  if (isConfirm) {
+    items = items.filter((p) => p.id != id || p.size != size);
+    setDataToLocalStorage(items);
+    updateTotalCart();
+    renderProductSidebar(items);
+  }
+};
+const plusCount = (id, size) => {
+  // Lấy ra sản phẩm tương ứng
+  let product = items.find((p) => p.id == id && p.size == size);
+  product.count++;
+  setDataToLocalStorage(items);
+  updateTotalMoneysidebar()
+  renderProductSidebar(items)
+};
 
+// Giảm số lượng
+const minusCount = (id, size) => {
+  let product = items.find((p) => p.id == id && p.size == size);
+  product.count--;
+  if (product.count < 1) {
+    product.count = 1;
+  }
+  setDataToLocalStorage(items);
+  updateTotalMoneysidebar()
+  renderProductSidebar(items)
+};
 
 
 const updateTotalMoneysidebar = () => {
@@ -310,16 +338,24 @@ Array.from(filterCatgory).forEach((input) =>{
 })
 
 renderProductSidebar(items)
-
-let inputValueName = document.querySelector(".sortAlphabetically")
-inputValueName.addEventListener("change", (e) =>{
-  if(e.target.value == 1){
-    let productSortUp = products.sort((a,b) =>{
-      return a.name - b.name
-    }) 
-    renderCard(productSortUp)
-  }
+let inputValueName = document.querySelector(".sortAlphabetically");
+inputValueName.addEventListener("change",(e) => {
+  let az 
+  arr.sort((a,b) => {
+    let sortNamea = a.name.toLowerCase();
+    let sortNameb = b.name.toLowerCase();
+    if (sortNamea < sortNameb) {
+        return az = -1;
+    }
+    if (sortNamea > sortNameb) {
+        return 1;
+    }
+    return 0;
+  })
+  renderCard(az )
 })
+
+renderCard(products)
 
 
 let inputValuePrice = document.querySelector(".sortPrice")

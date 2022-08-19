@@ -7,7 +7,7 @@ const formatMoney = (number) => {
 const productItemSidabar = document.querySelector(".product-item-sidebar")
 const renderProductSidebar = () => {
   if (items.length == 0) {
-    // productList.classList.add("d-none");
+    productItemSidabar.innerHTML = "Chưa có sản phẩm";
     return
   } 
   // else {
@@ -34,7 +34,7 @@ const renderProductSidebar = () => {
                     <span class="px-2 d-inline-block fw-bold">${p.count}</span>
                     <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
                 </span>
-                <button class="text-primary border-0 bg-transparent fw-light">
+                <button class="text-primary border-0 bg-transparent fw-light"  onclick="deleteProduct(${p.id}, '${p.size}')">
                   <span><i class="fa-solid fa-trash-can"></i></i></span>
               </button>
             </div>
@@ -49,7 +49,50 @@ const renderProductSidebar = () => {
 }
 renderProductSidebar(items)
 
+//  Xóa sản phẩm
+const deleteProduct = (id, size) => {
+  let isConfirm = confirm("Bạn có muốn xóa không?");
+  if (isConfirm) {
+    items = items.filter((p) => p.id != id || p.size != size);
+    setDataToLocalStorage(items);
+    updateTotalCart();
+    renderProduct(items);
+  }
+};
 
+// Thay đổi số lượng
+// Tăng số lượng
+const plusCount = (id, size) => {
+  // Lấy ra sản phẩm tương ứng
+  let product = items.find((p) => p.id == id && p.size == size);
+
+  // Tăng số lượng
+  product.count++;
+
+  // Lưu lại vào localStorage
+  setDataToLocalStorage(items);
+  // Hiển thị lại giao diện
+  renderProduct(items);
+  updateSubTotalMoney()
+  updateTotalMoney()
+  updateTotalMoneysidebar()
+  renderProductSidebar(items)
+};
+
+// Giảm số lượng
+const minusCount = (id, size) => {
+  let product = items.find((p) => p.id == id && p.size == size);
+  product.count--;
+  if (product.count < 1) {
+    product.count = 1;
+  }
+  setDataToLocalStorage(items);
+  renderProduct(items);
+  updateSubTotalMoney()
+  updateTotalMoneysidebar()
+  updateTotalMoney()
+  renderProductSidebar(items)
+};
 
 
 
@@ -95,4 +138,12 @@ const btnSearch = document.querySelector('.search-btn');
       $(".menu ul").css("left", "-250px");
       $("#overlay").css("display", "none");
     }
+  });
+  $(function () {
+    var url = window.location.href;
+    $(".nav  a").each(function () {
+      if (url == this.href) {
+        $(this).closest("li").addClass("active");
+      }
+    });
   });

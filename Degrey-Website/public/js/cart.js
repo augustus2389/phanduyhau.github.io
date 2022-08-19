@@ -34,11 +34,11 @@ const renderProductSidebar = () => {
             </div>
             <div class="count-sidebar text-black-50 d-flex justify-content-between ">
                 <span class="border d-inline-block me-3">
-                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
+                    <span class="minus-sidebar px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
                     <span class="px-2 d-inline-block fw-bold">${p.count}</span>
-                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
+                    <span class="plus-sidebar px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
                 </span>
-                <button class="text-primary border-0 bg-transparent fw-light">
+                <button class="text-primary border-0 bg-transparent fw-light" onclick="deleteProduct(${p.id}, '${p.size}')">
                   <span><i class="fa-solid fa-trash-can"></i></i></span>
               </button>
             </div>
@@ -59,15 +59,13 @@ const renderProductSidebar = () => {
 const renderProduct = () => {
   // Kiểm tra giỏ hàng rỗng hay không
   if (items.length == 0) {
-    productList.classList.add("d-none");
+    productItemSidabar.innerHTML = "Chưa có sản phẩm";
     return
   } else {
     message.classList.add("d-none");
   }
-
   // Nếu có sản phẩm thì hiển thị
   let html = "";
-
   items.forEach((p) => {
     html += `<div class="product-item d-flex border mb-4">
     <div class="image ">

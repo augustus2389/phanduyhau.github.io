@@ -43,7 +43,7 @@ const productJacket = products.filter((p) => {
 const productItemSidabar = document.querySelector(".product-item-sidebar");
 const renderProductSidebar = () => {
   if (items.length == 0) {
-    // productList.classList.add("d-none");
+    productItemSidabar.innerHTML = "Chưa có sản phẩm";
     return;
   }
   productItemSidabar.innerHTML = "";
@@ -101,13 +101,8 @@ const deleteProduct = (id, size) => {
 const plusCount = (id, size) => {
   // Lấy ra sản phẩm tương ứng
   let product = items.find((p) => p.id == id && p.size == size);
-
-  // Tăng số lượng
   product.count++;
-
-  // Lưu lại vào localStorage
   setDataToLocalStorage(items);
-  // Hiển thị lại giao diện
   updateTotalMoneysidebar()
   renderProductSidebar(items)
 };
@@ -458,9 +453,9 @@ const renderCardPants = (arr) => {
               <div class="d-flex  align-items-center mb-2 flex-wrap">
                 <span class="fw-bold me-3 mx-1">Số lượng:</span>
                   <span class="count-product d-inline-block me-3">
-                      <span class="rounded-circle px-2 d-inline-block fw-bold btn-minus-count">-</span>
-                      <span class="count py-1 px-2 d-inline-block fw-bold ">1</span>
-                      <span class="rounded-circle  px-2 d-inline-block fw-bold btn-plus-count">+</span>
+                      <span class="rounded-circle px-2 d-inline-block fw-bold btn-minus-count">${nameSet(name()+1)}</span>
+                      <span class="count py-1 px-2 d-inline-block fw-bold "> ${name()}</span>
+                      <span class="rounded-circle  px-2 d-inline-block fw-bold btn-plus-count">${nameSet(name()+1)}</span>
                   </span>
                   <button class="btn-icon btn-add-to-cart">Thêm vào giỏ hàng</button>
               </div>
@@ -476,6 +471,20 @@ const renderCardPants = (arr) => {
   });
   cardPantsEl.innerHTML = html;
 };
+const simple = (initial) => {
+  let val = initial;
+  return [
+    () => val,
+    (v)=> {
+      val=v;
+    }
+  ]
+}
+const [name , nameSet] = simple(0)
+
+
+
+
 let addCartPants = (id) => {
   let product = products.find((p) => p.id == id);
   let item = {

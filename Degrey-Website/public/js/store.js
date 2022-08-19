@@ -7,7 +7,7 @@ const formatMoney = (number) => {
 const productItemSidabar = document.querySelector(".product-item-sidebar")
 const renderProductSidebar = () => {
   if (items.length == 0) {
-    // productList.classList.add("d-none");
+    productItemSidabar.innerHTML = "Chưa có sản phẩm";
     return
   } 
   // else {
@@ -30,11 +30,11 @@ const renderProductSidebar = () => {
             </div>
             <div class="count-sidebar text-black-50 d-flex justify-content-between ">
                 <span class="border d-inline-block me-3">
-                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
+                    <span class="minus-sidebar px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
                     <span class="px-2 d-inline-block fw-bold">${p.count}</span>
-                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
+                    <span class="plus-sidebar px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
                 </span>
-                <button class="text-primary border-0 bg-transparent fw-light">
+                <button class="text-primary border-0 bg-transparent fw-light" onclick="deleteProduct(${p.id}, '${p.size}')">
                   <span><i class="fa-solid fa-trash-can"></i></i></span>
               </button>
             </div>
@@ -47,10 +47,54 @@ const renderProductSidebar = () => {
   });
   productItemSidabar.innerHTML = html;
 }
+//  Xóa sản phẩm
+const deleteProduct = (id, size) => {
+  let isConfirm = confirm("Bạn có muốn xóa không?");
+  if (isConfirm) {
+    items = items.filter((p) => p.id != id || p.size != size);
+    setDataToLocalStorage(items);
+    updateTotalCart();
+    renderProduct(items);
+  }
+};
 
+// Thay đổi số lượng
+// Tăng số lượng
+const plusCount = (id, size) => {
+  // Lấy ra sản phẩm tương ứng
+  let product = items.find((p) => p.id == id && p.size == size);
+
+  // Tăng số lượng
+  product.count++;
+
+  // Lưu lại vào localStorage
+  setDataToLocalStorage(items);
+  // Hiển thị lại giao diện
+  updateTotalMoneysidebar()
+  renderProductSidebar(items)
+};
+
+// Giảm số lượng
+const minusCount = (id, size) => {
+  let product = items.find((p) => p.id == id && p.size == size);
+  product.count--;
+  if (product.count < 1) {
+    product.count = 1;
+  }
+  setDataToLocalStorage(items);
+  updateTotalMoneysidebar()
+  renderProductSidebar(items)
+};
 renderProductSidebar(items)
+const updateTotalMoneysidebar = () => {
+  let totalMoney = 0;
+  items.map((e) => {
+    totalMoney += e.count * e.price;
+  });
+  totalMoneyElSidebar.innerText = formatMoney(totalMoney);
+};
 
-
+updateTotalMoneysidebar()
 
 
 

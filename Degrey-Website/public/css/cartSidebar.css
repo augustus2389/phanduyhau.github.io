@@ -27,3 +27,6 @@
   .product-item-sidebar .info{
     width: 63%;
   }
+  .minus-sidebar, .plus-sidebar {
+    cursor: pointer;
+  }
