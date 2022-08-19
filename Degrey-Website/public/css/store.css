@@ -84,6 +84,7 @@ a:hover {
 .link-page h2{
   color: #8b572a;
   font-weight: 700;
+  white-space: nowrap;
 }
 .list-unstyled li{
   margin: 15px 0;
