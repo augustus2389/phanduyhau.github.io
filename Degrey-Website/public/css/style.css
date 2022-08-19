@@ -382,8 +382,8 @@
 
 .floating-btn {
 	border-radius: 26.5px;
-	background-color: #001F61;
-	border: 1px solid #001F61;
+	background-color: gray;
+	border:none;
 	box-shadow: 0 16px 22px -17px #03153B;
 	color: #fff;
 	cursor: pointer;
@@ -399,6 +399,7 @@
 .floating-btn:hover {
 	background-color: #ffffff;
 	color: #001F61;
+  border: 1px solid grey;
 }
 
 .floating-btn:focus {
