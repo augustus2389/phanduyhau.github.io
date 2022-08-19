@@ -197,6 +197,7 @@
   position: fixed;
   display: none;
   border: none;
+  background: transparent;
   position: fixed;
   bottom: 50px;
   right:-55px;
@@ -467,7 +468,14 @@
     margin: 0 auto;
   }
 }
-
+@media (max-width:420px) {
+  .floating-btn{
+    display: none;
+  }
+  .rotate{
+    opacity: 0.4;
+  }
+}
 /* Test cart */
 
 
