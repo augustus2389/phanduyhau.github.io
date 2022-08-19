@@ -1,7 +1,7 @@
 @import url(./header.css);
 @import url(./footer.css);
 @import url(./responsive.css);
-
+@import url(./cartSidebar.css);
 .slick-prev {
   left: 0;
 }
