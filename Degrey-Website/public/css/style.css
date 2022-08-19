@@ -277,7 +277,7 @@
 .social-panel-container {
 	position: fixed;
 	right: 0;
-  z-index: 999;
+  z-index: 5;
 	bottom: 80px;
 	transform: translateX(100%);
 	transition: transform 0.4s ease-in-out;
@@ -393,7 +393,7 @@
 	position: fixed;
 	bottom: 30px;
 	right: 20px;
-	z-index: 999;
+	z-index: 5;
 }
 
 .floating-btn:hover {
