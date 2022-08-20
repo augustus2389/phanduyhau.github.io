@@ -24,15 +24,7 @@ const renderCard = (arr) => {
             src="${p.images[0]}"
             alt="${p.name}"
         /></a>
-        <ul class="social position-absolute top-50 end-0 translate-middle-y">
-          <li>
-            <button class="btn-add-to-cart"  onclick = 'addCartJacket(${
-              p.id
-            })'>
-            <i class="fa-solid fa-eye"></i>
-            </button>
-          </li>
-
+        <ul class="social position-absolute top-0 end-0">
           <li>
             <button
               class="button-discount"
@@ -40,7 +32,7 @@ const renderCard = (arr) => {
               data-bs-target="#exampleModal${p.id}"
               role="button"
             >
-              <i class="fa-solid fa-bag-shopping"></i>
+            <i class="fa-solid fa-eye"></i>
             </button>
           </li>
         </ul>
