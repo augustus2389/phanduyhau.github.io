@@ -147,6 +147,7 @@ updateTotalMoney();
 btnDiscount.addEventListener("click", () => {
   let value = discountInput.value;
   if (discountCode[value]) {
+    btnDiscount.style.backgroundColor = "#338dbc"
     return updateTotalMoney(items);
   } else {
     alert("Nhập mã không hợp lệ");
@@ -184,7 +185,7 @@ const phone = document.getElementById('phone')
 let inputEles = document.querySelectorAll('.form-control');
 form.addEventListener('submit', e => {
 	e.preventDefault();
-	
+	alert("Thanh toán thành công")
 	checkInputs();
 });
 

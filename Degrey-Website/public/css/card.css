@@ -172,4 +172,8 @@
     color: #fff;
     background-color: #03aae8;
   }
- 
+ @media (max-width:576px) {
+  .card-image .social li button {
+    display: none;
+  }
+ }

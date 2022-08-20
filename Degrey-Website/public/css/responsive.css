@@ -83,10 +83,12 @@
   .card-item .card-title h3{
     font-size: 12px;
   }
- 
+}
+@media (max-width: 580)  {
   
 }
 @media (max-width: 567px) {
+  
   .image .pc-tablet {
     display: none;
   }

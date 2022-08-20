@@ -177,6 +177,7 @@ const updateSubTotalMoney = () => {
     totalMoney += e.count * e.price;
   });
   subTotal.innerText = formatMoney(totalMoney);
+  console.log(totalMoney)
 };
 updateSubTotalMoney()
 updateTotalMoneysidebar()

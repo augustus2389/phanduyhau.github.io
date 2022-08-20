@@ -302,6 +302,7 @@ const addCartJacket = (id) => {
   };
   addItemToAdd(item);
   alert("Thêm vào giỏ hàng thành công");
+  window.location.reload()
   renderProductSidebar(items);
   updateTotalMoneysidebar();
 };
@@ -601,6 +602,8 @@ btnSearch.addEventListener("click", function () {
 $(".shopping-cart").click(function () {
   $(".cart").css("right", "0");
   $("#overlay").css("display", "block");
+
+  
 });
 $(".close-cart").click(function () {
   $(".cart").css("right", "-450px");
@@ -710,6 +713,7 @@ $(".suggest-content").slick({
   arrows: false,
   autoplay: true,
   slidesToShow: 3,
+  centerMode:true,
   autoplaySpeed: 3000,
   responsive: [
     {
