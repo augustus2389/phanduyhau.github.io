@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello world</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- Sử dụng link CDN -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script>
+      const menus = [
+        { path: "/", label: "Trang chủ" },
+        { path: "/shop", label: "Cửa hàng" },
+        { path: "/about", label: "Về chúng tôi" },
+        { path: "/contact", label: "Liên hệ" },
+      ];
+      const MenuItem = ({ path, label }) => {
+        return React.createElement(
+          "a",
+          { href: path, className: "menu-item" },
+          label
+        );
+      };
+      const MenuList = ({ menus }) => {
+        return React.createElement(
+          "div",
+          { className: "menu-list" },
+          menus.map((menu, index) => {
+            return React.createElement(
+              MenuItem,
+              { path: menu.path, label: menu.label, key: index },
+              null
+            );  //<MenuItem key=index path = menu.path, label menu.label/> 
+          })
+        );
+      };
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(React.createElement(MenuList,{menus},null))
+    </script>
+  </body>
+</html>
