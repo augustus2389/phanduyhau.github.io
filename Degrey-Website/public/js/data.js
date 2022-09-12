@@ -117,7 +117,7 @@ let products = [
   },
   {
     id: 7,
-    name: " LEOPARD PUFFER JACKET",
+    name: " AUGUSTUS JACKET",
     images: [
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/29.png?v=1658826002577",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0040-1-24eb8ec1-c830-48ac-9714-e4461f0d7669.jpg?v=1644815529293",
