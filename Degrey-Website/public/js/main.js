@@ -22,7 +22,7 @@ const searchFormInputEl = document.querySelector(".seach-input");
 //     alert("Tên sản phẩm đang bị để trống");
 //     return;
 //   }
-//   let productFilter = products.filter(p=>p.name.toLowerCase().includes(value.toLowerCase()));// Include tìm kiếm 
+//   let productFilter = products.filter(p=>p.name.toLowerCase().includes(value.toLowerCase()));// Include tìm kiếm
 //   renderCard(productFilter);
 // };
 let items = getDataFromLocalStorage();
@@ -101,7 +101,7 @@ const productJacket = products.filter((p) => {
 const productItemSidabar = document.querySelector(".product-item-sidebar");
 const renderProductSidebar = () => {
   if (items.length == 0) {
-    // productList.classList.add("d-none");
+    productItemSidabar.innerHTML = "Chưa có sản phẩm";
     return;
   }
   productItemSidabar.innerHTML = "";
@@ -296,13 +296,13 @@ const addCartJacket = (id) => {
     id: product.id,
     name: product.name,
     price: product.price,
-    size: 'M',
+    size: "M",
     image: product.images[0],
     count: 1,
   };
   addItemToAdd(item);
   alert("Thêm vào giỏ hàng thành công");
-  window.location.reload()
+  window.location.reload();
   renderProductSidebar(items);
   updateTotalMoneysidebar();
 };
@@ -422,7 +422,7 @@ let addCartTshirt = (id) => {
     id: product.id,
     name: product.name,
     price: product.price,
-    size: 'M',
+    size: "M",
     image: product.images[0],
     count: 1,
   };
@@ -551,7 +551,7 @@ let addCartPants = (id) => {
     id: product.id,
     name: product.name,
     price: product.price,
-    size: 'M',
+    size: "M",
     image: product.images[0],
     count: 1,
   };
@@ -602,8 +602,6 @@ btnSearch.addEventListener("click", function () {
 $(".shopping-cart").click(function () {
   $(".cart").css("right", "0");
   $("#overlay").css("display", "block");
-
-  
 });
 $(".close-cart").click(function () {
   $(".cart").css("right", "-450px");
@@ -713,7 +711,7 @@ $(".suggest-content").slick({
   arrows: false,
   autoplay: true,
   slidesToShow: 3,
-  centerMode:true,
+  centerMode: true,
   autoplaySpeed: 3000,
   responsive: [
     {

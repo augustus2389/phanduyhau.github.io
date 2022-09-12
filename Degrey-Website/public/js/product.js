@@ -1,11 +1,11 @@
-const btnSearch = document.querySelector('.search-btn');
-const addCart = document.querySelectorAll('.social .add-cart');
+const btnSearch = document.querySelector(".search-btn");
+const addCart = document.querySelectorAll(".social .add-cart");
 const message = document.querySelector(".message");
 
 const totalMoneyElSidebar = document.getElementById("total-money-sidebar");
 
-const productList = document.querySelector('.product-list')
-const productItemSidabar = document.querySelector(".product-item-sidebar")
+const productList = document.querySelector(".product-list");
+const productItemSidabar = document.querySelector(".product-item-sidebar");
 let items = getDataFromLocalStorage();
 const formatMoney = (number) => {
   return number.toLocaleString("it-IT", { style: "currency", currency: "VND" });
@@ -14,9 +14,9 @@ const formatMoney = (number) => {
 const renderCard = (arr) => {
   productList.innerHTML = "";
   let html = "";
-  arr.forEach((p,i) => {
-    if(i >= start && i < end){
-    html += `<div class="col-xl-2_4 col-lg-2_4 .col-xxl-2_4 col-md-4 col-sm-6 col-6">
+  arr.forEach((p, i) => {
+    if (i >= start && i < end) {
+      html += `<div class="col-xl-2_4 col-lg-2_4 .col-xxl-2_4 col-md-4 col-sm-6 col-6">
     <div class="card-item">
       <div class="card-image position-relative">
         <a href="./detail.html?id=${p.id}"
@@ -76,7 +76,9 @@ const renderCard = (arr) => {
                     <div class="col-lg-8 col-md-8 col-sm-9">
           <div id="detail ">
               <p class="product-name fw-bold mx-1">${p.name}</p>
-              <p class="product-price text-danger  fw-bold mb-2 mx-1">${formatMoney(p.price)}</p>
+              <p class="product-price text-danger  fw-bold mb-2 mx-1">${formatMoney(
+                p.price
+              )}</p>
               <div class="size d-flex mx-1 mb-2">
                 <span class="fw-bold me-3">Kích cỡ:</span>
               <div class="product-size mb-2">
@@ -103,97 +105,94 @@ const renderCard = (arr) => {
           </div>
         </div>
       </div>
-  </div>`}
+  </div>`;
+    }
   });
   productList.innerHTML = html;
-}
+};
 // renderCard(products)
-let btnNext = document.querySelector(".btn-next")
-let btnPrev = document.querySelector(".btn-prev")
+let btnNext = document.querySelector(".btn-next");
+let btnPrev = document.querySelector(".btn-prev");
 
 let perPage = 9;
-let currentPage = 1
-let start = 0
-let end = perPage 
-let totalPage = Math.ceil(products.length / perPage)
+let currentPage = 1;
+let start = 0;
+let end = perPage;
+let totalPage = Math.ceil(products.length / perPage);
 
-
-let renderListPage = () =>{
-  for(i=1; i <= totalPage; i++){
-    btnNext.insertAdjacentHTML("beforebegin",`<li class="pagination-item pagination-page ${i == 1 ? 'pagination-item-active' :''}">${i}
-    </li>`)
+let renderListPage = () => {
+  for (i = 1; i <= totalPage; i++) {
+    btnNext.insertAdjacentHTML(
+      "beforebegin",
+      `<li class="pagination-item pagination-page ${
+        i == 1 ? "pagination-item-active" : ""
+      }">${i}
+    </li>`
+    );
   }
-}
-renderListPage()
+};
+renderListPage();
 
+let btnPage = document.querySelectorAll(".pagination-page");
 
-let btnPage = document.querySelectorAll(".pagination-page")
-
-Array.from(btnPage).forEach((page,i) =>{
+Array.from(btnPage).forEach((page, i) => {
   page.addEventListener("click", (e) => {
-    let pageActive = document.querySelectorAll(".pagination-item-active")
-    Array.from(pageActive).forEach((p) =>{
-      p.classList.remove("pagination-item-active")
-    })
-    e.target.classList.add("pagination-item-active")
-    currentPage = i+1
-    start = (currentPage - 1)*perPage
-    end = currentPage*perPage
-    renderCard(products)
-  })
-})
+    let pageActive = document.querySelectorAll(".pagination-item-active");
+    Array.from(pageActive).forEach((p) => {
+      p.classList.remove("pagination-item-active");
+    });
+    e.target.classList.add("pagination-item-active");
+    currentPage = i + 1;
+    start = (currentPage - 1) * perPage;
+    end = currentPage * perPage;
+    renderCard(products);
+  });
+});
 
-
-btnNext.addEventListener("click", (e) =>{
-  currentPage++
-  if(currentPage > totalPage){
-    currentPage = totalPage
+btnNext.addEventListener("click", (e) => {
+  currentPage++;
+  if (currentPage > totalPage) {
+    currentPage = totalPage;
   }
 
-  Array.from(btnPage).forEach((page,i) =>{
-    if(i == currentPage-1){
-      page.classList.add("pagination-item-active")
-    }else{
-      page.classList.remove("pagination-item-active")
+  Array.from(btnPage).forEach((page, i) => {
+    if (i == currentPage - 1) {
+      page.classList.add("pagination-item-active");
+    } else {
+      page.classList.remove("pagination-item-active");
     }
-  })
+  });
 
-  start = (currentPage - 1)*perPage
-  end = currentPage*perPage
-  renderCard(products)
-})
+  start = (currentPage - 1) * perPage;
+  end = currentPage * perPage;
+  renderCard(products);
+});
 
-btnPrev.addEventListener("click", (e) =>{
-  currentPage--
-  if(currentPage <= 1){
-    currentPage = 1
+btnPrev.addEventListener("click", (e) => {
+  currentPage--;
+  if (currentPage <= 1) {
+    currentPage = 1;
   }
 
-  Array.from(btnPage).forEach((page,i) =>{
-    if(i == currentPage-1){
-      page.classList.add("pagination-item-active")
-    }else{
-      page.classList.remove("pagination-item-active")
+  Array.from(btnPage).forEach((page, i) => {
+    if (i == currentPage - 1) {
+      page.classList.add("pagination-item-active");
+    } else {
+      page.classList.remove("pagination-item-active");
     }
-  })
+  });
 
-  start = (currentPage - 1)*perPage
-  end = currentPage*perPage
-  renderCard(products)
-})
+  start = (currentPage - 1) * perPage;
+  end = currentPage * perPage;
+  renderCard(products);
+});
 
-renderCard(products)
-
-
-
-
+renderCard(products);
 
 const renderProductSidebar = () => {
   if (items.length == 0) {
-    // productList.classList.add("d-none");
-    return
-  // } else {
-  //   message.classList.add("d-none");
+    productItemSidabar.innerHTML = "Chưa có sản phẩm";
+    return;
   }
   productItemSidabar.innerHTML = "";
   let html = "";
@@ -212,11 +211,17 @@ const renderProductSidebar = () => {
             </div>
             <div class="count-sidebar text-black-50 d-flex justify-content-between ">
                 <span class="border d-inline-block me-3">
-                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${p.id}, '${p.size}')">-</span>
+                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="minusCount(${
+                      p.id
+                    }, '${p.size}')">-</span>
                     <span class="px-2 d-inline-block fw-bold">${p.count}</span>
-                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${p.id}, '${p.size}')">+</span>
+                    <span class="px-2 d-inline-block fw-bold bg-light" onclick="plusCount(${
+                      p.id
+                    }, '${p.size}')">+</span>
                 </span>
-                <button class="text-primary border-0 bg-transparent fw-light" onclick="deleteProduct(${p.id}, '${p.size}')">
+                <button class="text-primary border-0 bg-transparent fw-light" onclick="deleteProduct(${
+                  p.id
+                }, '${p.size}')">
                   <span><i class="fa-solid fa-trash-can"></i></i></span>
               </button>
             </div>
@@ -225,10 +230,10 @@ const renderProductSidebar = () => {
               </h3>
         </div>
     </div>
-  </div>`
+  </div>`;
   });
   productItemSidabar.innerHTML = html;
-}
+};
 
 const deleteProduct = (id, size) => {
   let isConfirm = confirm("Bạn có muốn xóa không?");
@@ -244,8 +249,8 @@ const plusCount = (id, size) => {
   let product = items.find((p) => p.id == id && p.size == size);
   product.count++;
   setDataToLocalStorage(items);
-  updateTotalMoneysidebar()
-  renderProductSidebar(items)
+  updateTotalMoneysidebar();
+  renderProductSidebar(items);
 };
 
 // Giảm số lượng
@@ -256,10 +261,9 @@ const minusCount = (id, size) => {
     product.count = 1;
   }
   setDataToLocalStorage(items);
-  updateTotalMoneysidebar()
-  renderProductSidebar(items)
+  updateTotalMoneysidebar();
+  renderProductSidebar(items);
 };
-
 
 const updateTotalMoneysidebar = () => {
   let totalMoney = 0;
@@ -268,125 +272,120 @@ const updateTotalMoneysidebar = () => {
   });
   totalMoneyElSidebar.innerText = formatMoney(totalMoney);
 };
-updateTotalMoneysidebar()
-
-
+updateTotalMoneysidebar();
 
 const getUrl = () => {
-  const category = window.location.hash.slice(1).split("&")
-  const data = products.filter((p) =>{
-    if(category.length == 2){
-      return p.category == category[0] || p.category == category[1]
-    } else if (category.length == 1 && category[0] !== '') {
+  const category = window.location.hash.slice(1).split("&");
+  const data = products.filter((p) => {
+    if (category.length == 2) {
+      return p.category == category[0] || p.category == category[1];
+    } else if (category.length == 1 && category[0] !== "") {
       return p.category.toLowerCase() == category[0].toLowerCase();
     } else {
       return true;
     }
-  })
-  renderCard(data) 
-}
+  });
+  renderCard(data);
+};
 getUrl();
 
-
-
-const filterPrices = document.querySelectorAll(".giaTien")
-let productFilterPrice = []
+const filterPrices = document.querySelectorAll(".giaTien");
+let productFilterPrice = [];
 
 function filterPrice(price1, price2) {
   let productFilterTrue;
-  if(!price2) {
+  if (!price2) {
     productFilterTrue = products.filter((p) => p.price >= price1);
   } else {
-    productFilterTrue = products.filter((p) => p.price > price1 && p.price < price2);
+    productFilterTrue = products.filter(
+      (p) => p.price > price1 && p.price < price2
+    );
   }
-  renderCard(productFilterTrue)
+  renderCard(productFilterTrue);
 }
 
 // filter catgory
-let filterCatgory = document.querySelectorAll(".clothes")
-let productFilterRating = []
-let checkedNumberRating = 0
-Array.from(filterCatgory).forEach((input) =>{
-  input.addEventListener("change",(e) =>{
-    let inputValue = e.target.value
-    if(e.target.checked == true){
-      checkedNumberRating ++
-      let productFilterTrue = products.filter((p) =>{
+let filterCatgory = document.querySelectorAll(".clothes");
+let productFilterRating = [];
+let checkedNumberRating = 0;
+Array.from(filterCatgory).forEach((input) => {
+  input.addEventListener("change", (e) => {
+    let inputValue = e.target.value;
+    if (e.target.checked == true) {
+      checkedNumberRating++;
+      let productFilterTrue = products.filter((p) => {
         return p.category == inputValue;
-      })
-      productFilterRating = productFilterRating.concat(productFilterTrue)
-      renderCard(productFilterRating)
-    } else{
-      checkedNumberRating --
-      productFilterRating = productFilterRating.filter((p) =>{
+      });
+      productFilterRating = productFilterRating.concat(productFilterTrue);
+      renderCard(productFilterRating);
+    } else {
+      checkedNumberRating--;
+      productFilterRating = productFilterRating.filter((p) => {
         return p.category != inputValue;
-      })
-      renderCard(productFilterRating)
+      });
+      renderCard(productFilterRating);
     }
-    if(checkedNumberRating == 0){
-      renderCard(products)
+    if (checkedNumberRating == 0) {
+      renderCard(products);
     }
-  })
-})
+  });
+});
 
-renderProductSidebar(items)
+renderProductSidebar(items);
 let inputValueName = document.querySelector(".sortAlphabetically");
-inputValueName.addEventListener("change",(e) => {
-  products.sort((a,b) => {
+inputValueName.addEventListener("change", (e) => {
+  products.sort((a, b) => {
     let sortNamea = a.name.toLowerCase();
     let sortNameb = b.name.toLowerCase();
     if (sortNamea < sortNameb) {
-        return az = -1;
+      return (az = -1);
     }
     if (sortNamea > sortNameb) {
-        return 1;
+      return 1;
     }
     return 0;
-  })
-  renderCard(az )
-})
+  });
+  renderCard(az);
+});
 
-renderCard(products)
+renderCard(products);
 
-
-let inputValuePrice = document.querySelector(".sortPrice")
-inputValuePrice.addEventListener("change", (e) =>{
-  if(e.target.value == 1){
-    let productSortUp = products.sort((a,b) =>{
-      return a.price - b.price
-    }) 
-    renderCard(productSortUp)
+let inputValuePrice = document.querySelector(".sortPrice");
+inputValuePrice.addEventListener("change", (e) => {
+  if (e.target.value == 1) {
+    let productSortUp = products.sort((a, b) => {
+      return a.price - b.price;
+    });
+    renderCard(productSortUp);
   }
-})
+});
 
-let inputValuePrice2 = document.querySelector(".sortPrice2")
-inputValuePrice2.addEventListener("change", (e) =>{
-  if(e.target.value == 2){
-    let productSortDown = products.sort((a,b) =>{
-      return b.price - a.price
-    })
-    renderCard(productSortDown)
-  } 
-})
+let inputValuePrice2 = document.querySelector(".sortPrice2");
+inputValuePrice2.addEventListener("change", (e) => {
+  if (e.target.value == 2) {
+    let productSortDown = products.sort((a, b) => {
+      return b.price - a.price;
+    });
+    renderCard(productSortDown);
+  }
+});
 
 // Phân trang Pagination
-
-
 
 // Hiển thị bộ lọc
 $(".icon-filter").click(function () {
   $(".product-filter").css("right", "0");
   $("#overlay").css("display", "block");
 });
-$(".close-cart").click(function(){
-  $(".product-filter ").css("right","-450px");
+$(".close-cart").click(function () {
+  $(".product-filter ").css("right", "-450px");
   $("#overlay").css("display", "none");
-})
+});
 $("#overlay").click(function () {
   $(".product-filter").css("right", "-250px");
   $("#overlay").css("display", "none");
 });
-$("#overlay").click(function () { 
+$("#overlay").click(function () {
   $("body").css("overflow-y", "scroll");
 });
 $(window).resize(() => {
@@ -396,25 +395,25 @@ $(window).resize(() => {
   }
 });
 // Hiện thị giỏ hàng
-$(".shopping-cart").click(function(){
-  $(".cart").css("right","0");
+$(".shopping-cart").click(function () {
+  $(".cart").css("right", "0");
   $("#overlay").css("display", "block");
-})
-$(".close-cart").click(function(){
-  $(".cart").css("right","-450px");
+});
+$(".close-cart").click(function () {
+  $(".cart").css("right", "-450px");
   $("#overlay").css("display", "none");
-})
+});
 $("#overlay").click(function () {
   $(".cart").css("right", "-450px");
   $("#overlay").css("display", "none");
 });
 
 // Hiện thị menu c2
-$('#navbarDropdown').click(function() {
-  $('.dropdown-menu').slideToggle(300, "linear");
+$("#navbarDropdown").click(function () {
+  $(".dropdown-menu").slideToggle(300, "linear");
 });
 
-$('.dropdown-menu').mouseleave(function() {
+$(".dropdown-menu").mouseleave(function () {
   $(this).slideToggle(300, "linear");
 });
 $(function () {
@@ -426,13 +425,11 @@ $(function () {
   });
 });
 
-
-
 // Nút search
-btnSearch.addEventListener('click',function(){
-  this.parentElement.classList.toggle('open');
+btnSearch.addEventListener("click", function () {
+  this.parentElement.classList.toggle("open");
   this.previousElementSibling.focus();
-})
+});
 
 // Hiện ra menu
 $(".menu-icon").click(function () {
@@ -451,30 +448,27 @@ $(window).resize(() => {
   }
 });
 
-
-
-
 $(".image-slider").slick({
-    dots: true,
-    infinite: true,
-    speed: 300,
-    fade: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    prevArrow: `<button type='button' class='slick-prev pull-left slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>`,
-    nextArrow: `<button type='button' class='slick-next pull-right slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>`,
-    responsive: [
-      {
-        breakpoint: 568,
-        settings: {
-          arrows: false,
-        },
+  dots: true,
+  infinite: true,
+  speed: 300,
+  fade: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  prevArrow: `<button type='button' class='slick-prev pull-left slick-arrow'><i class='fa fa-angle-left' aria-hidden='true'></i></button>`,
+  nextArrow: `<button type='button' class='slick-next pull-right slick-arrow'><i class='fa fa-angle-right' aria-hidden='true'></i></button>`,
+  responsive: [
+    {
+      breakpoint: 568,
+      settings: {
+        arrows: false,
       },
-    ],
-  });
-  //   $('.navbar a.dropdown-toggle').on('click', function(e) {
+    },
+  ],
+});
+//   $('.navbar a.dropdown-toggle').on('click', function(e) {
 //      var $el = $(this);
 //      var $parent = $(this).offsetParent(".dropdown-menu");
 //      $(this).parent("li").toggleClass('open');
