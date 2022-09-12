@@ -13,7 +13,8 @@ let products = [
     description:
       "Chi tiết kỹ thuật: -Thân áo: Vải dạ. Tay áo: da tổng hợp - May 2 lớp, lớp trong lót quả trám - Áo cổ bẻ, bo dệt ở cổ tay và gấu áo - 2 túi hông tiện dụng",
     price: 400000,
-    descriptionImg:"https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287"  ,
+    descriptionImg:
+      "https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287",
     sizes: ["M", "L", "XL"],
     tag: "Best Seller",
     category: "Jacket",
@@ -31,7 +32,8 @@ let products = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, dignissimos? Exercitationem iure architecto temporibus aliquam, numquam, culpa aperiam placeat voluptatem tempora nemo alias? Similique, rerum eius. Et provident voluptatem tenetur.",
     price: 160000,
-    descriptionImg:"https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287"  ,
+    descriptionImg:
+      "https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287",
     sizes: ["S", "M", "L", "XL"],
     tag: "New Arrival",
     category: "Jacket",
@@ -41,7 +43,7 @@ let products = [
     id: 3,
     name: " LEOPARD PUFFER JACKET",
     images: [
-      "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/65.png?v=1658826002577",
+      "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/28-2.png?v=1658826002577",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/28-2.png?v=1658826002577",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/29.png?v=1658826002577",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/36.png?v=1658826002577",
@@ -50,7 +52,8 @@ let products = [
     description:
       "Chất liệu: Chất gió chần bông Form dáng: Áo phao Gile Cảm hứng thiết kế: Hoạ tiết da báo với phối màu bắt mặt. Chữ  được in chuyển nhiệt ở mặt trước và sau. Hình thêu C-Star ở mặt trong phù hợp mặc cả hai mặt. Sản phẩm thuộc BST LEOPARD COLLECTION",
     price: 450000,
-    descriptionImg:"https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287"  ,
+    descriptionImg:
+      "https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287",
     sizes: ["S", "M", "L", "XL"],
     tag: "New Arrival",
     category: "Jacket",
@@ -68,7 +71,8 @@ let products = [
     description:
       "Chất liệu: vải gió (lót 2 lớp) Dáng xuông rộng, sử dụng khuy dập Mặt trước: Logo “ClownZ” - sử dụng công nghệ in phản quang chất lượng cao. Sử dụng vải nỉ thể thao kết hợp vải lót gió chống thấm nước, phù hợp với những ngày mưa",
     price: 579000,
-    descriptionImg:"https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287"  ,
+    descriptionImg:
+      "https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287",
     sizes: ["L", "XL"],
     tag: "New Arrival",
     category: "Jacket",
@@ -86,7 +90,8 @@ let products = [
     description:
       "Chất liệu: Chất gió chần bông Form dáng: Áo phao Gile Cảm hứng thiết kế: Hoạ tiết da báo với phối màu bắt mặt. Chữ  được in chuyển nhiệt ở mặt trước và sau. Hình thêu C-Star ở mặt trong phù hợp mặc cả hai mặt. Sản phẩm thuộc BST LEOPARD COLLECTION",
     price: 450000,
-    descriptionImg:"https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287"  ,
+    descriptionImg:
+      "https://bizweb.dktcdn.net/100/414/728/files/varsity-big-logo.jpg?v=1637729592287",
     sizes: ["S", "M", "L", "XL"],
     tag: "New Arrival",
     category: "Jacket",
@@ -100,7 +105,6 @@ let products = [
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0024.jpg?v=1639234061050",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0027-bb32f50c-797b-4510-b9f8-4ee6448d4189.jpg?v=1639234063163",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0025-c4193980-e928-4adf-b655-cec4ff265788.jpg?v=1639234064970",
-
     ],
     description:
       "Chất liệu: vải len dệt 100% cotton Dáng áo: Oversize Graphic được dệt trực tiết trên bề mặt vải Giặt không sấy tránh co áo",
@@ -115,7 +119,7 @@ let products = [
     id: 7,
     name: " LEOPARD PUFFER JACKET",
     images: [
-      "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0011.jpg?v=1644815529293",
+      "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/29.png?v=1658826002577",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0040-1-24eb8ec1-c830-48ac-9714-e4461f0d7669.jpg?v=1644815529293",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0085.jpg?v=1644815529293",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0082-dc39166f-6479-47ca-9cc2-0f788af0c452.jpg?v=1644815529293",
@@ -579,7 +583,6 @@ let products = [
       "https://product.hstatic.net/1000281824/product/fd6d6576ae88e855e03e217c49bf7297_acf5b5f071ae439a94de89e39bcc3d91_master.jpeg",
       "https://product.hstatic.net/1000281824/product/img_8321_90be40214f004266b332943481955ac8_master.jpeg",
       "https://product.hstatic.net/1000281824/product/d93ae87ab25a7004294b_e02b75fb2f214d51966c0569a1af5e39_master.jpeg",
-
     ],
     description:
       'Chất liệu: vải Khaki Dáng xuông (quần ông đứng). 2 bên túi thêu nổi chữ và logo "ClownZ". Độ bền cao, không sờn rách, không bạc màu khi giặt',
@@ -621,7 +624,7 @@ let products = [
       "https://product.hstatic.net/1000281824/product/6e6d289245868410707c8a4f5268ea53_e1e2e5cbc07143e8ad73122a871f9660_master.jpeg",
     ],
     description:
-      '- Chất liệu: Canvas. Hoạ tiết: Logo thêu trực tiếp lên túi. Thương hiệu: Degrey. Sản xuất: Việt Nam. Màu sắc và họa tiết được thiết kế riêng bởi team design DEGREY ',
+      "- Chất liệu: Canvas. Hoạ tiết: Logo thêu trực tiếp lên túi. Thương hiệu: Degrey. Sản xuất: Việt Nam. Màu sắc và họa tiết được thiết kế riêng bởi team design DEGREY ",
     price: 649000,
     descriptionImg:
       "https://file.hstatic.net/1000281824/file/ad9f09ca9a5658080147_b068cf372416476689d22c28c7199856_grande.jpg",
@@ -640,7 +643,7 @@ let products = [
       "https://product.hstatic.net/1000281824/product/anh_chup_man_hinh_2022-08-19_luc_00.15.13_85f0d318132a4d758d516a3f8429bbf5_master.png",
     ],
     description:
-      '- Chất liệu: Simili. Hoạ tiết: Được in trực tiếp lên sản phẩm.  Size: 20cm X 15cm X 5cm.  Thương hiệu: Degrey. Sản xuất: Việt Nam. Màu sắc và họa tiết được thiết kế riêng bởi team design DEGREY ',
+      "- Chất liệu: Simili. Hoạ tiết: Được in trực tiếp lên sản phẩm.  Size: 20cm X 15cm X 5cm.  Thương hiệu: Degrey. Sản xuất: Việt Nam. Màu sắc và họa tiết được thiết kế riêng bởi team design DEGREY ",
     price: 290000,
     descriptionImg:
       "https://maybalogiare.com/wp-content/uploads/2019/06/kich-thuoc-balo-4-1.jpg",
@@ -659,7 +662,7 @@ let products = [
       "https://product.hstatic.net/1000281824/product/f02ebb4b098c986903dcd63cd8d6aaa7__1__7494ee665a984082be07c7d5a25b410a_master.jpeg",
     ],
     description:
-      '- Chất liệu: Canvas pha Poly. Hoạ tiết: Được in trực tiếp lên sản phẩm.  Size: 40cm X 30cm X 12cm. Ngăn chống sốc đựng vừa laptop 15inch. Thương hiệu: Degrey.  Sản xuất: Việt Nam. Màu sắc và họa tiết được thiết kế riêng bởi team design DEGREY',
+      "- Chất liệu: Canvas pha Poly. Hoạ tiết: Được in trực tiếp lên sản phẩm.  Size: 40cm X 30cm X 12cm. Ngăn chống sốc đựng vừa laptop 15inch. Thương hiệu: Degrey.  Sản xuất: Việt Nam. Màu sắc và họa tiết được thiết kế riêng bởi team design DEGREY",
     price: 420000,
     descriptionImg:
       "https://maybalogiare.com/wp-content/uploads/2019/06/kich-thuoc-balo-4-1.jpg",
@@ -667,6 +670,4 @@ let products = [
     sizes: ["L"],
     category: "ACCESSORY",
   },
-  
 ];
-

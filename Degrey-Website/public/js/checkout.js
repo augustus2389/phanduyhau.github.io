@@ -1,4 +1,4 @@
-const checkOutProduct = document.querySelector(".product-list")
+const checkOutProduct = document.querySelector(".product-list");
 const discountBox = document.querySelector(".discount-box");
 const discountMoneyEl = document.getElementById("discount-money");
 const discountInput = document.getElementById("discount-form-input");
@@ -8,23 +8,9 @@ const districts = document.getElementById("district");
 const wards = document.getElementById("ward");
 const Parameter = {
   url: "../public/data/vietnam.json", //Đường dẫn đến file chứa dữ liệu hoặc api do backend cung cấp
-  method: "GET", 
-  responseType: "application/json", 
+  method: "GET",
+  responseType: "application/json",
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //gọi ajax = axios => nó trả về cho chúng ta là một promise
 let promise = axios(Parameter);
@@ -42,8 +28,8 @@ function renderCity(data) {
   citis.onchange = function () {
     district.length = 1;
     ward.length = 1;
-    if(this.value != ""){
-      const result = data.filter(n => n.Id === this.value);
+    if (this.value != "") {
+      const result = data.filter((n) => n.Id === this.value);
 
       for (const k of result[0].Districts) {
         district.options[district.options.length] = new Option(k.Name, k.Id);
@@ -51,12 +37,14 @@ function renderCity(data) {
     }
   };
 
-   // xứ lý khi thay đổi quận huyện thì sẽ hiển thị ra phường xã thuộc quận huyện đó
+  // xứ lý khi thay đổi quận huyện thì sẽ hiển thị ra phường xã thuộc quận huyện đó
   district.onchange = function () {
     ward.length = 1;
     const dataCity = data.filter((n) => n.Id === citis.value);
     if (this.value != "") {
-      const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+      const dataWards = dataCity[0].Districts.filter(
+        (n) => n.Id === this.value
+      )[0].Wards;
 
       for (const w of dataWards) {
         wards.options[wards.options.length] = new Option(w.Name, w.Id);
@@ -86,18 +74,16 @@ const renderProductCheckout = () => {
         <h3 class="fs-5 fw-bold">${formatMoney(p.price)}</h3>
       </div>
     </div>
-  </div>`
-  })
+  </div>`;
+  });
   checkOutProduct.innerHTML = html;
-}
-
+};
 
 const formatMoney = (number) => {
   return number.toLocaleString("it-IT", { style: "currency", currency: "VND" });
 };
 
-
-renderProductCheckout(items)
+renderProductCheckout(items);
 
 const subTotalMoneyEl = document.getElementById("sub-total-money");
 const updateSubTotalMoney = () => {
@@ -147,7 +133,7 @@ updateTotalMoney();
 btnDiscount.addEventListener("click", () => {
   let value = discountInput.value;
   if (discountCode[value]) {
-    btnDiscount.style.backgroundColor = "#338dbc"
+    btnDiscount.style.backgroundColor = "#338dbc";
     return updateTotalMoney(items);
   } else {
     alert("Nhập mã không hợp lệ");
@@ -155,95 +141,106 @@ btnDiscount.addEventListener("click", () => {
 });
 
 const BtnCoppyRight = document.querySelectorAll(".btn-test");
-Array.from(BtnCoppyRight).forEach((btn)=>{
-  btn.addEventListener("click",()=>{
+Array.from(BtnCoppyRight).forEach((btn) => {
+  btn.addEventListener("click", () => {
     // lọc những btn có đã sao chép thành sao chép mã
-    Array.from(BtnCoppyRight).forEach((btn)=>{
-      if(btn.innerHTML.includes("Đã")){
+    Array.from(BtnCoppyRight).forEach((btn) => {
+      if (btn.innerHTML.includes("Đã")) {
         btn.innerHTML = "Áp dụng ";
       }
-    })
+    });
     navigator.clipboard.writeText(btn.dataset.disscount);
-    // gán lại cho btn 
+    // gán lại cho btn
     btn.innerHTML = "Đã áp dụng";
-  })
-})
+  });
+});
 
 async function paste(input) {
   const text = await navigator.clipboard.readText();
   input.value = text;
 }
 
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
-const btnCheckout = document.querySelector(".footer-payment button")
-const address = document.getElementById('address')
-const phone = document.getElementById('phone')
-let inputEles = document.querySelectorAll('.form-control');
-form.addEventListener('submit', e => {
-	e.preventDefault();
-	alert("Thanh toán thành công")
-	checkInputs();
+const form = document.getElementById("form");
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const password2 = document.getElementById("password2");
+const btnCheckout = document.querySelector(".footer-payment button");
+const address = document.getElementById("address");
+const phone = document.getElementById("phone");
+let inputEles = document.querySelectorAll(".form-control");
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   checkInputs();
+// });
+
+btnCheckout.addEventListener("click", (e) => {
+  Array.from(form).map((ele) => ele.classList.remove("success", "error"));
+  e.preventDefault();
+  let isValid = checkInputs();
+  if (isValid) {
+    alert("Thanh toán thành công");
+  }
 });
-
-
-
 function checkInputs() {
-	// trim to remove the whitespaces
-	const usernameValue = username.value.trim();
-	const emailValue = email.value.trim();
-
-	const addressValue = address.value.trim();
+  // trim to remove the whitespaces
+  let isCheck = true;
+  const usernameValue = username.value.trim();
+  const emailValue = email.value.trim();
+  const addressValue = address.value.trim();
   const phoneValue = phone.value.trim();
-	if(usernameValue === '') {
-		setErrorFor(username, 'Họ và tên không được để trống');
-	} else {
-		setSuccessFor(username);
-	}
-	
-	if(emailValue === '') {
-		setErrorFor(email, 'Email không được để trống');
-	} else if (!isEmail(emailValue)) {
-		setErrorFor(email, 'Email không hợp lệ');
-	} else {
-		setSuccessFor(email);
-	}
-	
+  if (usernameValue === "") {
+    setErrorFor(username, "Họ và tên không được để trống");
+    isCheck = false;
+  } else {
+    setSuccessFor(username);
+  }
 
-  if(addressValue === '') {
-		setErrorFor(address, 'Địa chỉ không được để trống');
-	} else {
-		setSuccessFor(address);
-	}
-  if(phoneValue === '') {
-		setErrorFor(phone, 'Số điện thoại không được để trống');
-	} else if(!isPhone(phoneValue)){
-    setErrorFor(phone,'Số điện thoại không hợp lệ')
+  if (emailValue === "") {
+    setErrorFor(email, "Email không được để trống");
+    isCheck = false;
+  } else if (!isEmail(emailValue)) {
+    setErrorFor(email, "Email không hợp lệ");
+    isCheck = false;
+  } else {
+    setSuccessFor(email);
+  }
+
+  if (addressValue === "") {
+    setErrorFor(address, "Địa chỉ không được để trống");
+    isCheck = false;
+  } else {
+    setSuccessFor(address);
+  }
+  if (phoneValue === "") {
+    setErrorFor(phone, "Số điện thoại không được để trống");
+    isCheck = false;
+  } else if (!isPhone(phoneValue)) {
+    setErrorFor(phone, "Số điện thoại không hợp lệ");
+    isCheck = false;
   } else {
     setSuccessFor(phone);
   }
+  return isCheck;
 }
 
 function setErrorFor(input, message) {
-	const formControl = input.parentElement;
-	const small = formControl.querySelector('small');
-	formControl.className = 'form-control error';
-	small.innerText = message;
+  const formControl = input.parentElement;
+  const small = formControl.querySelector("small");
+  formControl.className = "form-control error";
+  small.innerText = message;
 }
 
 function setSuccessFor(input) {
-	const formControl = input.parentElement;
-	formControl.className = 'form-control success';
+  const formControl = input.parentElement;
+  formControl.className = "form-control success";
 }
-	
+
 function isEmail(email) {
-	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+    email
+  );
 }
 function isPhone(number) {
   return /(84|0[3|5|7|8|9])+([0-9]{8})\b/.test(number);
 }
-
-
