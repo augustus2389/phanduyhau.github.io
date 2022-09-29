@@ -23,7 +23,7 @@ let products = [
     id: 2,
     name: " FLAMMY SKULL COACH JACKET",
     images: [
-      "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0003-6d6f64bf-6d6b-4893-8e4a-0ea1b138c001.jpg?v=1639372166667",
+      "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0005.jpg?v=1639372166667",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0005.jpg?v=1639372166667",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/321-01-01.jpg?v=1639372166667",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/321-01-02.jpg?v=1639372166667",
@@ -62,7 +62,7 @@ let products = [
     id: 4,
     name: " CYBER REFLECTIVE ANORAK JACKET",
     images: [
-      "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0022.jpg?v=1642651246310",
+      "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0025.jpg?v=1642651246310",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/cz-0025.jpg?v=1642651246310",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/1-08.jpg?v=1642651246310",
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/414/728/products/1-03.jpg?v=1642651246310",
